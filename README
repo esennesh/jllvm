@@ -1,0 +1,17 @@
+jllvm: Java bindings for the Low-Level Virtual Machine
+by Eli Gottlieb, copyright 2012
+February 27, 2012
+-------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+
+These are bindings for LLVM, providing an object-oriented interface as similar as possible to the C++ bindings for JVM languages.  Underneath, they go through LLVM's C bindings.  They currently bind to the headers and ABI of LLVM 2.8, but work on updating them for LLVM 3.0 is underway. 
+
+To compile jllvm, run:
+$ ant build
+
+To package jllvm into a JAR file usable as a library, run:
+$ ant build
+$ ant jar
+
+Happy hacking!
+--Eli Gottlieb

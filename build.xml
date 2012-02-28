@@ -1,0 +1,22 @@
+<project name="jllvm">
+	<target name="build">
+		<exec dir="src/org/jllvm/bindings" executable="cmake">
+			<arg value="."/>
+		</exec>
+		<exec dir="src/org/jllvm/bindings" executable="make"/>
+		<mkdir dir="build"/>
+		<javac srcdir="src/org/jllvm/" destdir="build/" includeantruntime="false"/>
+	</target>
+	<target name="jar">
+		<jar basedir="build" destfile="build/jllvm.jar"/>
+	</target>
+	<target name="clean">
+		<delete dir="build/org/jllvm"/>
+		<delete>
+			<fileset dir="src/org/jllvm/bindings" includes="*.o"/>
+			<fileset dir="src/org/jllvm/bindings" includes="*.so"/>
+			<fileset dir="src/org/jllvm/bindings/Transforms" includes="*.o"/>
+			<fileset dir="src/org/jllvm/bindings/Transforms" includes="*.so"/>
+		</delete>
+	</target>
+</project>

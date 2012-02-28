@@ -1,0 +1,27 @@
+package jllvm;
+
+import jllvm.llvm.Core;
+import jllvm.llvm.SWIGTYPE_p_LLVMOpaqueMemoryBuffer;
+
+/* TODO: Look up how to make output typemaps for output strings and output memory-buffer references. */
+public class LLVMMemoryBuffer {
+	protected SWIGTYPE_p_LLVMOpaqueMemoryBuffer instance;
+	protected String creationMessage;
+	
+	public SWIGTYPE_p_LLVMOpaqueMemoryBuffer getInstance() {
+		return instance;
+	}
+	
+	/* Create a memory buffer from a file. */
+	public LLVMMemoryBuffer(String path) {
+		int result = 
+	}
+	
+	/* Create a memory buffer from stdin. */
+	public LLVMMemoryBuffer() {
+	}
+	
+	protected finalize() {
+		Core.LLVMDisposeMemoryBuffer(instance);
+	}
+}
