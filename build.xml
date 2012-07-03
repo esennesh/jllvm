@@ -6,6 +6,7 @@
 		<exec dir="src/org/jllvm/bindings" executable="make"/>
 		<mkdir dir="build"/>
 		<javac srcdir="src/org/jllvm/" destdir="build/" includeantruntime="false"/>
+		<jar destfile="jllvm.jar" basedir="build/" />
 	</target>
 	<target name="jar">
 		<jar basedir="build" destfile="build/jllvm.jar"/>

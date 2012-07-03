@@ -181,8 +181,8 @@ LLVM_ROOT:STRING=/usr
 //Value Computed by CMake
 jllvm_BINARY_DIR:STATIC=/home/eli/Programs/jllvm/src/org/jllvm/bindings
 
-//Dependencies for the target
-jllvm_LIB_DEPENDS:STATIC=general;LLVMBitWriter;general;LLVMInstrumentation;general;LLVMipo;general;LLVMLinker;general;LLVMMCDisassembler;general;LLVMARMAsmPrinter;general;LLVMInterpreter;general;LLVMJIT;general;LLVMAsmParser;general;LLVMArchive;general;LLVMARMAsmParser;general;LLVMAlphaAsmPrinter;general;LLVMBlackfinAsmPrinter;general;LLVMCBackend;general;LLVMCellSPUAsmPrinter;general;LLVMCppBackend;general;LLVMMBlazeAsmPrinter;general;LLVMMSP430AsmPrinter;general;LLVMMipsAsmPrinter;general;LLVMPIC16AsmPrinter;general;LLVMPowerPCAsmPrinter;general;LLVMSparcAsmPrinter;general;LLVMSystemZAsmPrinter;general;LLVMX86AsmParser;general;LLVMX86CodeGen;general;LLVMX86Disassembler;general;LLVMXCoreAsmPrinter;general;LLVMExecutionEngine;general;LLVMBitReader;general;LLVMARMCodeGen;general;LLVMAlphaCodeGen;general;LLVMBlackfinCodeGen;general;LLVMCBackendInfo;general;LLVMCellSPUCodeGen;general;LLVMCppBackendInfo;general;LLVMMBlazeCodeGen;general;LLVMMSP430CodeGen;general;LLVMMipsCodeGen;general;LLVMPIC16CodeGen;general;LLVMPowerPCCodeGen;general;LLVMSparcCodeGen;general;LLVMSystemZCodeGen;general;LLVMX86AsmPrinter;general;LLVMX86Info;general;LLVMXCoreCodeGen;general;LLVMARMInfo;general;LLVMAsmPrinter;general;LLVMAlphaInfo;general;LLVMBlackfinInfo;general;LLVMCellSPUInfo;general;LLVMMBlazeInfo;general;LLVMMSP430Info;general;LLVMMipsInfo;general;LLVMPIC16Info;general;LLVMPowerPCInfo;general;LLVMSparcInfo;general;LLVMSystemZInfo;general;LLVMSelectionDAG;general;LLVMXCoreInfo;general;LLVMMCParser;general;LLVMCodeGen;general;LLVMScalarOpts;general;LLVMInstCombine;general;LLVMTransformUtils;general;LLVMipa;general;LLVMAnalysis;general;LLVMTarget;general;LLVMCore;general;LLVMMC;general;LLVMSupport;general;LLVMSystem;
+//Dependencies for target
+jllvm_LIB_DEPENDS:STATIC=
 
 //Value Computed by CMake
 jllvm_SOURCE_DIR:STATIC=/home/eli/Programs/jllvm/src/org/jllvm/bindings
@@ -205,7 +205,7 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=2
 //Minor version of cmake used to create the current loaded cache
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=8
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=5
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=7
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
