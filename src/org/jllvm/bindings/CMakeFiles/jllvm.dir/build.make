@@ -4,7 +4,7 @@
 #=============================================================================
 # Special targets provided by cmake.
 
-# Disable implicit rules so canoncical targets will work.
+# Disable implicit rules so canonical targets will work.
 .SUFFIXES:
 
 # Remove some rules from gmake that .SUFFIXES does not remove.
@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eli/Programs/jllvm/src/org/jllvm/bindings
+CMAKE_SOURCE_DIR = /home/eli/Programs/jllvm/src/org/jllvm/llvm-c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eli/Programs/jllvm/src/org/jllvm/bindings
+CMAKE_BINARY_DIR = /home/eli/Programs/jllvm/src/org/jllvm/llvm-c
 
 # Include any dependencies generated for this target.
 include CMakeFiles/jllvm.dir/depend.make
@@ -48,17 +48,17 @@ include CMakeFiles/jllvm.dir/flags.make
 
 CMakeFiles/jllvm.dir/Analysis_wrap.c.o: CMakeFiles/jllvm.dir/flags.make
 CMakeFiles/jllvm.dir/Analysis_wrap.c.o: Analysis_wrap.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/bindings/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/jllvm.dir/Analysis_wrap.c.o"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/Analysis_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/bindings/Analysis_wrap.c
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/Analysis_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Analysis_wrap.c
 
 CMakeFiles/jllvm.dir/Analysis_wrap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jllvm.dir/Analysis_wrap.c.i"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/bindings/Analysis_wrap.c > CMakeFiles/jllvm.dir/Analysis_wrap.c.i
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Analysis_wrap.c > CMakeFiles/jllvm.dir/Analysis_wrap.c.i
 
 CMakeFiles/jllvm.dir/Analysis_wrap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jllvm.dir/Analysis_wrap.c.s"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/bindings/Analysis_wrap.c -o CMakeFiles/jllvm.dir/Analysis_wrap.c.s
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Analysis_wrap.c -o CMakeFiles/jllvm.dir/Analysis_wrap.c.s
 
 CMakeFiles/jllvm.dir/Analysis_wrap.c.o.requires:
 .PHONY : CMakeFiles/jllvm.dir/Analysis_wrap.c.o.requires
@@ -71,17 +71,17 @@ CMakeFiles/jllvm.dir/Analysis_wrap.c.o.provides.build: CMakeFiles/jllvm.dir/Anal
 
 CMakeFiles/jllvm.dir/BitReader_wrap.c.o: CMakeFiles/jllvm.dir/flags.make
 CMakeFiles/jllvm.dir/BitReader_wrap.c.o: BitReader_wrap.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/bindings/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/jllvm.dir/BitReader_wrap.c.o"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/BitReader_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/bindings/BitReader_wrap.c
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/BitReader_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/BitReader_wrap.c
 
 CMakeFiles/jllvm.dir/BitReader_wrap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jllvm.dir/BitReader_wrap.c.i"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/bindings/BitReader_wrap.c > CMakeFiles/jllvm.dir/BitReader_wrap.c.i
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/BitReader_wrap.c > CMakeFiles/jllvm.dir/BitReader_wrap.c.i
 
 CMakeFiles/jllvm.dir/BitReader_wrap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jllvm.dir/BitReader_wrap.c.s"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/bindings/BitReader_wrap.c -o CMakeFiles/jllvm.dir/BitReader_wrap.c.s
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/BitReader_wrap.c -o CMakeFiles/jllvm.dir/BitReader_wrap.c.s
 
 CMakeFiles/jllvm.dir/BitReader_wrap.c.o.requires:
 .PHONY : CMakeFiles/jllvm.dir/BitReader_wrap.c.o.requires
@@ -94,17 +94,17 @@ CMakeFiles/jllvm.dir/BitReader_wrap.c.o.provides.build: CMakeFiles/jllvm.dir/Bit
 
 CMakeFiles/jllvm.dir/BitWriter_wrap.c.o: CMakeFiles/jllvm.dir/flags.make
 CMakeFiles/jllvm.dir/BitWriter_wrap.c.o: BitWriter_wrap.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/bindings/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/jllvm.dir/BitWriter_wrap.c.o"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/BitWriter_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/bindings/BitWriter_wrap.c
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/BitWriter_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/BitWriter_wrap.c
 
 CMakeFiles/jllvm.dir/BitWriter_wrap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jllvm.dir/BitWriter_wrap.c.i"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/bindings/BitWriter_wrap.c > CMakeFiles/jllvm.dir/BitWriter_wrap.c.i
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/BitWriter_wrap.c > CMakeFiles/jllvm.dir/BitWriter_wrap.c.i
 
 CMakeFiles/jllvm.dir/BitWriter_wrap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jllvm.dir/BitWriter_wrap.c.s"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/bindings/BitWriter_wrap.c -o CMakeFiles/jllvm.dir/BitWriter_wrap.c.s
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/BitWriter_wrap.c -o CMakeFiles/jllvm.dir/BitWriter_wrap.c.s
 
 CMakeFiles/jllvm.dir/BitWriter_wrap.c.o.requires:
 .PHONY : CMakeFiles/jllvm.dir/BitWriter_wrap.c.o.requires
@@ -117,17 +117,17 @@ CMakeFiles/jllvm.dir/BitWriter_wrap.c.o.provides.build: CMakeFiles/jllvm.dir/Bit
 
 CMakeFiles/jllvm.dir/Core_wrap.c.o: CMakeFiles/jllvm.dir/flags.make
 CMakeFiles/jllvm.dir/Core_wrap.c.o: Core_wrap.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/bindings/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/jllvm.dir/Core_wrap.c.o"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/Core_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/bindings/Core_wrap.c
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/Core_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Core_wrap.c
 
 CMakeFiles/jllvm.dir/Core_wrap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jllvm.dir/Core_wrap.c.i"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/bindings/Core_wrap.c > CMakeFiles/jllvm.dir/Core_wrap.c.i
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Core_wrap.c > CMakeFiles/jllvm.dir/Core_wrap.c.i
 
 CMakeFiles/jllvm.dir/Core_wrap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jllvm.dir/Core_wrap.c.s"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/bindings/Core_wrap.c -o CMakeFiles/jllvm.dir/Core_wrap.c.s
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Core_wrap.c -o CMakeFiles/jllvm.dir/Core_wrap.c.s
 
 CMakeFiles/jllvm.dir/Core_wrap.c.o.requires:
 .PHONY : CMakeFiles/jllvm.dir/Core_wrap.c.o.requires
@@ -140,17 +140,17 @@ CMakeFiles/jllvm.dir/Core_wrap.c.o.provides.build: CMakeFiles/jllvm.dir/Core_wra
 
 CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.o: CMakeFiles/jllvm.dir/flags.make
 CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.o: EnhancedDisassembly_wrap.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/bindings/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.o"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/bindings/EnhancedDisassembly_wrap.c
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/EnhancedDisassembly_wrap.c
 
 CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.i"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/bindings/EnhancedDisassembly_wrap.c > CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.i
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/EnhancedDisassembly_wrap.c > CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.i
 
 CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.s"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/bindings/EnhancedDisassembly_wrap.c -o CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.s
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/EnhancedDisassembly_wrap.c -o CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.s
 
 CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.o.requires:
 .PHONY : CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.o.requires
@@ -163,17 +163,17 @@ CMakeFiles/jllvm.dir/EnhancedDisassembly_wrap.c.o.provides.build: CMakeFiles/jll
 
 CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.o: CMakeFiles/jllvm.dir/flags.make
 CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.o: ExecutionEngine_wrap.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/bindings/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.o"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/bindings/ExecutionEngine_wrap.c
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/ExecutionEngine_wrap.c
 
 CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.i"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/bindings/ExecutionEngine_wrap.c > CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.i
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/ExecutionEngine_wrap.c > CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.i
 
 CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.s"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/bindings/ExecutionEngine_wrap.c -o CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.s
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/ExecutionEngine_wrap.c -o CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.s
 
 CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.o.requires:
 .PHONY : CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.o.requires
@@ -186,17 +186,17 @@ CMakeFiles/jllvm.dir/ExecutionEngine_wrap.c.o.provides.build: CMakeFiles/jllvm.d
 
 CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.o: CMakeFiles/jllvm.dir/flags.make
 CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.o: LinkTimeOptimizer_wrap.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/bindings/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.o"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/bindings/LinkTimeOptimizer_wrap.c
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/LinkTimeOptimizer_wrap.c
 
 CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.i"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/bindings/LinkTimeOptimizer_wrap.c > CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.i
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/LinkTimeOptimizer_wrap.c > CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.i
 
 CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.s"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/bindings/LinkTimeOptimizer_wrap.c -o CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.s
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/LinkTimeOptimizer_wrap.c -o CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.s
 
 CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.o.requires:
 .PHONY : CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.o.requires
@@ -209,17 +209,17 @@ CMakeFiles/jllvm.dir/LinkTimeOptimizer_wrap.c.o.provides.build: CMakeFiles/jllvm
 
 CMakeFiles/jllvm.dir/lto_wrap.c.o: CMakeFiles/jllvm.dir/flags.make
 CMakeFiles/jllvm.dir/lto_wrap.c.o: lto_wrap.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/bindings/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/jllvm.dir/lto_wrap.c.o"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/lto_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/bindings/lto_wrap.c
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/lto_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/lto_wrap.c
 
 CMakeFiles/jllvm.dir/lto_wrap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jllvm.dir/lto_wrap.c.i"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/bindings/lto_wrap.c > CMakeFiles/jllvm.dir/lto_wrap.c.i
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/lto_wrap.c > CMakeFiles/jllvm.dir/lto_wrap.c.i
 
 CMakeFiles/jllvm.dir/lto_wrap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jllvm.dir/lto_wrap.c.s"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/bindings/lto_wrap.c -o CMakeFiles/jllvm.dir/lto_wrap.c.s
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/lto_wrap.c -o CMakeFiles/jllvm.dir/lto_wrap.c.s
 
 CMakeFiles/jllvm.dir/lto_wrap.c.o.requires:
 .PHONY : CMakeFiles/jllvm.dir/lto_wrap.c.o.requires
@@ -232,17 +232,17 @@ CMakeFiles/jllvm.dir/lto_wrap.c.o.provides.build: CMakeFiles/jllvm.dir/lto_wrap.
 
 CMakeFiles/jllvm.dir/Target_wrap.c.o: CMakeFiles/jllvm.dir/flags.make
 CMakeFiles/jllvm.dir/Target_wrap.c.o: Target_wrap.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/bindings/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/jllvm.dir/Target_wrap.c.o"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/Target_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/bindings/Target_wrap.c
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/Target_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Target_wrap.c
 
 CMakeFiles/jllvm.dir/Target_wrap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jllvm.dir/Target_wrap.c.i"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/bindings/Target_wrap.c > CMakeFiles/jllvm.dir/Target_wrap.c.i
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Target_wrap.c > CMakeFiles/jllvm.dir/Target_wrap.c.i
 
 CMakeFiles/jllvm.dir/Target_wrap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jllvm.dir/Target_wrap.c.s"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/bindings/Target_wrap.c -o CMakeFiles/jllvm.dir/Target_wrap.c.s
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Target_wrap.c -o CMakeFiles/jllvm.dir/Target_wrap.c.s
 
 CMakeFiles/jllvm.dir/Target_wrap.c.o.requires:
 .PHONY : CMakeFiles/jllvm.dir/Target_wrap.c.o.requires
@@ -255,17 +255,17 @@ CMakeFiles/jllvm.dir/Target_wrap.c.o.provides.build: CMakeFiles/jllvm.dir/Target
 
 CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.o: CMakeFiles/jllvm.dir/flags.make
 CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.o: Transforms/IPO_wrap.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/bindings/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.o"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/bindings/Transforms/IPO_wrap.c
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Transforms/IPO_wrap.c
 
 CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.i"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/bindings/Transforms/IPO_wrap.c > CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.i
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Transforms/IPO_wrap.c > CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.i
 
 CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.s"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/bindings/Transforms/IPO_wrap.c -o CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.s
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Transforms/IPO_wrap.c -o CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.s
 
 CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.o.requires:
 .PHONY : CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.o.requires
@@ -278,17 +278,17 @@ CMakeFiles/jllvm.dir/Transforms/IPO_wrap.c.o.provides.build: CMakeFiles/jllvm.di
 
 CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.o: CMakeFiles/jllvm.dir/flags.make
 CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.o: Transforms/Scalar_wrap.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/bindings/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.o"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/bindings/Transforms/Scalar_wrap.c
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.o   -c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Transforms/Scalar_wrap.c
 
 CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.i"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/bindings/Transforms/Scalar_wrap.c > CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.i
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Transforms/Scalar_wrap.c > CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.i
 
 CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.s"
-	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/bindings/Transforms/Scalar_wrap.c -o CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.s
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/Transforms/Scalar_wrap.c -o CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.s
 
 CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.o.requires:
 .PHONY : CMakeFiles/jllvm.dir/Transforms/Scalar_wrap.c.o.requires
@@ -354,6 +354,6 @@ CMakeFiles/jllvm.dir/clean:
 .PHONY : CMakeFiles/jllvm.dir/clean
 
 CMakeFiles/jllvm.dir/depend:
-	cd /home/eli/Programs/jllvm/src/org/jllvm/bindings && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eli/Programs/jllvm/src/org/jllvm/bindings /home/eli/Programs/jllvm/src/org/jllvm/bindings /home/eli/Programs/jllvm/src/org/jllvm/bindings /home/eli/Programs/jllvm/src/org/jllvm/bindings /home/eli/Programs/jllvm/src/org/jllvm/bindings/CMakeFiles/jllvm.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/eli/Programs/jllvm/src/org/jllvm/llvm-c && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eli/Programs/jllvm/src/org/jllvm/llvm-c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c /home/eli/Programs/jllvm/src/org/jllvm/llvm-c/CMakeFiles/jllvm.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/jllvm.dir/depend
 

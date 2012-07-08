@@ -5,10 +5,6 @@
 
 %include "carrays.i"
 %array_functions(LLVMValueRef,LLVMValueRefArray)
-%array_functions(LLVMGenericValueRef,LLVMGenericValueRefArray)
-%array_functions(LLVMExecutionEngineRef,LLVMExecutionEngineRefArray)
-%array_functions(LLVMModuleRef,LLVMModuleRefArray)
-%array_functions(char*,StringArray)
 /*===-- llvm-c/ExecutionEngine.h - ExecutionEngine Lib C Iface --*- C++ -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|
@@ -37,17 +33,18 @@
 extern "C" {
 #endif
 
+/**
+ * @defgroup LLVMCExecutionEngine Execution Engine
+ * @ingroup LLVMC
+ *
+ * @{
+ */
+
 void LLVMLinkInJIT(void);
 void LLVMLinkInInterpreter(void);
 
-typedef int LLVMBool;
-typedef struct LLVMOpaqueModule *LLVMModuleRef;
-typedef struct LLVMOpaqueTargetData *LLVMTargetDataRef;
-typedef struct LLVMOpaqueValue *LLVMValueRef;
 typedef struct LLVMOpaqueGenericValue *LLVMGenericValueRef;
 typedef struct LLVMOpaqueExecutionEngine *LLVMExecutionEngineRef;
-typedef struct LLVMOpaqueType *LLVMTypeRef;
-typedef struct LLVMOpaqueModule *LLVMModuleRef;
 
 /*===-- Operations on generic values --------------------------------------===*/
 
@@ -72,34 +69,34 @@ void LLVMDisposeGenericValue(LLVMGenericValueRef GenVal);
 
 /*===-- Operations on execution engines -----------------------------------===*/
 
-LLVMBool LLVMCreateExecutionEngineForModule(LLVMExecutionEngineRef *OutEng,
+LLVMBool LLVMCreateExecutionEngineForModule(LLVMExecutionEngineRef *OutEE,
                                             LLVMModuleRef M,
                                             char **OutError);
 
-LLVMBool LLVMCreateInterpreterForModule(LLVMExecutionEngineRef *OutIntr,
+LLVMBool LLVMCreateInterpreterForModule(LLVMExecutionEngineRef *OutInterp,
                                         LLVMModuleRef M,
                                         char **OutError);
 
-LLVMBool LLVMCreateJITCompilerForModule(LLVMExecutionEngineRef *OutJit,
+LLVMBool LLVMCreateJITCompilerForModule(LLVMExecutionEngineRef *OutJIT,
                                         LLVMModuleRef M,
                                         unsigned OptLevel,
                                         char **OutError);
 
 /** Deprecated: Use LLVMCreateExecutionEngineForModule instead. */
-/*LLVMBool LLVMCreateExecutionEngine(LLVMExecutionEngineRef *OUTPUT,
+LLVMBool LLVMCreateExecutionEngine(LLVMExecutionEngineRef *OutEE,
                                    LLVMModuleProviderRef MP,
-                                   char **OUTPUT);*/
+                                   char **OutError);
 
 /** Deprecated: Use LLVMCreateInterpreterForModule instead. */
-/* LLVMBool LLVMCreateInterpreter(LLVMExecutionEngineRef *OUTPUT,
+LLVMBool LLVMCreateInterpreter(LLVMExecutionEngineRef *OutInterp,
                                LLVMModuleProviderRef MP,
-                               char **OUTPUT); */
+                               char **OutError);
 
 /** Deprecated: Use LLVMCreateJITCompilerForModule instead. */
-/* LLVMBool LLVMCreateJITCompiler(LLVMExecutionEngineRef *OUTPUT,
+LLVMBool LLVMCreateJITCompiler(LLVMExecutionEngineRef *OutJIT,
                                LLVMModuleProviderRef MP,
                                unsigned OptLevel,
-                               char **OUTPUT); */
+                               char **OutError);
 
 void LLVMDisposeExecutionEngine(LLVMExecutionEngineRef EE);
 
@@ -120,18 +117,20 @@ void LLVMFreeMachineCodeForFunction(LLVMExecutionEngineRef EE, LLVMValueRef F);
 void LLVMAddModule(LLVMExecutionEngineRef EE, LLVMModuleRef M);
 
 /** Deprecated: Use LLVMAddModule instead. */
-//void LLVMAddModuleProvider(LLVMExecutionEngineRef EE, LLVMModuleProviderRef MP);
+void LLVMAddModuleProvider(LLVMExecutionEngineRef EE, LLVMModuleProviderRef MP);
 
 LLVMBool LLVMRemoveModule(LLVMExecutionEngineRef EE, LLVMModuleRef M,
-                          LLVMModuleRef *OutMod, char **OutErr);
+                          LLVMModuleRef *OutMod, char **OutError);
 
 /** Deprecated: Use LLVMRemoveModule instead. */
-/* LLVMBool LLVMRemoveModuleProvider(LLVMExecutionEngineRef EE,
+LLVMBool LLVMRemoveModuleProvider(LLVMExecutionEngineRef EE,
                                   LLVMModuleProviderRef MP,
-                                  LLVMModuleRef *OutMod, char **OutError); */
+                                  LLVMModuleRef *OutMod, char **OutError);
 
 LLVMBool LLVMFindFunction(LLVMExecutionEngineRef EE, const char *Name,
-                          LLVMValueRef *OutFunc);
+                          LLVMValueRef *OutFn);
+
+void *LLVMRecompileAndRelinkFunction(LLVMExecutionEngineRef EE, LLVMValueRef Fn);
 
 LLVMTargetDataRef LLVMGetExecutionEngineTargetData(LLVMExecutionEngineRef EE);
 
@@ -139,6 +138,10 @@ void LLVMAddGlobalMapping(LLVMExecutionEngineRef EE, LLVMValueRef Global,
                           void* Addr);
 
 void *LLVMGetPointerToGlobal(LLVMExecutionEngineRef EE, LLVMValueRef Global);
+
+/**
+ * @}
+ */
 
 #ifdef __cplusplus
 }

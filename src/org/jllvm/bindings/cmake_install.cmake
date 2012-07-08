@@ -1,4 +1,4 @@
-# Install script for directory: /home/eli/Programs/jllvm/src/org/jllvm/bindings
+# Install script for directory: /home/eli/Programs/jllvm/src/org/jllvm/llvm-c
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libjllvm.so"
          RPATH "")
   ENDIF()
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/eli/Programs/jllvm/src/org/jllvm/bindings/libjllvm.so")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/eli/Programs/jllvm/src/org/jllvm/llvm-c/libjllvm.so")
   IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libjllvm.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libjllvm.so")
     IF(CMAKE_INSTALL_DO_STRIP)
@@ -54,7 +54,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/eli/Programs/jllvm/src/org/jllvm/bindings/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/eli/Programs/jllvm/src/org/jllvm/llvm-c/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/eli/Programs/jllvm/src/org/jllvm/bindings/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/eli/Programs/jllvm/src/org/jllvm/llvm-c/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

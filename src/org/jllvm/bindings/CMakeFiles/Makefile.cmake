@@ -45,9 +45,8 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-2.8/Modules/Platform/Linux-GNU.cmake"
   "/usr/share/cmake-2.8/Modules/Platform/Linux.cmake"
   "/usr/share/cmake-2.8/Modules/Platform/UnixPaths.cmake"
-  "/usr/share/llvm/cmake/LLVM.cmake"
+  "/usr/share/llvm/cmake/LLVM-Config.cmake"
   "/usr/share/llvm/cmake/LLVMConfig.cmake"
-  "/usr/share/llvm/cmake/LLVMLibDeps.cmake"
   )
 
 # The corresponding makefile is:

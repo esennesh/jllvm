@@ -73,8 +73,8 @@ def generate_swig_interfaces(header_path):
 		out.close()
 		cwd = os.getcwd()
 		os.chdir(relpath)
-		print 'swig ' + '-package jllvm.llvm -java ' + name + '.i'
-		out = runprog("swig",["-package jllvm.llvm -java",name + '.i'])
+		print 'swig ' + '-package org.jllvm.bindings -java ' + name + '.i'
+		out = runprog("swig",["-package org.jllvm.bindings -java",name + '.i'])
 		os.chdir(cwd)
 		print out
 		
