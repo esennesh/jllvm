@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 2.6)
 project (jllvm)
-add_library(jllvm SHARED Analysis_wrap.c BitReader_wrap.c BitWriter_wrap.c Core_wrap.c EnhancedDisassembly_wrap.c ExecutionEngine_wrap.c LinkTimeOptimizer_wrap.c lto_wrap.c Target_wrap.c Transforms/IPO_wrap.c Transforms/Scalar_wrap.c)
+add_library(jllvm SHARED Analysis_wrap.c BitReader_wrap.c BitWriter_wrap.c Core_wrap.c Disassembler_wrap.c EnhancedDisassembly_wrap.c ExecutionEngine_wrap.c Initialization_wrap.c LinkTimeOptimizer_wrap.c lto_wrap.c Object_wrap.c Target_wrap.c TargetMachine_wrap.c Transforms/IPO_wrap.c Transforms/PassManagerBuilder_wrap.c Transforms/Scalar_wrap.c Transforms/Vectorize_wrap.c)
 install(TARGETS jllvm DESTINATION lib/)
 add_definitions( -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS )
 
