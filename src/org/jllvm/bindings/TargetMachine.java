@@ -27,16 +27,16 @@ public class TargetMachine {
     return TargetMachineJNI.LLVMGetTargetDescription(SWIGTYPE_p_LLVMTarget.getCPtr(T));
   }
 
-  public static SWIGTYPE_p_LLVMBool LLVMTargetHasJIT(SWIGTYPE_p_LLVMTarget T) {
-    return new SWIGTYPE_p_LLVMBool(TargetMachineJNI.LLVMTargetHasJIT(SWIGTYPE_p_LLVMTarget.getCPtr(T)), true);
+  public static int LLVMTargetHasJIT(SWIGTYPE_p_LLVMTarget T) {
+    return TargetMachineJNI.LLVMTargetHasJIT(SWIGTYPE_p_LLVMTarget.getCPtr(T));
   }
 
-  public static SWIGTYPE_p_LLVMBool LLVMTargetHasTargetMachine(SWIGTYPE_p_LLVMTarget T) {
-    return new SWIGTYPE_p_LLVMBool(TargetMachineJNI.LLVMTargetHasTargetMachine(SWIGTYPE_p_LLVMTarget.getCPtr(T)), true);
+  public static int LLVMTargetHasTargetMachine(SWIGTYPE_p_LLVMTarget T) {
+    return TargetMachineJNI.LLVMTargetHasTargetMachine(SWIGTYPE_p_LLVMTarget.getCPtr(T));
   }
 
-  public static SWIGTYPE_p_LLVMBool LLVMTargetHasAsmBackend(SWIGTYPE_p_LLVMTarget T) {
-    return new SWIGTYPE_p_LLVMBool(TargetMachineJNI.LLVMTargetHasAsmBackend(SWIGTYPE_p_LLVMTarget.getCPtr(T)), true);
+  public static int LLVMTargetHasAsmBackend(SWIGTYPE_p_LLVMTarget T) {
+    return TargetMachineJNI.LLVMTargetHasAsmBackend(SWIGTYPE_p_LLVMTarget.getCPtr(T));
   }
 
   public static SWIGTYPE_p_LLVMTargetMachine LLVMCreateTargetMachine(SWIGTYPE_p_LLVMTarget T, String Triple, String CPU, String Features, LLVMCodeGenOptLevel Level, LLVMRelocMode Reloc, LLVMCodeModel CodeModel) {
@@ -69,8 +69,8 @@ public class TargetMachine {
     return new SWIGTYPE_p_LLVMTargetDataRef(TargetMachineJNI.LLVMGetTargetMachineData(SWIGTYPE_p_LLVMTargetMachine.getCPtr(T)), true);
   }
 
-  public static SWIGTYPE_p_LLVMBool LLVMTargetMachineEmitToFile(SWIGTYPE_p_LLVMTargetMachine T, SWIGTYPE_p_LLVMModuleRef M, String Filename, LLVMCodeGenFileType codegen, SWIGTYPE_p_p_char ErrorMessage) {
-    return new SWIGTYPE_p_LLVMBool(TargetMachineJNI.LLVMTargetMachineEmitToFile(SWIGTYPE_p_LLVMTargetMachine.getCPtr(T), SWIGTYPE_p_LLVMModuleRef.getCPtr(M), Filename, codegen.swigValue(), SWIGTYPE_p_p_char.getCPtr(ErrorMessage)), true);
+  public static int LLVMTargetMachineEmitToFile(SWIGTYPE_p_LLVMTargetMachine T, SWIGTYPE_p_LLVMModuleRef M, String Filename, LLVMCodeGenFileType codegen, SWIGTYPE_p_p_char ErrorMessage) {
+    return TargetMachineJNI.LLVMTargetMachineEmitToFile(SWIGTYPE_p_LLVMTargetMachine.getCPtr(T), SWIGTYPE_p_LLVMModuleRef.getCPtr(M), Filename, codegen.swigValue(), SWIGTYPE_p_p_char.getCPtr(ErrorMessage)) != 0 ? 1 : 0;
   }
 
 }

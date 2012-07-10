@@ -33,12 +33,12 @@ public class Target {
     TargetJNI.LLVMInitializeAllDisassemblers();
   }
 
-  public static SWIGTYPE_p_LLVMBool LLVMInitializeNativeTarget() {
-    return new SWIGTYPE_p_LLVMBool(TargetJNI.LLVMInitializeNativeTarget(), true);
+  public static int LLVMInitializeNativeTarget() {
+    return TargetJNI.LLVMInitializeNativeTarget();
   }
 
   public static SWIGTYPE_p_LLVMOpaqueTargetData LLVMCreateTargetData(String StringRep) {
-    long cPtr = TargetJNI.LLVMCreateTargetData(StringRep);
+    int cPtr = TargetJNI.LLVMCreateTargetData(StringRep);
     return (cPtr == 0) ? null : new SWIGTYPE_p_LLVMOpaqueTargetData(cPtr, false);
   }
 
@@ -58,7 +58,7 @@ public class Target {
     return LLVMByteOrdering.swigToEnum(TargetJNI.LLVMByteOrder(SWIGTYPE_p_LLVMOpaqueTargetData.getCPtr(arg0)));
   }
 
-  public static long LLVMPointerSize(SWIGTYPE_p_LLVMOpaqueTargetData arg0) {
+  public static int LLVMPointerSize(SWIGTYPE_p_LLVMOpaqueTargetData arg0) {
     return TargetJNI.LLVMPointerSize(SWIGTYPE_p_LLVMOpaqueTargetData.getCPtr(arg0));
   }
 
@@ -78,27 +78,27 @@ public class Target {
     return TargetJNI.LLVMABISizeOfType(SWIGTYPE_p_LLVMOpaqueTargetData.getCPtr(arg0), SWIGTYPE_p_LLVMTypeRef.getCPtr(arg1));
   }
 
-  public static long LLVMABIAlignmentOfType(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMTypeRef arg1) {
+  public static int LLVMABIAlignmentOfType(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMTypeRef arg1) {
     return TargetJNI.LLVMABIAlignmentOfType(SWIGTYPE_p_LLVMOpaqueTargetData.getCPtr(arg0), SWIGTYPE_p_LLVMTypeRef.getCPtr(arg1));
   }
 
-  public static long LLVMCallFrameAlignmentOfType(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMTypeRef arg1) {
+  public static int LLVMCallFrameAlignmentOfType(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMTypeRef arg1) {
     return TargetJNI.LLVMCallFrameAlignmentOfType(SWIGTYPE_p_LLVMOpaqueTargetData.getCPtr(arg0), SWIGTYPE_p_LLVMTypeRef.getCPtr(arg1));
   }
 
-  public static long LLVMPreferredAlignmentOfType(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMTypeRef arg1) {
+  public static int LLVMPreferredAlignmentOfType(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMTypeRef arg1) {
     return TargetJNI.LLVMPreferredAlignmentOfType(SWIGTYPE_p_LLVMOpaqueTargetData.getCPtr(arg0), SWIGTYPE_p_LLVMTypeRef.getCPtr(arg1));
   }
 
-  public static long LLVMPreferredAlignmentOfGlobal(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMValueRef GlobalVar) {
+  public static int LLVMPreferredAlignmentOfGlobal(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMValueRef GlobalVar) {
     return TargetJNI.LLVMPreferredAlignmentOfGlobal(SWIGTYPE_p_LLVMOpaqueTargetData.getCPtr(arg0), SWIGTYPE_p_LLVMValueRef.getCPtr(GlobalVar));
   }
 
-  public static long LLVMElementAtOffset(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMTypeRef StructTy, java.math.BigInteger Offset) {
+  public static int LLVMElementAtOffset(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMTypeRef StructTy, java.math.BigInteger Offset) {
     return TargetJNI.LLVMElementAtOffset(SWIGTYPE_p_LLVMOpaqueTargetData.getCPtr(arg0), SWIGTYPE_p_LLVMTypeRef.getCPtr(StructTy), Offset);
   }
 
-  public static java.math.BigInteger LLVMOffsetOfElement(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMTypeRef StructTy, long Element) {
+  public static java.math.BigInteger LLVMOffsetOfElement(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMTypeRef StructTy, int Element) {
     return TargetJNI.LLVMOffsetOfElement(SWIGTYPE_p_LLVMOpaqueTargetData.getCPtr(arg0), SWIGTYPE_p_LLVMTypeRef.getCPtr(StructTy), Element);
   }
 

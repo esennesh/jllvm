@@ -27,8 +27,8 @@ public class Object {
     ObjectJNI.LLVMDisposeSectionIterator(SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(SI));
   }
 
-  public static SWIGTYPE_p_LLVMBool LLVMIsSectionIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile ObjectFile, SWIGTYPE_p_LLVMOpaqueSectionIterator SI) {
-    return new SWIGTYPE_p_LLVMBool(ObjectJNI.LLVMIsSectionIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile.getCPtr(ObjectFile), SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(SI)), true);
+  public static int LLVMIsSectionIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile ObjectFile, SWIGTYPE_p_LLVMOpaqueSectionIterator SI) {
+    return ObjectJNI.LLVMIsSectionIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile.getCPtr(ObjectFile), SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(SI));
   }
 
   public static void LLVMMoveToNextSection(SWIGTYPE_p_LLVMOpaqueSectionIterator SI) {
@@ -48,8 +48,8 @@ public class Object {
     ObjectJNI.LLVMDisposeSymbolIterator(SWIGTYPE_p_LLVMOpaqueSymbolIterator.getCPtr(SI));
   }
 
-  public static SWIGTYPE_p_LLVMBool LLVMIsSymbolIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile ObjectFile, SWIGTYPE_p_LLVMOpaqueSymbolIterator SI) {
-    return new SWIGTYPE_p_LLVMBool(ObjectJNI.LLVMIsSymbolIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile.getCPtr(ObjectFile), SWIGTYPE_p_LLVMOpaqueSymbolIterator.getCPtr(SI)), true);
+  public static int LLVMIsSymbolIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile ObjectFile, SWIGTYPE_p_LLVMOpaqueSymbolIterator SI) {
+    return ObjectJNI.LLVMIsSymbolIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile.getCPtr(ObjectFile), SWIGTYPE_p_LLVMOpaqueSymbolIterator.getCPtr(SI));
   }
 
   public static void LLVMMoveToNextSymbol(SWIGTYPE_p_LLVMOpaqueSymbolIterator SI) {
@@ -72,8 +72,8 @@ public class Object {
     return new SWIGTYPE_p_uint64_t(ObjectJNI.LLVMGetSectionAddress(SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(SI)), true);
   }
 
-  public static SWIGTYPE_p_LLVMBool LLVMGetSectionContainsSymbol(SWIGTYPE_p_LLVMOpaqueSectionIterator SI, SWIGTYPE_p_LLVMOpaqueSymbolIterator Sym) {
-    return new SWIGTYPE_p_LLVMBool(ObjectJNI.LLVMGetSectionContainsSymbol(SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(SI), SWIGTYPE_p_LLVMOpaqueSymbolIterator.getCPtr(Sym)), true);
+  public static int LLVMGetSectionContainsSymbol(SWIGTYPE_p_LLVMOpaqueSectionIterator SI, SWIGTYPE_p_LLVMOpaqueSymbolIterator Sym) {
+    return ObjectJNI.LLVMGetSectionContainsSymbol(SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(SI), SWIGTYPE_p_LLVMOpaqueSymbolIterator.getCPtr(Sym));
   }
 
   public static SWIGTYPE_p_LLVMOpaqueRelocationIterator LLVMGetRelocations(SWIGTYPE_p_LLVMOpaqueSectionIterator Section) {
@@ -85,8 +85,8 @@ public class Object {
     ObjectJNI.LLVMDisposeRelocationIterator(SWIGTYPE_p_LLVMOpaqueRelocationIterator.getCPtr(RI));
   }
 
-  public static SWIGTYPE_p_LLVMBool LLVMIsRelocationIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueSectionIterator Section, SWIGTYPE_p_LLVMOpaqueRelocationIterator RI) {
-    return new SWIGTYPE_p_LLVMBool(ObjectJNI.LLVMIsRelocationIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(Section), SWIGTYPE_p_LLVMOpaqueRelocationIterator.getCPtr(RI)), true);
+  public static int LLVMIsRelocationIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueSectionIterator Section, SWIGTYPE_p_LLVMOpaqueRelocationIterator RI) {
+    return ObjectJNI.LLVMIsRelocationIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(Section), SWIGTYPE_p_LLVMOpaqueRelocationIterator.getCPtr(RI));
   }
 
   public static void LLVMMoveToNextRelocation(SWIGTYPE_p_LLVMOpaqueRelocationIterator RI) {
