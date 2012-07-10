@@ -5,6 +5,7 @@
 
 %include "carrays.i"
 %array_functions(unsigned,UnsignedIntArray)
+%array_functions(char *,StringArray)
 /*===-- llvm-c/EnhancedDisassembly.h - Disassembler C Interface ---*- C -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|

@@ -25,6 +25,10 @@ public class CoreJNI {
   public final static native void delete_LLVMBasicBlockRefArray(long jarg1);
   public final static native long LLVMBasicBlockRefArray_getitem(long jarg1, int jarg2);
   public final static native void LLVMBasicBlockRefArray_setitem(long jarg1, int jarg2, long jarg3);
+  public final static native long new_StringArray(int jarg1);
+  public final static native void delete_StringArray(long jarg1);
+  public final static native String StringArray_getitem(long jarg1, int jarg2);
+  public final static native void StringArray_setitem(long jarg1, int jarg2, String jarg3);
   public final static native int LLVMZExtAttribute_get();
   public final static native int LLVMSExtAttribute_get();
   public final static native int LLVMNoReturnAttribute_get();

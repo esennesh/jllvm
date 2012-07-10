@@ -13,6 +13,10 @@ public class EnhancedDisassemblyJNI {
   public final static native void delete_UnsignedIntArray(long jarg1);
   public final static native long UnsignedIntArray_getitem(long jarg1, int jarg2);
   public final static native void UnsignedIntArray_setitem(long jarg1, int jarg2, long jarg3);
+  public final static native long new_StringArray(int jarg1);
+  public final static native void delete_StringArray(long jarg1);
+  public final static native String StringArray_getitem(long jarg1, int jarg2);
+  public final static native void StringArray_setitem(long jarg1, int jarg2, String jarg3);
   public final static native int kEDAssemblySyntaxX86Intel_get();
   public final static native int kEDAssemblySyntaxX86ATT_get();
   public final static native int kEDAssemblySyntaxARMUAL_get();

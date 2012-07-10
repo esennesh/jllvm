@@ -206,6 +206,38 @@ static void LLVMValueRefArray_setitem(LLVMValueRef *ary, int index, LLVMValueRef
 }
 
 
+static LLVMExecutionEngineRef *new_LLVMExecutionEngineRefArray(int nelements) { 
+  return (LLVMExecutionEngineRef *) calloc(nelements,sizeof(LLVMExecutionEngineRef)); 
+}
+
+static void delete_LLVMExecutionEngineRefArray(LLVMExecutionEngineRef *ary) { 
+  free(ary); 
+}
+
+static LLVMExecutionEngineRef LLVMExecutionEngineRefArray_getitem(LLVMExecutionEngineRef *ary, int index) {
+    return ary[index];
+}
+static void LLVMExecutionEngineRefArray_setitem(LLVMExecutionEngineRef *ary, int index, LLVMExecutionEngineRef value) {
+    ary[index] = value;
+}
+
+
+static char * *new_StringArray(int nelements) { 
+  return (char * *) calloc(nelements,sizeof(char *)); 
+}
+
+static void delete_StringArray(char * *ary) { 
+  free(ary); 
+}
+
+static char * StringArray_getitem(char * *ary, int index) {
+    return ary[index];
+}
+static void StringArray_setitem(char * *ary, int index, char * value) {
+    ary[index] = value;
+}
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -271,6 +303,119 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMValueRefA
   }
   arg3 = *argp3; 
   LLVMValueRefArray_setitem(arg1,arg2,arg3);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_new_1LLVMExecutionEngineRefArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
+  jlong jresult = 0 ;
+  int arg1 ;
+  LLVMExecutionEngineRef *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = (int)jarg1; 
+  result = (LLVMExecutionEngineRef *)new_LLVMExecutionEngineRefArray(arg1);
+  *(LLVMExecutionEngineRef **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_delete_1LLVMExecutionEngineRefArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMExecutionEngineRef **)&jarg1; 
+  delete_LLVMExecutionEngineRefArray(arg1);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMExecutionEngineRefArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  jlong jresult = 0 ;
+  LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
+  int arg2 ;
+  LLVMExecutionEngineRef result;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMExecutionEngineRef **)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = (LLVMExecutionEngineRef)LLVMExecutionEngineRefArray_getitem(arg1,arg2);
+  *(LLVMExecutionEngineRef *)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMExecutionEngineRefArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
+  LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
+  int arg2 ;
+  LLVMExecutionEngineRef arg3 = (LLVMExecutionEngineRef) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMExecutionEngineRef **)&jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = *(LLVMExecutionEngineRef *)&jarg3; 
+  LLVMExecutionEngineRefArray_setitem(arg1,arg2,arg3);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_new_1StringArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
+  jlong jresult = 0 ;
+  int arg1 ;
+  char **result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = (int)jarg1; 
+  result = (char **)new_StringArray(arg1);
+  *(char ***)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_delete_1StringArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  char **arg1 = (char **) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(char ***)&jarg1; 
+  delete_StringArray(arg1);
+}
+
+
+SWIGEXPORT jstring JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_StringArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  jstring jresult = 0 ;
+  char **arg1 = (char **) 0 ;
+  int arg2 ;
+  char *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(char ***)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = (char *)StringArray_getitem(arg1,arg2);
+  if (result) jresult = (*jenv)->NewStringUTF(jenv, (const char *)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_StringArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jstring jarg3) {
+  char **arg1 = (char **) 0 ;
+  int arg2 ;
+  char *arg3 = (char *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(char ***)&jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = 0;
+  if (jarg3) {
+    arg3 = (char *)(*jenv)->GetStringUTFChars(jenv, jarg3, 0);
+    if (!arg3) return ;
+  }
+  StringArray_setitem(arg1,arg2,arg3);
+  if (arg3) (*jenv)->ReleaseStringUTFChars(jenv, jarg3, (const char *)arg3);
 }
 
 

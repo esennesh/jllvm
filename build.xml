@@ -12,7 +12,7 @@
 		<jar basedir="build" destfile="build/jllvm.jar"/>
 	</target>
 	<target name="clean">
-		<delete dir="build/org/jllvm"/>
+		<delete dir="build/"/>
 		<delete>
 			<fileset dir="src/org/jllvm/bindings" includes="*.o"/>
 			<fileset dir="src/org/jllvm/bindings" includes="*.so"/>

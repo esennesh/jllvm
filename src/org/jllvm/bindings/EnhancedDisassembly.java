@@ -26,6 +26,23 @@ public class EnhancedDisassembly implements EnhancedDisassemblyConstants {
     EnhancedDisassemblyJNI.UnsignedIntArray_setitem(SWIGTYPE_p_unsigned_int.getCPtr(ary), index, value);
   }
 
+  public static SWIGTYPE_p_p_char new_StringArray(int nelements) {
+    long cPtr = EnhancedDisassemblyJNI.new_StringArray(nelements);
+    return (cPtr == 0) ? null : new SWIGTYPE_p_p_char(cPtr, false);
+  }
+
+  public static void delete_StringArray(SWIGTYPE_p_p_char ary) {
+    EnhancedDisassemblyJNI.delete_StringArray(SWIGTYPE_p_p_char.getCPtr(ary));
+  }
+
+  public static String StringArray_getitem(SWIGTYPE_p_p_char ary, int index) {
+    return EnhancedDisassemblyJNI.StringArray_getitem(SWIGTYPE_p_p_char.getCPtr(ary), index);
+  }
+
+  public static void StringArray_setitem(SWIGTYPE_p_p_char ary, int index, String value) {
+    EnhancedDisassemblyJNI.StringArray_setitem(SWIGTYPE_p_p_char.getCPtr(ary), index, value);
+  }
+
   public static int EDGetDisassembler(SWIGTYPE_p_p_void disassembler, String triple, long syntax) {
     return EnhancedDisassemblyJNI.EDGetDisassembler(SWIGTYPE_p_p_void.getCPtr(disassembler), triple, syntax);
   }

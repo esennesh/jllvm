@@ -5,6 +5,8 @@
 
 %include "carrays.i"
 %array_functions(LLVMValueRef,LLVMValueRefArray)
+%array_functions(LLVMExecutionEngineRef,LLVMExecutionEngineRefArray)
+%array_functions(char *,StringArray)
 /*===-- llvm-c/ExecutionEngine.h - ExecutionEngine Lib C Iface --*- C++ -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|

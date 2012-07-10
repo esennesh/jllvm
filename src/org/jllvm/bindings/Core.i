@@ -8,6 +8,7 @@
 %array_functions(LLVMValueRef,LLVMValueRefArray)
 %array_functions(unsigned,UnsignedIntArray)
 %array_functions(LLVMBasicBlockRef,LLVMBasicBlockRefArray)
+%array_functions(char *,StringArray)
 /*===-- llvm-c/Core.h - Core Library C Interface ------------------*- C -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|

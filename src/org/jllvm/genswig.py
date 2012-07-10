@@ -69,6 +69,10 @@ def generate_swig_interfaces(header_path):
 			out.write('%array_functions(unsigned,UnsignedIntArray)\n')
 		if contents.find('LLVMBasicBlockRef *') >= 0:
 			out.write('%array_functions(LLVMBasicBlockRef,LLVMBasicBlockRefArray)\n')
+		if contents.find('LLVMExecutionEngineRef *') >= 0:
+			out.write('%array_functions(LLVMExecutionEngineRef,LLVMExecutionEngineRefArray)\n')
+		if contents.find('char **') >= 0:
+			out.write('%array_functions(char *,StringArray)\n')
 		out.write(contents)
 		out.close()
 		cwd = os.getcwd()

@@ -26,6 +26,41 @@ public class ExecutionEngine {
     ExecutionEngineJNI.LLVMValueRefArray_setitem(SWIGTYPE_p_LLVMValueRef.getCPtr(ary), index, SWIGTYPE_p_LLVMValueRef.getCPtr(value));
   }
 
+  public static SWIGTYPE_p_p_LLVMOpaqueExecutionEngine new_LLVMExecutionEngineRefArray(int nelements) {
+    long cPtr = ExecutionEngineJNI.new_LLVMExecutionEngineRefArray(nelements);
+    return (cPtr == 0) ? null : new SWIGTYPE_p_p_LLVMOpaqueExecutionEngine(cPtr, false);
+  }
+
+  public static void delete_LLVMExecutionEngineRefArray(SWIGTYPE_p_p_LLVMOpaqueExecutionEngine ary) {
+    ExecutionEngineJNI.delete_LLVMExecutionEngineRefArray(SWIGTYPE_p_p_LLVMOpaqueExecutionEngine.getCPtr(ary));
+  }
+
+  public static SWIGTYPE_p_LLVMOpaqueExecutionEngine LLVMExecutionEngineRefArray_getitem(SWIGTYPE_p_p_LLVMOpaqueExecutionEngine ary, int index) {
+    long cPtr = ExecutionEngineJNI.LLVMExecutionEngineRefArray_getitem(SWIGTYPE_p_p_LLVMOpaqueExecutionEngine.getCPtr(ary), index);
+    return (cPtr == 0) ? null : new SWIGTYPE_p_LLVMOpaqueExecutionEngine(cPtr, false);
+  }
+
+  public static void LLVMExecutionEngineRefArray_setitem(SWIGTYPE_p_p_LLVMOpaqueExecutionEngine ary, int index, SWIGTYPE_p_LLVMOpaqueExecutionEngine value) {
+    ExecutionEngineJNI.LLVMExecutionEngineRefArray_setitem(SWIGTYPE_p_p_LLVMOpaqueExecutionEngine.getCPtr(ary), index, SWIGTYPE_p_LLVMOpaqueExecutionEngine.getCPtr(value));
+  }
+
+  public static SWIGTYPE_p_p_char new_StringArray(int nelements) {
+    long cPtr = ExecutionEngineJNI.new_StringArray(nelements);
+    return (cPtr == 0) ? null : new SWIGTYPE_p_p_char(cPtr, false);
+  }
+
+  public static void delete_StringArray(SWIGTYPE_p_p_char ary) {
+    ExecutionEngineJNI.delete_StringArray(SWIGTYPE_p_p_char.getCPtr(ary));
+  }
+
+  public static String StringArray_getitem(SWIGTYPE_p_p_char ary, int index) {
+    return ExecutionEngineJNI.StringArray_getitem(SWIGTYPE_p_p_char.getCPtr(ary), index);
+  }
+
+  public static void StringArray_setitem(SWIGTYPE_p_p_char ary, int index, String value) {
+    ExecutionEngineJNI.StringArray_setitem(SWIGTYPE_p_p_char.getCPtr(ary), index, value);
+  }
+
   public static void LLVMLinkInJIT() {
     ExecutionEngineJNI.LLVMLinkInJIT();
   }

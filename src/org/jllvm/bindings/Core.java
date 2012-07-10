@@ -80,6 +80,23 @@ public class Core {
     CoreJNI.LLVMBasicBlockRefArray_setitem(SWIGTYPE_p_p_LLVMOpaqueBasicBlock.getCPtr(ary), index, SWIGTYPE_p_LLVMOpaqueBasicBlock.getCPtr(value));
   }
 
+  public static SWIGTYPE_p_p_char new_StringArray(int nelements) {
+    long cPtr = CoreJNI.new_StringArray(nelements);
+    return (cPtr == 0) ? null : new SWIGTYPE_p_p_char(cPtr, false);
+  }
+
+  public static void delete_StringArray(SWIGTYPE_p_p_char ary) {
+    CoreJNI.delete_StringArray(SWIGTYPE_p_p_char.getCPtr(ary));
+  }
+
+  public static String StringArray_getitem(SWIGTYPE_p_p_char ary, int index) {
+    return CoreJNI.StringArray_getitem(SWIGTYPE_p_p_char.getCPtr(ary), index);
+  }
+
+  public static void StringArray_setitem(SWIGTYPE_p_p_char ary, int index, String value) {
+    CoreJNI.StringArray_setitem(SWIGTYPE_p_p_char.getCPtr(ary), index, value);
+  }
+
   public static void LLVMInitializeCore(SWIGTYPE_p_LLVMOpaquePassRegistry R) {
     CoreJNI.LLVMInitializeCore(SWIGTYPE_p_LLVMOpaquePassRegistry.getCPtr(R));
   }
