@@ -10,6 +10,8 @@
 		<copy file="src/org/jllvm/bindings/libjllvm.so" todir="." />
 	</target>
 	<target name="clean">
+		<delete file="jllvm.jar" />
+		<delete file="libjllvm.so" />
 		<delete dir="build/"/>
 		<delete>
 			<fileset dir="src/org/jllvm/bindings" includes="*.o"/>
