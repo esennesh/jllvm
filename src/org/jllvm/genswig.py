@@ -59,7 +59,7 @@ def generate_swig_interfaces(header_path):
 		hfile.close()
 		out = open(join_paths([relpath,name + '.i']),"w")
 		out.write('%module ' + name + '\n%{\n#include ' + header_include(name,os.path.dirname(header),std_include) + '\n%}\n')
-		if contents.find('LLVMTypeRef *') >=0 or contents.find('LLVMValueRef *') >= 0 or contents.find('unsigned *') >=0 or contents.find('LLVMBasicBlockRef *') >= 0:
+		if contents.find('LLVMTypeRef *') >=0 or contents.find('LLVMValueRef *') >= 0 or contents.find('unsigned *') >=0 or contents.find('LLVMModuleRef *') >= 0 or contents.find('LLVMBasicBlockRef *') >= 0 or contents.find('LLVMExecutionEngineRef *') >= 0 or contents.find('char **') >= 0:
 			out.write('\n%include "carrays.i"\n')
 		if contents.find('LLVMTypeRef *') >= 0:
 			out.write('%array_functions(LLVMTypeRef,LLVMTypeRefArray)\n')
@@ -67,6 +67,8 @@ def generate_swig_interfaces(header_path):
 			out.write('%array_functions(LLVMValueRef,LLVMValueRefArray)\n')
 		if contents.find('unsigned *') >= 0:
 			out.write('%array_functions(unsigned,UnsignedIntArray)\n')
+		if contents.find('LLVMModuleRef *') >= 0:
+			out.write('%array_functions(LLVMModuleRef,LLVMModuleRefArray)\n')
 		if contents.find('LLVMBasicBlockRef *') >= 0:
 			out.write('%array_functions(LLVMBasicBlockRef,LLVMBasicBlockRefArray)\n')
 		if contents.find('LLVMExecutionEngineRef *') >= 0:

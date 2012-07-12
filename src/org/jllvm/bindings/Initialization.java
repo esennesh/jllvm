@@ -9,48 +9,48 @@
 package org.jllvm.bindings;
 
 public class Initialization {
-  public static void LLVMInitializeCore(SWIGTYPE_p_LLVMPassRegistryRef R) {
-    InitializationJNI.LLVMInitializeCore(SWIGTYPE_p_LLVMPassRegistryRef.getCPtr(R));
+  public static void LLVMInitializeCore(SWIGTYPE_p_LLVMOpaquePassRegistry R) {
+    InitializationJNI.LLVMInitializeCore(SWIGTYPE_p_LLVMOpaquePassRegistry.getCPtr(R));
   }
 
-  public static void LLVMInitializeTransformUtils(SWIGTYPE_p_LLVMPassRegistryRef R) {
-    InitializationJNI.LLVMInitializeTransformUtils(SWIGTYPE_p_LLVMPassRegistryRef.getCPtr(R));
+  public static void LLVMInitializeTransformUtils(SWIGTYPE_p_LLVMOpaquePassRegistry R) {
+    InitializationJNI.LLVMInitializeTransformUtils(SWIGTYPE_p_LLVMOpaquePassRegistry.getCPtr(R));
   }
 
-  public static void LLVMInitializeScalarOpts(SWIGTYPE_p_LLVMPassRegistryRef R) {
-    InitializationJNI.LLVMInitializeScalarOpts(SWIGTYPE_p_LLVMPassRegistryRef.getCPtr(R));
+  public static void LLVMInitializeScalarOpts(SWIGTYPE_p_LLVMOpaquePassRegistry R) {
+    InitializationJNI.LLVMInitializeScalarOpts(SWIGTYPE_p_LLVMOpaquePassRegistry.getCPtr(R));
   }
 
-  public static void LLVMInitializeVectorization(SWIGTYPE_p_LLVMPassRegistryRef R) {
-    InitializationJNI.LLVMInitializeVectorization(SWIGTYPE_p_LLVMPassRegistryRef.getCPtr(R));
+  public static void LLVMInitializeVectorization(SWIGTYPE_p_LLVMOpaquePassRegistry R) {
+    InitializationJNI.LLVMInitializeVectorization(SWIGTYPE_p_LLVMOpaquePassRegistry.getCPtr(R));
   }
 
-  public static void LLVMInitializeInstCombine(SWIGTYPE_p_LLVMPassRegistryRef R) {
-    InitializationJNI.LLVMInitializeInstCombine(SWIGTYPE_p_LLVMPassRegistryRef.getCPtr(R));
+  public static void LLVMInitializeInstCombine(SWIGTYPE_p_LLVMOpaquePassRegistry R) {
+    InitializationJNI.LLVMInitializeInstCombine(SWIGTYPE_p_LLVMOpaquePassRegistry.getCPtr(R));
   }
 
-  public static void LLVMInitializeIPO(SWIGTYPE_p_LLVMPassRegistryRef R) {
-    InitializationJNI.LLVMInitializeIPO(SWIGTYPE_p_LLVMPassRegistryRef.getCPtr(R));
+  public static void LLVMInitializeIPO(SWIGTYPE_p_LLVMOpaquePassRegistry R) {
+    InitializationJNI.LLVMInitializeIPO(SWIGTYPE_p_LLVMOpaquePassRegistry.getCPtr(R));
   }
 
-  public static void LLVMInitializeInstrumentation(SWIGTYPE_p_LLVMPassRegistryRef R) {
-    InitializationJNI.LLVMInitializeInstrumentation(SWIGTYPE_p_LLVMPassRegistryRef.getCPtr(R));
+  public static void LLVMInitializeInstrumentation(SWIGTYPE_p_LLVMOpaquePassRegistry R) {
+    InitializationJNI.LLVMInitializeInstrumentation(SWIGTYPE_p_LLVMOpaquePassRegistry.getCPtr(R));
   }
 
-  public static void LLVMInitializeAnalysis(SWIGTYPE_p_LLVMPassRegistryRef R) {
-    InitializationJNI.LLVMInitializeAnalysis(SWIGTYPE_p_LLVMPassRegistryRef.getCPtr(R));
+  public static void LLVMInitializeAnalysis(SWIGTYPE_p_LLVMOpaquePassRegistry R) {
+    InitializationJNI.LLVMInitializeAnalysis(SWIGTYPE_p_LLVMOpaquePassRegistry.getCPtr(R));
   }
 
-  public static void LLVMInitializeIPA(SWIGTYPE_p_LLVMPassRegistryRef R) {
-    InitializationJNI.LLVMInitializeIPA(SWIGTYPE_p_LLVMPassRegistryRef.getCPtr(R));
+  public static void LLVMInitializeIPA(SWIGTYPE_p_LLVMOpaquePassRegistry R) {
+    InitializationJNI.LLVMInitializeIPA(SWIGTYPE_p_LLVMOpaquePassRegistry.getCPtr(R));
   }
 
-  public static void LLVMInitializeCodeGen(SWIGTYPE_p_LLVMPassRegistryRef R) {
-    InitializationJNI.LLVMInitializeCodeGen(SWIGTYPE_p_LLVMPassRegistryRef.getCPtr(R));
+  public static void LLVMInitializeCodeGen(SWIGTYPE_p_LLVMOpaquePassRegistry R) {
+    InitializationJNI.LLVMInitializeCodeGen(SWIGTYPE_p_LLVMOpaquePassRegistry.getCPtr(R));
   }
 
-  public static void LLVMInitializeTarget(SWIGTYPE_p_LLVMPassRegistryRef R) {
-    InitializationJNI.LLVMInitializeTarget(SWIGTYPE_p_LLVMPassRegistryRef.getCPtr(R));
+  public static void LLVMInitializeTarget(SWIGTYPE_p_LLVMOpaquePassRegistry R) {
+    InitializationJNI.LLVMInitializeTarget(SWIGTYPE_p_LLVMOpaquePassRegistry.getCPtr(R));
   }
 
 }

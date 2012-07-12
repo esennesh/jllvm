@@ -17,12 +17,12 @@ public class LLVMExecutionEngine {
 	public LLVMExecutionEngine(LLVMModule mod) throws Exception {
 		SWIGTYPE_p_p_LLVMOpaqueExecutionEngine engines = ExecutionEngine.new_LLVMExecutionEngineRefArray(1);
 		SWIGTYPE_p_p_char outerrs = ExecutionEngine.new_StringArray(1);
-		int success = ExecutionEngine.LLVMCreateExecutionEngineForModule(engines,mod.getInstance(),outerrs);
+		boolean success = ExecutionEngine.LLVMCreateExecutionEngineForModule(engines,mod.getInstance(),outerrs);
 		String outerr = ExecutionEngine.StringArray_getitem(outerrs,0);
 		ExecutionEngine.delete_StringArray(outerrs); outerrs = null;
 		instance = ExecutionEngine.LLVMExecutionEngineRefArray_getitem(engines,0);
 		ExecutionEngine.delete_LLVMExecutionEngineRefArray(engines); engines = null;
-		if(success == 0)
+		if(!success)
 			throw new Exception(outerr);
 	}
 	
@@ -79,7 +79,7 @@ public class LLVMExecutionEngine {
 	public boolean removeModule(LLVMModule m) {
 		SWIGTYPE_p_p_char outerr = ExecutionEngine.new_StringArray(1);
 		SWIGTYPE_p_p_LLVMOpaqueModule outmod = ExecutionEngine.new_LLVMModuleRefArray(1);
-		boolean result = ExecutionEngine.LLVMRemoveModule(instance,m.getInstance(),outmod,outerr) != 0;
+		boolean result = ExecutionEngine.LLVMRemoveModule(instance,m.getInstance(),outmod,outerr);
 		ExecutionEngine.delete_LLVMModuleRefArray(outmod);
 		ExecutionEngine.delete_StringArray(outerr);
 		return result;
@@ -87,10 +87,10 @@ public class LLVMExecutionEngine {
 	
 	public LLVMFunction findFunction(String name) {
 		SWIGTYPE_p_p_LLVMOpaqueValue resarray = ExecutionEngine.new_LLVMValueRefArray(1);
-		int success = ExecutionEngine.LLVMFindFunction(instance,name,resarray);
+		boolean success = ExecutionEngine.LLVMFindFunction(instance,name,resarray);
 		SWIGTYPE_p_LLVMOpaqueValue result = ExecutionEngine.LLVMValueRefArray_getitem(resarray,0);
 		ExecutionEngine.delete_LLVMValueRefArray(resarray);
-		if(success != 0 && result != null)
+		if(success && result != null)
 			return new LLVMFunction(result);
 		else
 			return null;

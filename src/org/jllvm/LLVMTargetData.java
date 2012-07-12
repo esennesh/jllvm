@@ -72,12 +72,8 @@ public class LLVMTargetData {
 		return Target.LLVMElementAtOffset(instance,struct.getInstance(),BigInteger.valueOf(offset));
 	}
 	
-	public long offsetOfElement(LLVMStructType struct,long element) {
+	public long offsetOfElement(LLVMStructType struct,int element) {
 		return Target.LLVMOffsetOfElement(instance,struct.getInstance(),element).longValue();
-	}
-	
-	public void invalidateStructLayout(LLVMStructType struct) {
-		Target.LLVMInvalidateStructLayout(instance,struct.getInstance());
 	}
 	
 	public LLVMTargetData(SWIGTYPE_p_LLVMOpaqueTargetData td) {

@@ -238,6 +238,38 @@ static void StringArray_setitem(char * *ary, int index, char * value) {
 }
 
 
+static LLVMModuleRef *new_LLVMModuleRefArray(int nelements) { 
+  return (LLVMModuleRef *) calloc(nelements,sizeof(LLVMModuleRef)); 
+}
+
+static void delete_LLVMModuleRefArray(LLVMModuleRef *ary) { 
+  free(ary); 
+}
+
+static LLVMModuleRef LLVMModuleRefArray_getitem(LLVMModuleRef *ary, int index) {
+    return ary[index];
+}
+static void LLVMModuleRefArray_setitem(LLVMModuleRef *ary, int index, LLVMModuleRef value) {
+    ary[index] = value;
+}
+
+
+static LLVMGenericValueRef *new_LLVMGenericValueRefArray(int nelements) { 
+  return (LLVMGenericValueRef *) calloc(nelements,sizeof(LLVMGenericValueRef)); 
+}
+
+static void delete_LLVMGenericValueRefArray(LLVMGenericValueRef *ary) { 
+  free(ary); 
+}
+
+static LLVMGenericValueRef LLVMGenericValueRefArray_getitem(LLVMGenericValueRef *ary, int index) {
+    return ary[index];
+}
+static void LLVMGenericValueRefArray_setitem(LLVMGenericValueRef *ary, int index, LLVMGenericValueRef value) {
+    ary[index] = value;
+}
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -416,6 +448,124 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_StringArray_1
   }
   StringArray_setitem(arg1,arg2,arg3);
   if (arg3) (*jenv)->ReleaseStringUTFChars(jenv, jarg3, (const char *)arg3);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_new_1LLVMModuleRefArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
+  jlong jresult = 0 ;
+  int arg1 ;
+  LLVMModuleRef *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = (int)jarg1; 
+  result = (LLVMModuleRef *)new_LLVMModuleRefArray(arg1);
+  *(LLVMModuleRef **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_delete_1LLVMModuleRefArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  LLVMModuleRef *arg1 = (LLVMModuleRef *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMModuleRef **)&jarg1; 
+  delete_LLVMModuleRefArray(arg1);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMModuleRefArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  jlong jresult = 0 ;
+  LLVMModuleRef *arg1 = (LLVMModuleRef *) 0 ;
+  int arg2 ;
+  LLVMModuleRef result;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMModuleRef **)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = LLVMModuleRefArray_getitem(arg1,arg2);
+  {
+    LLVMModuleRef * resultptr = (LLVMModuleRef *) malloc(sizeof(LLVMModuleRef));
+    memmove(resultptr, &result, sizeof(LLVMModuleRef));
+    *(LLVMModuleRef **)&jresult = resultptr;
+  }
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMModuleRefArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
+  LLVMModuleRef *arg1 = (LLVMModuleRef *) 0 ;
+  int arg2 ;
+  LLVMModuleRef arg3 ;
+  LLVMModuleRef *argp3 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMModuleRef **)&jarg1; 
+  arg2 = (int)jarg2; 
+  argp3 = *(LLVMModuleRef **)&jarg3; 
+  if (!argp3) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
+    return ;
+  }
+  arg3 = *argp3; 
+  LLVMModuleRefArray_setitem(arg1,arg2,arg3);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_new_1LLVMGenericValueRefArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
+  jlong jresult = 0 ;
+  int arg1 ;
+  LLVMGenericValueRef *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = (int)jarg1; 
+  result = (LLVMGenericValueRef *)new_LLVMGenericValueRefArray(arg1);
+  *(LLVMGenericValueRef **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_delete_1LLVMGenericValueRefArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  LLVMGenericValueRef *arg1 = (LLVMGenericValueRef *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMGenericValueRef **)&jarg1; 
+  delete_LLVMGenericValueRefArray(arg1);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMGenericValueRefArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  jlong jresult = 0 ;
+  LLVMGenericValueRef *arg1 = (LLVMGenericValueRef *) 0 ;
+  int arg2 ;
+  LLVMGenericValueRef result;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMGenericValueRef **)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = (LLVMGenericValueRef)LLVMGenericValueRefArray_getitem(arg1,arg2);
+  *(LLVMGenericValueRef *)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMGenericValueRefArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
+  LLVMGenericValueRef *arg1 = (LLVMGenericValueRef *) 0 ;
+  int arg2 ;
+  LLVMGenericValueRef arg3 = (LLVMGenericValueRef) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMGenericValueRef **)&jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = *(LLVMGenericValueRef *)&jarg3; 
+  LLVMGenericValueRefArray_setitem(arg1,arg2,arg3);
 }
 
 

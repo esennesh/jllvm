@@ -9,16 +9,16 @@
 package org.jllvm.bindings;
 
 public class BitWriter {
-  public static int LLVMWriteBitcodeToFile(SWIGTYPE_p_LLVMModuleRef M, String Path) {
-    return BitWriterJNI.LLVMWriteBitcodeToFile(SWIGTYPE_p_LLVMModuleRef.getCPtr(M), Path);
+  public static int LLVMWriteBitcodeToFile(SWIGTYPE_p_LLVMOpaqueModule M, String Path) {
+    return BitWriterJNI.LLVMWriteBitcodeToFile(SWIGTYPE_p_LLVMOpaqueModule.getCPtr(M), Path);
   }
 
-  public static int LLVMWriteBitcodeToFD(SWIGTYPE_p_LLVMModuleRef M, int FD, int ShouldClose, int Unbuffered) {
-    return BitWriterJNI.LLVMWriteBitcodeToFD(SWIGTYPE_p_LLVMModuleRef.getCPtr(M), FD, ShouldClose, Unbuffered);
+  public static int LLVMWriteBitcodeToFD(SWIGTYPE_p_LLVMOpaqueModule M, int FD, int ShouldClose, int Unbuffered) {
+    return BitWriterJNI.LLVMWriteBitcodeToFD(SWIGTYPE_p_LLVMOpaqueModule.getCPtr(M), FD, ShouldClose, Unbuffered);
   }
 
-  public static int LLVMWriteBitcodeToFileHandle(SWIGTYPE_p_LLVMModuleRef M, int Handle) {
-    return BitWriterJNI.LLVMWriteBitcodeToFileHandle(SWIGTYPE_p_LLVMModuleRef.getCPtr(M), Handle);
+  public static int LLVMWriteBitcodeToFileHandle(SWIGTYPE_p_LLVMOpaqueModule M, int Handle) {
+    return BitWriterJNI.LLVMWriteBitcodeToFileHandle(SWIGTYPE_p_LLVMOpaqueModule.getCPtr(M), Handle);
   }
 
 }

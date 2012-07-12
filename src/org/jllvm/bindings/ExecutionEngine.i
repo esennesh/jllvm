@@ -7,6 +7,8 @@
 %array_functions(LLVMValueRef,LLVMValueRefArray)
 %array_functions(LLVMExecutionEngineRef,LLVMExecutionEngineRefArray)
 %array_functions(char *,StringArray)
+%array_functions(LLVMModuleRef,LLVMModuleRefArray)
+%array_functions(LLVMGenericValueRef,LLVMGenericValueRefArray)
 /*===-- llvm-c/ExecutionEngine.h - ExecutionEngine Lib C Iface --*- C++ -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|

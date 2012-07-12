@@ -7,11 +7,11 @@ import java.math.BigInteger;
 
 public class LLVMGenericInt extends LLVMGenericValue {
 	public LLVMGenericInt(LLVMType t,java.math.BigInteger n,boolean isSigned) {
-		super(ExecutionEngine.LLVMCreateGenericValueOfInt(t.getInstance(),n,isSigned ? 1 : 0));
+		super(ExecutionEngine.LLVMCreateGenericValueOfInt(t.getInstance(),n,isSigned));
 	}
 	
 	public java.math.BigInteger toInt(boolean isSigned) {
-		return ExecutionEngine.LLVMGenericValueToInt(instance,isSigned ? 1 : 0);
+		return ExecutionEngine.LLVMGenericValueToInt(instance,isSigned);
 	}
 	
 	public long intWidth() {

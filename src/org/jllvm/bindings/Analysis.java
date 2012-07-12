@@ -9,20 +9,20 @@
 package org.jllvm.bindings;
 
 public class Analysis {
-  public static int LLVMVerifyModule(SWIGTYPE_p_LLVMModuleRef M, LLVMVerifierFailureAction Action, SWIGTYPE_p_p_char OutMessage) {
-    return AnalysisJNI.LLVMVerifyModule(SWIGTYPE_p_LLVMModuleRef.getCPtr(M), Action.swigValue(), SWIGTYPE_p_p_char.getCPtr(OutMessage));
+  public static long LLVMVerifyModule(SWIGTYPE_p_LLVMOpaqueModule M, LLVMVerifierFailureAction Action, SWIGTYPE_p_p_char OutMessage) {
+    return AnalysisJNI.LLVMVerifyModule(SWIGTYPE_p_LLVMOpaqueModule.getCPtr(M), Action.swigValue(), SWIGTYPE_p_p_char.getCPtr(OutMessage));
   }
 
-  public static int LLVMVerifyFunction(SWIGTYPE_p_LLVMValueRef Fn, LLVMVerifierFailureAction Action) {
-    return AnalysisJNI.LLVMVerifyFunction(SWIGTYPE_p_LLVMValueRef.getCPtr(Fn), Action.swigValue());
+  public static long LLVMVerifyFunction(SWIGTYPE_p_LLVMOpaqueValue Fn, LLVMVerifierFailureAction Action) {
+    return AnalysisJNI.LLVMVerifyFunction(SWIGTYPE_p_LLVMOpaqueValue.getCPtr(Fn), Action.swigValue());
   }
 
-  public static void LLVMViewFunctionCFG(SWIGTYPE_p_LLVMValueRef Fn) {
-    AnalysisJNI.LLVMViewFunctionCFG(SWIGTYPE_p_LLVMValueRef.getCPtr(Fn));
+  public static void LLVMViewFunctionCFG(SWIGTYPE_p_LLVMOpaqueValue Fn) {
+    AnalysisJNI.LLVMViewFunctionCFG(SWIGTYPE_p_LLVMOpaqueValue.getCPtr(Fn));
   }
 
-  public static void LLVMViewFunctionCFGOnly(SWIGTYPE_p_LLVMValueRef Fn) {
-    AnalysisJNI.LLVMViewFunctionCFGOnly(SWIGTYPE_p_LLVMValueRef.getCPtr(Fn));
+  public static void LLVMViewFunctionCFGOnly(SWIGTYPE_p_LLVMOpaqueValue Fn) {
+    AnalysisJNI.LLVMViewFunctionCFGOnly(SWIGTYPE_p_LLVMOpaqueValue.getCPtr(Fn));
   }
 
 }

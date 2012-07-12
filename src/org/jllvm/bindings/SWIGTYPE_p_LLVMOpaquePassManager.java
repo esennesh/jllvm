@@ -11,7 +11,7 @@ package org.jllvm.bindings;
 public class SWIGTYPE_p_LLVMOpaquePassManager {
   private long swigCPtr;
 
-  protected SWIGTYPE_p_LLVMOpaquePassManager(long cPtr, boolean futureUse) {
+  public SWIGTYPE_p_LLVMOpaquePassManager(long cPtr, boolean futureUse) {
     swigCPtr = cPtr;
   }
 
@@ -19,7 +19,7 @@ public class SWIGTYPE_p_LLVMOpaquePassManager {
     swigCPtr = 0;
   }
 
-  protected static long getCPtr(SWIGTYPE_p_LLVMOpaquePassManager obj) {
+  public static long getCPtr(SWIGTYPE_p_LLVMOpaquePassManager obj) {
     return (obj == null) ? 0 : obj.swigCPtr;
   }
 }

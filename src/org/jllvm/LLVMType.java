@@ -68,8 +68,6 @@ public class LLVMType {
 				result = new LLVMArrayType(tr);
 			else if(kind == LLVMTypeKind.LLVMPointerTypeKind)
 				result = new LLVMPointerType(tr);
-			else if(kind == LLVMTypeKind.LLVMOpaqueTypeKind)
-				result = new LLVMOpaqueType();
 			else if(kind == LLVMTypeKind.LLVMVectorTypeKind)
 				result = new LLVMVectorType(tr);
 			/*else if(kind == LLVMMetadataTypeKind)

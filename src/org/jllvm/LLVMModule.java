@@ -34,14 +34,6 @@ public class LLVMModule {
 		Core.LLVMSetTarget(instance,triple);
 	}
 	
-	public boolean addTypeName(String name,LLVMType type) {
-		return Core.LLVMAddTypeName(instance,name,type.getInstance()) != 0;
-	}
-	
-	public void deleteTypeName(String name) {
-		Core.LLVMDeleteTypeName(instance,name);
-	}
-	
 	public void dump() {
 		Core.LLVMDumpModule(instance);
 	}

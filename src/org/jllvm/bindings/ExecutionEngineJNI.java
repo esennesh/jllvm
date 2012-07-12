@@ -21,6 +21,14 @@ public class ExecutionEngineJNI {
   public final static native void delete_StringArray(long jarg1);
   public final static native String StringArray_getitem(long jarg1, int jarg2);
   public final static native void StringArray_setitem(long jarg1, int jarg2, String jarg3);
+  public final static native long new_LLVMModuleRefArray(int jarg1);
+  public final static native void delete_LLVMModuleRefArray(long jarg1);
+  public final static native long LLVMModuleRefArray_getitem(long jarg1, int jarg2);
+  public final static native void LLVMModuleRefArray_setitem(long jarg1, int jarg2, long jarg3);
+  public final static native long new_LLVMGenericValueRefArray(int jarg1);
+  public final static native void delete_LLVMGenericValueRefArray(long jarg1);
+  public final static native long LLVMGenericValueRefArray_getitem(long jarg1, int jarg2);
+  public final static native void LLVMGenericValueRefArray_setitem(long jarg1, int jarg2, long jarg3);
   public final static native void LLVMLinkInJIT();
   public final static native void LLVMLinkInInterpreter();
   public final static native long LLVMCreateGenericValueOfInt(long jarg1, java.math.BigInteger jarg2, long jarg3);
