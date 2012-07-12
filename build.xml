@@ -7,9 +7,7 @@
 		<mkdir dir="build"/>
 		<javac srcdir="src/org/jllvm/" destdir="build/" includeantruntime="false"/>
 		<jar destfile="jllvm.jar" basedir="build/" />
-	</target>
-	<target name="jar">
-		<jar basedir="build" destfile="build/jllvm.jar"/>
+		<copy file="src/org/jllvm/bindings/libjllvm.so" todir="." />
 	</target>
 	<target name="clean">
 		<delete dir="build/"/>
