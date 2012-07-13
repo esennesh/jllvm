@@ -119,8 +119,8 @@ public class Core {
     CoreJNI.LLVMContextDispose(SWIGTYPE_p_LLVMOpaqueContext.getCPtr(C));
   }
 
-  public static long LLVMGetMDKindIDInContext(SWIGTYPE_p_LLVMOpaqueContext C, String Name, long SLen) {
-    return CoreJNI.LLVMGetMDKindIDInContext(SWIGTYPE_p_LLVMOpaqueContext.getCPtr(C), Name, SLen);
+  public static long LLVMGetMDKindIDInContext(SWIGTYPE_p_LLVMOpaqueContext C, String Name) {
+    return CoreJNI.LLVMGetMDKindIDInContext(SWIGTYPE_p_LLVMOpaqueContext.getCPtr(C), Name, Name.length());
   }
 
   public static long LLVMGetMDKindID(String Name, long SLen) {
@@ -395,8 +395,8 @@ public class Core {
     return CoreJNI.LLVMGetStructName(SWIGTYPE_p_LLVMOpaqueType.getCPtr(Ty));
   }
 
-  public static void LLVMStructSetBody(SWIGTYPE_p_LLVMOpaqueType StructTy, SWIGTYPE_p_p_LLVMOpaqueType ElementTypes, long ElementCount, int Packed) {
-    CoreJNI.LLVMStructSetBody(SWIGTYPE_p_LLVMOpaqueType.getCPtr(StructTy), SWIGTYPE_p_p_LLVMOpaqueType.getCPtr(ElementTypes), ElementCount, Packed);
+  public static void LLVMStructSetBody(SWIGTYPE_p_LLVMOpaqueType StructTy, SWIGTYPE_p_p_LLVMOpaqueType ElementTypes, long ElementCount, boolean Packed) {
+    CoreJNI.LLVMStructSetBody(SWIGTYPE_p_LLVMOpaqueType.getCPtr(StructTy), SWIGTYPE_p_p_LLVMOpaqueType.getCPtr(ElementTypes), ElementCount, Packed ? 1 : 0);
   }
 
   public static long LLVMCountStructElementTypes(SWIGTYPE_p_LLVMOpaqueType StructTy) {
@@ -407,12 +407,12 @@ public class Core {
     CoreJNI.LLVMGetStructElementTypes(SWIGTYPE_p_LLVMOpaqueType.getCPtr(StructTy), SWIGTYPE_p_p_LLVMOpaqueType.getCPtr(Dest));
   }
 
-  public static int LLVMIsPackedStruct(SWIGTYPE_p_LLVMOpaqueType StructTy) {
-    return CoreJNI.LLVMIsPackedStruct(SWIGTYPE_p_LLVMOpaqueType.getCPtr(StructTy));
+  public static boolean LLVMIsPackedStruct(SWIGTYPE_p_LLVMOpaqueType StructTy) {
+    return CoreJNI.LLVMIsPackedStruct(SWIGTYPE_p_LLVMOpaqueType.getCPtr(StructTy)) != 0;
   }
 
-  public static int LLVMIsOpaqueStruct(SWIGTYPE_p_LLVMOpaqueType StructTy) {
-    return CoreJNI.LLVMIsOpaqueStruct(SWIGTYPE_p_LLVMOpaqueType.getCPtr(StructTy));
+  public static boolean LLVMIsOpaqueStruct(SWIGTYPE_p_LLVMOpaqueType StructTy) {
+    return CoreJNI.LLVMIsOpaqueStruct(SWIGTYPE_p_LLVMOpaqueType.getCPtr(StructTy)) != 0;
   }
 
   public static SWIGTYPE_p_LLVMOpaqueType LLVMGetElementType(SWIGTYPE_p_LLVMOpaqueType Ty) {

@@ -9,11 +9,24 @@ import org.jllvm.LLVMType;
 
 /* Implements all operations on struct types from Core.h */
 public class LLVMStructType extends LLVMType {
+	protected LLVMStructType() {
+		instance = null;
+	}
 	public LLVMStructType(LLVMType[] elements,boolean packed) {
 		SWIGTYPE_p_p_LLVMOpaqueType elmnts = Core.new_LLVMTypeRefArray(elements.length);
 		for(int i=0;i<elements.length;i++)
 			Core.LLVMTypeRefArray_setitem(elmnts,i,elements[i].getInstance());
 		SWIGTYPE_p_LLVMOpaqueType tr = Core.LLVMStructType(elmnts,elements.length,packed ? 0 : 1);
+		Core.delete_LLVMTypeRefArray(elmnts);
+		instance = tr;
+		llvm_types.put(instance,this);
+	}
+	
+	public LLVMStructType(LLVMContext context, LLVMType[] elements,boolean packed) {
+		SWIGTYPE_p_p_LLVMOpaqueType elmnts = Core.new_LLVMTypeRefArray(elements.length);
+		for(int i=0;i<elements.length;i++)
+			Core.LLVMTypeRefArray_setitem(elmnts,i,elements[i].getInstance());
+		SWIGTYPE_p_LLVMOpaqueType tr = Core.LLVMStructTypeInContext(context.getInstance(),elmnts,elements.length,packed ? 0 : 1);
 		Core.delete_LLVMTypeRefArray(elmnts);
 		instance = tr;
 		llvm_types.put(instance,this);
@@ -40,6 +53,6 @@ public class LLVMStructType extends LLVMType {
 	}
 	
 	public boolean isPacked() {
-		return Core.LLVMIsPackedStruct(instance) != 0;
+		return Core.LLVMIsPackedStruct(instance);
 	}
 }

@@ -66,6 +66,10 @@ public class LLVMModule {
 		return LLVMFunction.getFunction(Core.LLVMGetLastFunction(instance));
 	}
 	
+	public LLVMContext getContext() {
+		return LLVMContext.getContext(Core.LLVMGetModuleContext(instance));
+	}
+	
 	public LLVMModule(String moduleid) {
 		instance = Core.LLVMModuleCreateWithName(moduleid);
 		identifier = moduleid;
