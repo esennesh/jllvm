@@ -18,6 +18,10 @@ public class LLVMIdentifiedStructType extends LLVMStructType {
 		instance = Core.LLVMStructCreateNamed(context.getInstance(),"");
 	}
 	
+	public LLVMIdentifiedStructType(String name) {
+		instance = Core.LLVMStructCreateNamed(LLVMContext.getGlobalContext().getInstance(),name);
+	}
+	
 	public LLVMIdentifiedStructType(SWIGTYPE_p_LLVMOpaqueType t) {
 		super(t);
 		assert(Core.LLVMGetTypeKind(t) == LLVMTypeKind.LLVMStructTypeKind);
