@@ -12,12 +12,20 @@ public class LLVMContext {
 		if(llvm_contexts == null)
 			llvm_contexts = new HashMap<SWIGTYPE_p_LLVMOpaqueContext,LLVMContext>();
 		LLVMContext result = llvm_contexts.get(c);
+		if(result == null) {
+			result = new LLVMContext(c);
+			llvm_contexts.put(c,result);
+		}
 		assert(result != null);
 		return result;
 	}
 	
 	public LLVMContext() {
 		instance = Core.LLVMContextCreate();
+	}
+	
+	protected LLVMContext(SWIGTYPE_p_LLVMOpaqueContext c) {
+		instance = c;
 	}
 	
 	public SWIGTYPE_p_LLVMOpaqueContext getInstance() {
