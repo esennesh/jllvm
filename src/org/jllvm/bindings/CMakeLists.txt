@@ -26,7 +26,7 @@ INCLUDE_DIRECTORIES(${JAVA_INCLUDE_PATH2})
 # Let's suppose we want to build a JIT compiler with support for
 # binary code (no interpreter):
 #llvm_map_components_to_libraries(REQ_LLVM_LIBRARIES jit native)
-llvm_map_components_to_libraries(REQ_LLVM_LIBRARIES native analysis bitreader bitwriter)
+llvm_map_components_to_libraries(REQ_LLVM_LIBRARIES native analysis bitreader bitwriter core executionengine object target)
 # Finally, we link the LLVM libraries to our executable:
 target_link_libraries(jllvm ${REQ_LLVM_LIBRARIES})
 # LLVM typically comes installed as static libraries, so make sure to link in the C++ runtimes.

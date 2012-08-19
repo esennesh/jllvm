@@ -18,4 +18,8 @@ public class LLVMPointerType extends LLVMSequenceType {
 	public long getAddressSpace() {
 		return Core.LLVMGetPointerAddressSpace(instance);
 	}
+	
+	public String toString() {
+		return getElementType().toString() + "*";
+	}
 }

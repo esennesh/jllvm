@@ -33,7 +33,7 @@ public class Target {
     TargetJNI.LLVMInitializeAllDisassemblers();
   }
 
-  public static long LLVMInitializeNativeTarget() {
+  public static int LLVMInitializeNativeTarget() {
     return TargetJNI.LLVMInitializeNativeTarget();
   }
 
@@ -63,7 +63,8 @@ public class Target {
   }
 
   public static SWIGTYPE_p_LLVMOpaqueType LLVMIntPtrType(SWIGTYPE_p_LLVMOpaqueTargetData arg0) {
-    return new SWIGTYPE_p_LLVMOpaqueType(TargetJNI.LLVMIntPtrType(SWIGTYPE_p_LLVMOpaqueTargetData.getCPtr(arg0)), true);
+    long cPtr = TargetJNI.LLVMIntPtrType(SWIGTYPE_p_LLVMOpaqueTargetData.getCPtr(arg0));
+    return (cPtr == 0) ? null : new SWIGTYPE_p_LLVMOpaqueType(cPtr, false);
   }
 
   public static java.math.BigInteger LLVMSizeOfTypeInBits(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMOpaqueType arg1) {
@@ -98,7 +99,7 @@ public class Target {
     return TargetJNI.LLVMElementAtOffset(SWIGTYPE_p_LLVMOpaqueTargetData.getCPtr(arg0), SWIGTYPE_p_LLVMOpaqueType.getCPtr(StructTy), Offset);
   }
 
-  public static java.math.BigInteger LLVMOffsetOfElement(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMOpaqueType StructTy, int Element) {
+  public static java.math.BigInteger LLVMOffsetOfElement(SWIGTYPE_p_LLVMOpaqueTargetData arg0, SWIGTYPE_p_LLVMOpaqueType StructTy, long Element) {
     return TargetJNI.LLVMOffsetOfElement(SWIGTYPE_p_LLVMOpaqueTargetData.getCPtr(arg0), SWIGTYPE_p_LLVMOpaqueType.getCPtr(StructTy), Element);
   }
 

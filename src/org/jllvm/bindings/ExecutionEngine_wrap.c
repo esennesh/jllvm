@@ -206,38 +206,6 @@ static void LLVMValueRefArray_setitem(LLVMValueRef *ary, int index, LLVMValueRef
 }
 
 
-static LLVMExecutionEngineRef *new_LLVMExecutionEngineRefArray(int nelements) { 
-  return (LLVMExecutionEngineRef *) calloc(nelements,sizeof(LLVMExecutionEngineRef)); 
-}
-
-static void delete_LLVMExecutionEngineRefArray(LLVMExecutionEngineRef *ary) { 
-  free(ary); 
-}
-
-static LLVMExecutionEngineRef LLVMExecutionEngineRefArray_getitem(LLVMExecutionEngineRef *ary, int index) {
-    return ary[index];
-}
-static void LLVMExecutionEngineRefArray_setitem(LLVMExecutionEngineRef *ary, int index, LLVMExecutionEngineRef value) {
-    ary[index] = value;
-}
-
-
-static char * *new_StringArray(int nelements) { 
-  return (char * *) calloc(nelements,sizeof(char *)); 
-}
-
-static void delete_StringArray(char * *ary) { 
-  free(ary); 
-}
-
-static char * StringArray_getitem(char * *ary, int index) {
-    return ary[index];
-}
-static void StringArray_setitem(char * *ary, int index, char * value) {
-    ary[index] = value;
-}
-
-
 static LLVMModuleRef *new_LLVMModuleRefArray(int nelements) { 
   return (LLVMModuleRef *) calloc(nelements,sizeof(LLVMModuleRef)); 
 }
@@ -254,6 +222,22 @@ static void LLVMModuleRefArray_setitem(LLVMModuleRef *ary, int index, LLVMModule
 }
 
 
+static LLVMExecutionEngineRef *new_LLVMExecutionEngineRefArray(int nelements) { 
+  return (LLVMExecutionEngineRef *) calloc(nelements,sizeof(LLVMExecutionEngineRef)); 
+}
+
+static void delete_LLVMExecutionEngineRefArray(LLVMExecutionEngineRef *ary) { 
+  free(ary); 
+}
+
+static LLVMExecutionEngineRef LLVMExecutionEngineRefArray_getitem(LLVMExecutionEngineRef *ary, int index) {
+    return ary[index];
+}
+static void LLVMExecutionEngineRefArray_setitem(LLVMExecutionEngineRef *ary, int index, LLVMExecutionEngineRef value) {
+    ary[index] = value;
+}
+
+
 static LLVMGenericValueRef *new_LLVMGenericValueRefArray(int nelements) { 
   return (LLVMGenericValueRef *) calloc(nelements,sizeof(LLVMGenericValueRef)); 
 }
@@ -266,6 +250,22 @@ static LLVMGenericValueRef LLVMGenericValueRefArray_getitem(LLVMGenericValueRef 
     return ary[index];
 }
 static void LLVMGenericValueRefArray_setitem(LLVMGenericValueRef *ary, int index, LLVMGenericValueRef value) {
+    ary[index] = value;
+}
+
+
+static char * *new_StringArray(int nelements) { 
+  return (char * *) calloc(nelements,sizeof(char *)); 
+}
+
+static void delete_StringArray(char * *ary) { 
+  free(ary); 
+}
+
+static char * StringArray_getitem(char * *ary, int index) {
+    return ary[index];
+}
+static void StringArray_setitem(char * *ary, int index, char * value) {
     ary[index] = value;
 }
 
@@ -308,12 +308,8 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMValueRef
   (void)jcls;
   arg1 = *(LLVMValueRef **)&jarg1; 
   arg2 = (int)jarg2; 
-  result = LLVMValueRefArray_getitem(arg1,arg2);
-  {
-    LLVMValueRef * resultptr = (LLVMValueRef *) malloc(sizeof(LLVMValueRef));
-    memmove(resultptr, &result, sizeof(LLVMValueRef));
-    *(LLVMValueRef **)&jresult = resultptr;
-  }
+  result = (LLVMValueRef)LLVMValueRefArray_getitem(arg1,arg2);
+  *(LLVMValueRef *)&jresult = result; 
   return jresult;
 }
 
@@ -321,20 +317,68 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMValueRef
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMValueRefArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
   LLVMValueRef *arg1 = (LLVMValueRef *) 0 ;
   int arg2 ;
-  LLVMValueRef arg3 ;
-  LLVMValueRef *argp3 ;
+  LLVMValueRef arg3 = (LLVMValueRef) 0 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMValueRef **)&jarg1; 
   arg2 = (int)jarg2; 
-  argp3 = *(LLVMValueRef **)&jarg3; 
-  if (!argp3) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMValueRef");
-    return ;
-  }
-  arg3 = *argp3; 
+  arg3 = *(LLVMValueRef *)&jarg3; 
   LLVMValueRefArray_setitem(arg1,arg2,arg3);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_new_1LLVMModuleRefArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
+  jlong jresult = 0 ;
+  int arg1 ;
+  LLVMModuleRef *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = (int)jarg1; 
+  result = (LLVMModuleRef *)new_LLVMModuleRefArray(arg1);
+  *(LLVMModuleRef **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_delete_1LLVMModuleRefArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  LLVMModuleRef *arg1 = (LLVMModuleRef *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMModuleRef **)&jarg1; 
+  delete_LLVMModuleRefArray(arg1);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMModuleRefArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  jlong jresult = 0 ;
+  LLVMModuleRef *arg1 = (LLVMModuleRef *) 0 ;
+  int arg2 ;
+  LLVMModuleRef result;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMModuleRef **)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = (LLVMModuleRef)LLVMModuleRefArray_getitem(arg1,arg2);
+  *(LLVMModuleRef *)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMModuleRefArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
+  LLVMModuleRef *arg1 = (LLVMModuleRef *) 0 ;
+  int arg2 ;
+  LLVMModuleRef arg3 = (LLVMModuleRef) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMModuleRef **)&jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = *(LLVMModuleRef *)&jarg3; 
+  LLVMModuleRefArray_setitem(arg1,arg2,arg3);
 }
 
 
@@ -389,6 +433,60 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMExecution
   arg2 = (int)jarg2; 
   arg3 = *(LLVMExecutionEngineRef *)&jarg3; 
   LLVMExecutionEngineRefArray_setitem(arg1,arg2,arg3);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_new_1LLVMGenericValueRefArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
+  jlong jresult = 0 ;
+  int arg1 ;
+  LLVMGenericValueRef *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = (int)jarg1; 
+  result = (LLVMGenericValueRef *)new_LLVMGenericValueRefArray(arg1);
+  *(LLVMGenericValueRef **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_delete_1LLVMGenericValueRefArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  LLVMGenericValueRef *arg1 = (LLVMGenericValueRef *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMGenericValueRef **)&jarg1; 
+  delete_LLVMGenericValueRefArray(arg1);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMGenericValueRefArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  jlong jresult = 0 ;
+  LLVMGenericValueRef *arg1 = (LLVMGenericValueRef *) 0 ;
+  int arg2 ;
+  LLVMGenericValueRef result;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMGenericValueRef **)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = (LLVMGenericValueRef)LLVMGenericValueRefArray_getitem(arg1,arg2);
+  *(LLVMGenericValueRef *)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMGenericValueRefArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
+  LLVMGenericValueRef *arg1 = (LLVMGenericValueRef *) 0 ;
+  int arg2 ;
+  LLVMGenericValueRef arg3 = (LLVMGenericValueRef) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMGenericValueRef **)&jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = *(LLVMGenericValueRef *)&jarg3; 
+  LLVMGenericValueRefArray_setitem(arg1,arg2,arg3);
 }
 
 
@@ -451,124 +549,6 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_StringArray_1
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_new_1LLVMModuleRefArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
-  jlong jresult = 0 ;
-  int arg1 ;
-  LLVMModuleRef *result = 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = (int)jarg1; 
-  result = (LLVMModuleRef *)new_LLVMModuleRefArray(arg1);
-  *(LLVMModuleRef **)&jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_delete_1LLVMModuleRefArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMModuleRef *arg1 = (LLVMModuleRef *) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMModuleRef **)&jarg1; 
-  delete_LLVMModuleRefArray(arg1);
-}
-
-
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMModuleRefArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
-  jlong jresult = 0 ;
-  LLVMModuleRef *arg1 = (LLVMModuleRef *) 0 ;
-  int arg2 ;
-  LLVMModuleRef result;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMModuleRef **)&jarg1; 
-  arg2 = (int)jarg2; 
-  result = LLVMModuleRefArray_getitem(arg1,arg2);
-  {
-    LLVMModuleRef * resultptr = (LLVMModuleRef *) malloc(sizeof(LLVMModuleRef));
-    memmove(resultptr, &result, sizeof(LLVMModuleRef));
-    *(LLVMModuleRef **)&jresult = resultptr;
-  }
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMModuleRefArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
-  LLVMModuleRef *arg1 = (LLVMModuleRef *) 0 ;
-  int arg2 ;
-  LLVMModuleRef arg3 ;
-  LLVMModuleRef *argp3 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMModuleRef **)&jarg1; 
-  arg2 = (int)jarg2; 
-  argp3 = *(LLVMModuleRef **)&jarg3; 
-  if (!argp3) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
-    return ;
-  }
-  arg3 = *argp3; 
-  LLVMModuleRefArray_setitem(arg1,arg2,arg3);
-}
-
-
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_new_1LLVMGenericValueRefArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
-  jlong jresult = 0 ;
-  int arg1 ;
-  LLVMGenericValueRef *result = 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = (int)jarg1; 
-  result = (LLVMGenericValueRef *)new_LLVMGenericValueRefArray(arg1);
-  *(LLVMGenericValueRef **)&jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_delete_1LLVMGenericValueRefArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMGenericValueRef *arg1 = (LLVMGenericValueRef *) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMGenericValueRef **)&jarg1; 
-  delete_LLVMGenericValueRefArray(arg1);
-}
-
-
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMGenericValueRefArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
-  jlong jresult = 0 ;
-  LLVMGenericValueRef *arg1 = (LLVMGenericValueRef *) 0 ;
-  int arg2 ;
-  LLVMGenericValueRef result;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMGenericValueRef **)&jarg1; 
-  arg2 = (int)jarg2; 
-  result = (LLVMGenericValueRef)LLVMGenericValueRefArray_getitem(arg1,arg2);
-  *(LLVMGenericValueRef *)&jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMGenericValueRefArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
-  LLVMGenericValueRef *arg1 = (LLVMGenericValueRef *) 0 ;
-  int arg2 ;
-  LLVMGenericValueRef arg3 = (LLVMGenericValueRef) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMGenericValueRef **)&jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = *(LLVMGenericValueRef *)&jarg3; 
-  LLVMGenericValueRefArray_setitem(arg1,arg2,arg3);
-}
-
-
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMLinkInJIT(JNIEnv *jenv, jclass jcls) {
   (void)jenv;
   (void)jcls;
@@ -583,23 +563,16 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMLinkInInt
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateGenericValueOfInt(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg2, jlong jarg3) {
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateGenericValueOfInt(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg2, jint jarg3) {
   jlong jresult = 0 ;
-  LLVMTypeRef arg1 ;
+  LLVMTypeRef arg1 = (LLVMTypeRef) 0 ;
   unsigned long long arg2 ;
   LLVMBool arg3 ;
-  LLVMTypeRef *argp1 ;
-  LLVMBool *argp3 ;
   LLVMGenericValueRef result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMTypeRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMTypeRef");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMTypeRef *)&jarg1; 
   {
     jclass clazz;
     jmethodID mid;
@@ -623,12 +596,7 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateGe
     }
     (*jenv)->ReleaseByteArrayElements(jenv, ba, bae, 0);
   }
-  argp3 = *(LLVMBool **)&jarg3; 
-  if (!argp3) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMBool");
-    return 0;
-  }
-  arg3 = *argp3; 
+  arg3 = (LLVMBool)jarg3; 
   result = (LLVMGenericValueRef)LLVMCreateGenericValueOfInt(arg1,arg2,arg3);
   *(LLVMGenericValueRef *)&jresult = result; 
   return jresult;
@@ -651,19 +619,13 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateGe
 
 SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateGenericValueOfFloat(JNIEnv *jenv, jclass jcls, jlong jarg1, jdouble jarg2) {
   jlong jresult = 0 ;
-  LLVMTypeRef arg1 ;
+  LLVMTypeRef arg1 = (LLVMTypeRef) 0 ;
   double arg2 ;
-  LLVMTypeRef *argp1 ;
   LLVMGenericValueRef result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMTypeRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMTypeRef");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMTypeRef *)&jarg1; 
   arg2 = (double)jarg2; 
   result = (LLVMGenericValueRef)LLVMCreateGenericValueOfFloat(arg1,arg2);
   *(LLVMGenericValueRef *)&jresult = result; 
@@ -685,22 +647,16 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMGenericV
 }
 
 
-SWIGEXPORT jobject JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMGenericValueToInt(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+SWIGEXPORT jobject JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMGenericValueToInt(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
   jobject jresult = 0 ;
   LLVMGenericValueRef arg1 = (LLVMGenericValueRef) 0 ;
   LLVMBool arg2 ;
-  LLVMBool *argp2 ;
   unsigned long long result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMGenericValueRef *)&jarg1; 
-  argp2 = *(LLVMBool **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMBool");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = (LLVMBool)jarg2; 
   result = (unsigned long long)LLVMGenericValueToInt(arg1,arg2);
   {
     jbyteArray ba = (*jenv)->NewByteArray(jenv, 9);
@@ -739,19 +695,13 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMGenericV
 
 SWIGEXPORT jdouble JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMGenericValueToFloat(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
   jdouble jresult = 0 ;
-  LLVMTypeRef arg1 ;
+  LLVMTypeRef arg1 = (LLVMTypeRef) 0 ;
   LLVMGenericValueRef arg2 = (LLVMGenericValueRef) 0 ;
-  LLVMTypeRef *argp1 ;
   double result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMTypeRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMTypeRef");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMTypeRef *)&jarg1; 
   arg2 = *(LLVMGenericValueRef *)&jarg2; 
   result = (double)LLVMGenericValueToFloat(arg1,arg2);
   jresult = (jdouble)result; 
@@ -769,94 +719,64 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMDisposeGe
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateExecutionEngineForModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateExecutionEngineForModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
+  jint jresult = 0 ;
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
-  LLVMModuleRef arg2 ;
+  LLVMModuleRef arg2 = (LLVMModuleRef) 0 ;
   char **arg3 = (char **) 0 ;
-  LLVMModuleRef *argp2 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef **)&jarg1; 
-  argp2 = *(LLVMModuleRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMModuleRef *)&jarg2; 
   arg3 = *(char ***)&jarg3; 
-  result = LLVMCreateExecutionEngineForModule(arg1,arg2,arg3);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMCreateExecutionEngineForModule(arg1,arg2,arg3);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateInterpreterForModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateInterpreterForModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
+  jint jresult = 0 ;
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
-  LLVMModuleRef arg2 ;
+  LLVMModuleRef arg2 = (LLVMModuleRef) 0 ;
   char **arg3 = (char **) 0 ;
-  LLVMModuleRef *argp2 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef **)&jarg1; 
-  argp2 = *(LLVMModuleRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMModuleRef *)&jarg2; 
   arg3 = *(char ***)&jarg3; 
-  result = LLVMCreateInterpreterForModule(arg1,arg2,arg3);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMCreateInterpreterForModule(arg1,arg2,arg3);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateJITCompilerForModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateJITCompilerForModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
+  jint jresult = 0 ;
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
-  LLVMModuleRef arg2 ;
+  LLVMModuleRef arg2 = (LLVMModuleRef) 0 ;
   unsigned int arg3 ;
   char **arg4 = (char **) 0 ;
-  LLVMModuleRef *argp2 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef **)&jarg1; 
-  argp2 = *(LLVMModuleRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMModuleRef *)&jarg2; 
   arg3 = (unsigned int)jarg3; 
   arg4 = *(char ***)&jarg4; 
-  result = LLVMCreateJITCompilerForModule(arg1,arg2,arg3,arg4);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMCreateJITCompilerForModule(arg1,arg2,arg3,arg4);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateExecutionEngine(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateExecutionEngine(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
+  jint jresult = 0 ;
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
   LLVMModuleProviderRef arg2 ;
   char **arg3 = (char **) 0 ;
@@ -873,18 +793,14 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateEx
   }
   arg2 = *argp2; 
   arg3 = *(char ***)&jarg3; 
-  result = LLVMCreateExecutionEngine(arg1,arg2,arg3);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMCreateExecutionEngine(arg1,arg2,arg3);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateInterpreter(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateInterpreter(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
+  jint jresult = 0 ;
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
   LLVMModuleProviderRef arg2 ;
   char **arg3 = (char **) 0 ;
@@ -901,18 +817,14 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateIn
   }
   arg2 = *argp2; 
   arg3 = *(char ***)&jarg3; 
-  result = LLVMCreateInterpreter(arg1,arg2,arg3);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMCreateInterpreter(arg1,arg2,arg3);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateJITCompiler(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateJITCompiler(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
+  jint jresult = 0 ;
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
   LLVMModuleProviderRef arg2 ;
   unsigned int arg3 ;
@@ -931,12 +843,8 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateJI
   arg2 = *argp2; 
   arg3 = (unsigned int)jarg3; 
   arg4 = *(char ***)&jarg4; 
-  result = LLVMCreateJITCompiler(arg1,arg2,arg3,arg4);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMCreateJITCompiler(arg1,arg2,arg3,arg4);
+  jresult = (jint)result; 
   return jresult;
 }
 
@@ -974,22 +882,16 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMRunStatic
 SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMRunFunctionAsMain(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4, jlong jarg5) {
   jint jresult = 0 ;
   LLVMExecutionEngineRef arg1 = (LLVMExecutionEngineRef) 0 ;
-  LLVMValueRef arg2 ;
+  LLVMValueRef arg2 = (LLVMValueRef) 0 ;
   unsigned int arg3 ;
   char **arg4 = (char **) 0 ;
   char **arg5 = (char **) 0 ;
-  LLVMValueRef *argp2 ;
   int result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef *)&jarg1; 
-  argp2 = *(LLVMValueRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMValueRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMValueRef *)&jarg2; 
   arg3 = (unsigned int)jarg3; 
   arg4 = *(char ***)&jarg4; 
   arg5 = *(char ***)&jarg5; 
@@ -1002,21 +904,15 @@ SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMRunFuncti
 SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMRunFunction(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
   jlong jresult = 0 ;
   LLVMExecutionEngineRef arg1 = (LLVMExecutionEngineRef) 0 ;
-  LLVMValueRef arg2 ;
+  LLVMValueRef arg2 = (LLVMValueRef) 0 ;
   unsigned int arg3 ;
   LLVMGenericValueRef *arg4 = (LLVMGenericValueRef *) 0 ;
-  LLVMValueRef *argp2 ;
   LLVMGenericValueRef result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef *)&jarg1; 
-  argp2 = *(LLVMValueRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMValueRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMValueRef *)&jarg2; 
   arg3 = (unsigned int)jarg3; 
   arg4 = *(LLVMGenericValueRef **)&jarg4; 
   result = (LLVMGenericValueRef)LLVMRunFunction(arg1,arg2,arg3,arg4);
@@ -1027,36 +923,24 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMRunFunct
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMFreeMachineCodeForFunction(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
   LLVMExecutionEngineRef arg1 = (LLVMExecutionEngineRef) 0 ;
-  LLVMValueRef arg2 ;
-  LLVMValueRef *argp2 ;
+  LLVMValueRef arg2 = (LLVMValueRef) 0 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef *)&jarg1; 
-  argp2 = *(LLVMValueRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMValueRef");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMValueRef *)&jarg2; 
   LLVMFreeMachineCodeForFunction(arg1,arg2);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMAddModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
   LLVMExecutionEngineRef arg1 = (LLVMExecutionEngineRef) 0 ;
-  LLVMModuleRef arg2 ;
-  LLVMModuleRef *argp2 ;
+  LLVMModuleRef arg2 = (LLVMModuleRef) 0 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef *)&jarg1; 
-  argp2 = *(LLVMModuleRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMModuleRef *)&jarg2; 
   LLVMAddModule(arg1,arg2);
 }
 
@@ -1079,38 +963,28 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMAddModule
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMRemoveModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMRemoveModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
+  jint jresult = 0 ;
   LLVMExecutionEngineRef arg1 = (LLVMExecutionEngineRef) 0 ;
-  LLVMModuleRef arg2 ;
+  LLVMModuleRef arg2 = (LLVMModuleRef) 0 ;
   LLVMModuleRef *arg3 = (LLVMModuleRef *) 0 ;
   char **arg4 = (char **) 0 ;
-  LLVMModuleRef *argp2 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef *)&jarg1; 
-  argp2 = *(LLVMModuleRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMModuleRef *)&jarg2; 
   arg3 = *(LLVMModuleRef **)&jarg3; 
   arg4 = *(char ***)&jarg4; 
-  result = LLVMRemoveModule(arg1,arg2,arg3,arg4);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMRemoveModule(arg1,arg2,arg3,arg4);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMRemoveModuleProvider(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMRemoveModuleProvider(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
+  jint jresult = 0 ;
   LLVMExecutionEngineRef arg1 = (LLVMExecutionEngineRef) 0 ;
   LLVMModuleProviderRef arg2 ;
   LLVMModuleRef *arg3 = (LLVMModuleRef *) 0 ;
@@ -1129,18 +1003,14 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMRemoveMo
   arg2 = *argp2; 
   arg3 = *(LLVMModuleRef **)&jarg3; 
   arg4 = *(char ***)&jarg4; 
-  result = LLVMRemoveModuleProvider(arg1,arg2,arg3,arg4);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMRemoveModuleProvider(arg1,arg2,arg3,arg4);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMFindFunction(JNIEnv *jenv, jclass jcls, jlong jarg1, jstring jarg2, jlong jarg3) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMFindFunction(JNIEnv *jenv, jclass jcls, jlong jarg1, jstring jarg2, jlong jarg3) {
+  jint jresult = 0 ;
   LLVMExecutionEngineRef arg1 = (LLVMExecutionEngineRef) 0 ;
   char *arg2 = (char *) 0 ;
   LLVMValueRef *arg3 = (LLVMValueRef *) 0 ;
@@ -1155,12 +1025,8 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMFindFunc
     if (!arg2) return 0;
   }
   arg3 = *(LLVMValueRef **)&jarg3; 
-  result = LLVMFindFunction(arg1,(char const *)arg2,arg3);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMFindFunction(arg1,(char const *)arg2,arg3);
+  jresult = (jint)result; 
   if (arg2) (*jenv)->ReleaseStringUTFChars(jenv, jarg2, (const char *)arg2);
   return jresult;
 }
@@ -1169,19 +1035,13 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMFindFunc
 SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMRecompileAndRelinkFunction(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
   jlong jresult = 0 ;
   LLVMExecutionEngineRef arg1 = (LLVMExecutionEngineRef) 0 ;
-  LLVMValueRef arg2 ;
-  LLVMValueRef *argp2 ;
+  LLVMValueRef arg2 = (LLVMValueRef) 0 ;
   void *result = 0 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef *)&jarg1; 
-  argp2 = *(LLVMValueRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMValueRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMValueRef *)&jarg2; 
   result = (void *)LLVMRecompileAndRelinkFunction(arg1,arg2);
   *(void **)&jresult = result; 
   return jresult;
@@ -1196,31 +1056,21 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMGetExecu
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef *)&jarg1; 
-  result = LLVMGetExecutionEngineTargetData(arg1);
-  {
-    LLVMTargetDataRef * resultptr = (LLVMTargetDataRef *) malloc(sizeof(LLVMTargetDataRef));
-    memmove(resultptr, &result, sizeof(LLVMTargetDataRef));
-    *(LLVMTargetDataRef **)&jresult = resultptr;
-  }
+  result = (LLVMTargetDataRef)LLVMGetExecutionEngineTargetData(arg1);
+  *(LLVMTargetDataRef *)&jresult = result; 
   return jresult;
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMAddGlobalMapping(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
   LLVMExecutionEngineRef arg1 = (LLVMExecutionEngineRef) 0 ;
-  LLVMValueRef arg2 ;
+  LLVMValueRef arg2 = (LLVMValueRef) 0 ;
   void *arg3 = (void *) 0 ;
-  LLVMValueRef *argp2 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef *)&jarg1; 
-  argp2 = *(LLVMValueRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMValueRef");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMValueRef *)&jarg2; 
   arg3 = *(void **)&jarg3; 
   LLVMAddGlobalMapping(arg1,arg2,arg3);
 }
@@ -1229,19 +1079,13 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMAddGlobal
 SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMGetPointerToGlobal(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
   jlong jresult = 0 ;
   LLVMExecutionEngineRef arg1 = (LLVMExecutionEngineRef) 0 ;
-  LLVMValueRef arg2 ;
-  LLVMValueRef *argp2 ;
+  LLVMValueRef arg2 = (LLVMValueRef) 0 ;
   void *result = 0 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef *)&jarg1; 
-  argp2 = *(LLVMValueRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMValueRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMValueRef *)&jarg2; 
   result = (void *)LLVMGetPointerToGlobal(arg1,arg2);
   *(void **)&jresult = result; 
   return jresult;

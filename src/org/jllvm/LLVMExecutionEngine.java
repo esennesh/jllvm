@@ -17,7 +17,7 @@ public class LLVMExecutionEngine {
 	public LLVMExecutionEngine(LLVMModule mod) throws Exception {
 		SWIGTYPE_p_p_LLVMOpaqueExecutionEngine engines = ExecutionEngine.new_LLVMExecutionEngineRefArray(1);
 		SWIGTYPE_p_p_char outerrs = ExecutionEngine.new_StringArray(1);
-		boolean success = ExecutionEngine.LLVMCreateExecutionEngineForModule(engines,mod.getInstance(),outerrs);
+		boolean success = ExecutionEngine.LLVMCreateExecutionEngineForModule(engines,mod.getInstance(),outerrs) > 0;
 		String outerr = ExecutionEngine.StringArray_getitem(outerrs,0);
 		ExecutionEngine.delete_StringArray(outerrs); outerrs = null;
 		instance = ExecutionEngine.LLVMExecutionEngineRefArray_getitem(engines,0);
@@ -79,7 +79,7 @@ public class LLVMExecutionEngine {
 	public boolean removeModule(LLVMModule m) {
 		SWIGTYPE_p_p_char outerr = ExecutionEngine.new_StringArray(1);
 		SWIGTYPE_p_p_LLVMOpaqueModule outmod = ExecutionEngine.new_LLVMModuleRefArray(1);
-		boolean result = ExecutionEngine.LLVMRemoveModule(instance,m.getInstance(),outmod,outerr);
+		boolean result = ExecutionEngine.LLVMRemoveModule(instance,m.getInstance(),outmod,outerr) > 0;
 		ExecutionEngine.delete_LLVMModuleRefArray(outmod);
 		ExecutionEngine.delete_StringArray(outerr);
 		return result;
@@ -87,7 +87,7 @@ public class LLVMExecutionEngine {
 	
 	public LLVMFunction findFunction(String name) {
 		SWIGTYPE_p_p_LLVMOpaqueValue resarray = ExecutionEngine.new_LLVMValueRefArray(1);
-		boolean success = ExecutionEngine.LLVMFindFunction(instance,name,resarray);
+		boolean success = ExecutionEngine.LLVMFindFunction(instance,name,resarray) > 0;
 		SWIGTYPE_p_LLVMOpaqueValue result = ExecutionEngine.LLVMValueRefArray_getitem(resarray,0);
 		ExecutionEngine.delete_LLVMValueRefArray(resarray);
 		if(success && result != null)

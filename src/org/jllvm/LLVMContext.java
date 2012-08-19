@@ -33,7 +33,7 @@ public class LLVMContext {
 	}
 	
 	public long getMetadataKindID(String name) {
-		return Core.LLVMGetMDKindIDInContext(instance,name);
+		return Core.LLVMGetMDKindIDInContext(instance,name,name.length());
 	}
 	
 	public static LLVMContext getGlobalContext() {
@@ -41,6 +41,7 @@ public class LLVMContext {
 	}
 	
 	protected void finalize() {
-		Core.LLVMContextDispose(instance);
+		if(instance != Core.LLVMGetGlobalContext())
+			Core.LLVMContextDispose(instance);
 	}
 }

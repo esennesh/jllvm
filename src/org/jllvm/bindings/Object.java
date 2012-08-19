@@ -9,8 +9,8 @@
 package org.jllvm.bindings;
 
 public class Object {
-  public static SWIGTYPE_p_LLVMOpaqueObjectFile LLVMCreateObjectFile(SWIGTYPE_p_LLVMOpaqueMemoryBuffer MemBuf) {
-    long cPtr = ObjectJNI.LLVMCreateObjectFile(SWIGTYPE_p_LLVMOpaqueMemoryBuffer.getCPtr(MemBuf));
+  public static SWIGTYPE_p_LLVMOpaqueObjectFile LLVMCreateObjectFile(SWIGTYPE_p_LLVMMemoryBufferRef MemBuf) {
+    long cPtr = ObjectJNI.LLVMCreateObjectFile(SWIGTYPE_p_LLVMMemoryBufferRef.getCPtr(MemBuf));
     return (cPtr == 0) ? null : new SWIGTYPE_p_LLVMOpaqueObjectFile(cPtr, false);
   }
 
@@ -27,8 +27,8 @@ public class Object {
     ObjectJNI.LLVMDisposeSectionIterator(SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(SI));
   }
 
-  public static long LLVMIsSectionIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile ObjectFile, SWIGTYPE_p_LLVMOpaqueSectionIterator SI) {
-    return ObjectJNI.LLVMIsSectionIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile.getCPtr(ObjectFile), SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(SI));
+  public static SWIGTYPE_p_LLVMBool LLVMIsSectionIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile ObjectFile, SWIGTYPE_p_LLVMOpaqueSectionIterator SI) {
+    return new SWIGTYPE_p_LLVMBool(ObjectJNI.LLVMIsSectionIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile.getCPtr(ObjectFile), SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(SI)), true);
   }
 
   public static void LLVMMoveToNextSection(SWIGTYPE_p_LLVMOpaqueSectionIterator SI) {
@@ -48,8 +48,8 @@ public class Object {
     ObjectJNI.LLVMDisposeSymbolIterator(SWIGTYPE_p_LLVMOpaqueSymbolIterator.getCPtr(SI));
   }
 
-  public static long LLVMIsSymbolIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile ObjectFile, SWIGTYPE_p_LLVMOpaqueSymbolIterator SI) {
-    return ObjectJNI.LLVMIsSymbolIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile.getCPtr(ObjectFile), SWIGTYPE_p_LLVMOpaqueSymbolIterator.getCPtr(SI));
+  public static SWIGTYPE_p_LLVMBool LLVMIsSymbolIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile ObjectFile, SWIGTYPE_p_LLVMOpaqueSymbolIterator SI) {
+    return new SWIGTYPE_p_LLVMBool(ObjectJNI.LLVMIsSymbolIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueObjectFile.getCPtr(ObjectFile), SWIGTYPE_p_LLVMOpaqueSymbolIterator.getCPtr(SI)), true);
   }
 
   public static void LLVMMoveToNextSymbol(SWIGTYPE_p_LLVMOpaqueSymbolIterator SI) {
@@ -72,8 +72,8 @@ public class Object {
     return new SWIGTYPE_p_uint64_t(ObjectJNI.LLVMGetSectionAddress(SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(SI)), true);
   }
 
-  public static long LLVMGetSectionContainsSymbol(SWIGTYPE_p_LLVMOpaqueSectionIterator SI, SWIGTYPE_p_LLVMOpaqueSymbolIterator Sym) {
-    return ObjectJNI.LLVMGetSectionContainsSymbol(SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(SI), SWIGTYPE_p_LLVMOpaqueSymbolIterator.getCPtr(Sym));
+  public static SWIGTYPE_p_LLVMBool LLVMGetSectionContainsSymbol(SWIGTYPE_p_LLVMOpaqueSectionIterator SI, SWIGTYPE_p_LLVMOpaqueSymbolIterator Sym) {
+    return new SWIGTYPE_p_LLVMBool(ObjectJNI.LLVMGetSectionContainsSymbol(SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(SI), SWIGTYPE_p_LLVMOpaqueSymbolIterator.getCPtr(Sym)), true);
   }
 
   public static SWIGTYPE_p_LLVMOpaqueRelocationIterator LLVMGetRelocations(SWIGTYPE_p_LLVMOpaqueSectionIterator Section) {
@@ -85,8 +85,8 @@ public class Object {
     ObjectJNI.LLVMDisposeRelocationIterator(SWIGTYPE_p_LLVMOpaqueRelocationIterator.getCPtr(RI));
   }
 
-  public static long LLVMIsRelocationIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueSectionIterator Section, SWIGTYPE_p_LLVMOpaqueRelocationIterator RI) {
-    return ObjectJNI.LLVMIsRelocationIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(Section), SWIGTYPE_p_LLVMOpaqueRelocationIterator.getCPtr(RI));
+  public static SWIGTYPE_p_LLVMBool LLVMIsRelocationIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueSectionIterator Section, SWIGTYPE_p_LLVMOpaqueRelocationIterator RI) {
+    return new SWIGTYPE_p_LLVMBool(ObjectJNI.LLVMIsRelocationIteratorAtEnd(SWIGTYPE_p_LLVMOpaqueSectionIterator.getCPtr(Section), SWIGTYPE_p_LLVMOpaqueRelocationIterator.getCPtr(RI)), true);
   }
 
   public static void LLVMMoveToNextRelocation(SWIGTYPE_p_LLVMOpaqueRelocationIterator RI) {

@@ -196,19 +196,13 @@ extern "C" {
 
 SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_BitWriterJNI_LLVMWriteBitcodeToFile(JNIEnv *jenv, jclass jcls, jlong jarg1, jstring jarg2) {
   jint jresult = 0 ;
-  LLVMModuleRef arg1 ;
+  LLVMModuleRef arg1 = (LLVMModuleRef) 0 ;
   char *arg2 = (char *) 0 ;
-  LLVMModuleRef *argp1 ;
   int result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMModuleRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMModuleRef *)&jarg1; 
   arg2 = 0;
   if (jarg2) {
     arg2 = (char *)(*jenv)->GetStringUTFChars(jenv, jarg2, 0);
@@ -223,21 +217,15 @@ SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_BitWriterJNI_LLVMWriteBitcodeToF
 
 SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_BitWriterJNI_LLVMWriteBitcodeToFD(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jint jarg3, jint jarg4) {
   jint jresult = 0 ;
-  LLVMModuleRef arg1 ;
+  LLVMModuleRef arg1 = (LLVMModuleRef) 0 ;
   int arg2 ;
   int arg3 ;
   int arg4 ;
-  LLVMModuleRef *argp1 ;
   int result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMModuleRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMModuleRef *)&jarg1; 
   arg2 = (int)jarg2; 
   arg3 = (int)jarg3; 
   arg4 = (int)jarg4; 
@@ -249,19 +237,13 @@ SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_BitWriterJNI_LLVMWriteBitcodeToF
 
 SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_BitWriterJNI_LLVMWriteBitcodeToFileHandle(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
   jint jresult = 0 ;
-  LLVMModuleRef arg1 ;
+  LLVMModuleRef arg1 = (LLVMModuleRef) 0 ;
   int arg2 ;
-  LLVMModuleRef *argp1 ;
   int result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMModuleRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMModuleRef *)&jarg1; 
   arg2 = (int)jarg2; 
   result = (int)LLVMWriteBitcodeToFileHandle(arg1,arg2);
   jresult = (jint)result; 

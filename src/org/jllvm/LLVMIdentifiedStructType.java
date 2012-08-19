@@ -35,11 +35,11 @@ public class LLVMIdentifiedStructType extends LLVMStructType {
 		SWIGTYPE_p_p_LLVMOpaqueType elements = Core.new_LLVMTypeRefArray(elementTypes.length);
 		for(int i=0;i<elementTypes.length;i++)
 			Core.LLVMTypeRefArray_setitem(elements,i,elementTypes[i].getInstance());
-		Core.LLVMStructSetBody(instance,elements,elementTypes.length,packed);
+		Core.LLVMStructSetBody(instance,elements,elementTypes.length,packed ? 1 : 0);
 		Core.delete_LLVMTypeRefArray(elements);
 	}
 	
 	public boolean isOpaque() {
-		return Core.LLVMIsOpaqueStruct(instance);
+		return (Core.LLVMIsOpaqueStruct(instance) > 0);
 	}
 }

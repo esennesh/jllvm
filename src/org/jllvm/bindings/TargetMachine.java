@@ -9,6 +9,23 @@
 package org.jllvm.bindings;
 
 public class TargetMachine {
+  public static SWIGTYPE_p_p_char new_StringArray(int nelements) {
+    long cPtr = TargetMachineJNI.new_StringArray(nelements);
+    return (cPtr == 0) ? null : new SWIGTYPE_p_p_char(cPtr, false);
+  }
+
+  public static void delete_StringArray(SWIGTYPE_p_p_char ary) {
+    TargetMachineJNI.delete_StringArray(SWIGTYPE_p_p_char.getCPtr(ary));
+  }
+
+  public static String StringArray_getitem(SWIGTYPE_p_p_char ary, int index) {
+    return TargetMachineJNI.StringArray_getitem(SWIGTYPE_p_p_char.getCPtr(ary), index);
+  }
+
+  public static void StringArray_setitem(SWIGTYPE_p_p_char ary, int index, String value) {
+    TargetMachineJNI.StringArray_setitem(SWIGTYPE_p_p_char.getCPtr(ary), index, value);
+  }
+
   public static SWIGTYPE_p_LLVMTarget LLVMGetFirstTarget() {
     long cPtr = TargetMachineJNI.LLVMGetFirstTarget();
     return (cPtr == 0) ? null : new SWIGTYPE_p_LLVMTarget(cPtr, false);
@@ -27,15 +44,15 @@ public class TargetMachine {
     return TargetMachineJNI.LLVMGetTargetDescription(SWIGTYPE_p_LLVMTarget.getCPtr(T));
   }
 
-  public static long LLVMTargetHasJIT(SWIGTYPE_p_LLVMTarget T) {
+  public static int LLVMTargetHasJIT(SWIGTYPE_p_LLVMTarget T) {
     return TargetMachineJNI.LLVMTargetHasJIT(SWIGTYPE_p_LLVMTarget.getCPtr(T));
   }
 
-  public static long LLVMTargetHasTargetMachine(SWIGTYPE_p_LLVMTarget T) {
+  public static int LLVMTargetHasTargetMachine(SWIGTYPE_p_LLVMTarget T) {
     return TargetMachineJNI.LLVMTargetHasTargetMachine(SWIGTYPE_p_LLVMTarget.getCPtr(T));
   }
 
-  public static long LLVMTargetHasAsmBackend(SWIGTYPE_p_LLVMTarget T) {
+  public static int LLVMTargetHasAsmBackend(SWIGTYPE_p_LLVMTarget T) {
     return TargetMachineJNI.LLVMTargetHasAsmBackend(SWIGTYPE_p_LLVMTarget.getCPtr(T));
   }
 
@@ -66,11 +83,12 @@ public class TargetMachine {
   }
 
   public static SWIGTYPE_p_LLVMOpaqueTargetData LLVMGetTargetMachineData(SWIGTYPE_p_LLVMTargetMachine T) {
-    return new SWIGTYPE_p_LLVMOpaqueTargetData(TargetMachineJNI.LLVMGetTargetMachineData(SWIGTYPE_p_LLVMTargetMachine.getCPtr(T)), true);
+    long cPtr = TargetMachineJNI.LLVMGetTargetMachineData(SWIGTYPE_p_LLVMTargetMachine.getCPtr(T));
+    return (cPtr == 0) ? null : new SWIGTYPE_p_LLVMOpaqueTargetData(cPtr, false);
   }
 
-  public static boolean LLVMTargetMachineEmitToFile(SWIGTYPE_p_LLVMTargetMachine T, SWIGTYPE_p_LLVMOpaqueModule M, String Filename, LLVMCodeGenFileType codegen, SWIGTYPE_p_p_char ErrorMessage) {
-    return TargetMachineJNI.LLVMTargetMachineEmitToFile(SWIGTYPE_p_LLVMTargetMachine.getCPtr(T), SWIGTYPE_p_LLVMOpaqueModule.getCPtr(M), Filename, codegen.swigValue(), SWIGTYPE_p_p_char.getCPtr(ErrorMessage)) != 0;
+  public static int LLVMTargetMachineEmitToFile(SWIGTYPE_p_LLVMTargetMachine T, SWIGTYPE_p_LLVMOpaqueModule M, String Filename, LLVMCodeGenFileType codegen, SWIGTYPE_p_p_char ErrorMessage) {
+    return TargetMachineJNI.LLVMTargetMachineEmitToFile(SWIGTYPE_p_LLVMTargetMachine.getCPtr(T), SWIGTYPE_p_LLVMOpaqueModule.getCPtr(M), Filename, codegen.swigValue(), SWIGTYPE_p_p_char.getCPtr(ErrorMessage));
   }
 
 }

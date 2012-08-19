@@ -190,9 +190,84 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 #include <llvm-c/Analysis.h>
 
 
+static char * *new_StringArray(int nelements) { 
+  return (char * *) calloc(nelements,sizeof(char *)); 
+}
+
+static void delete_StringArray(char * *ary) { 
+  free(ary); 
+}
+
+static char * StringArray_getitem(char * *ary, int index) {
+    return ary[index];
+}
+static void StringArray_setitem(char * *ary, int index, char * value) {
+    ary[index] = value;
+}
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_AnalysisJNI_new_1StringArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
+  jlong jresult = 0 ;
+  int arg1 ;
+  char **result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = (int)jarg1; 
+  result = (char **)new_StringArray(arg1);
+  *(char ***)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_AnalysisJNI_delete_1StringArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  char **arg1 = (char **) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(char ***)&jarg1; 
+  delete_StringArray(arg1);
+}
+
+
+SWIGEXPORT jstring JNICALL Java_org_jllvm_bindings_AnalysisJNI_StringArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  jstring jresult = 0 ;
+  char **arg1 = (char **) 0 ;
+  int arg2 ;
+  char *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(char ***)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = (char *)StringArray_getitem(arg1,arg2);
+  if (result) jresult = (*jenv)->NewStringUTF(jenv, (const char *)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_AnalysisJNI_StringArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jstring jarg3) {
+  char **arg1 = (char **) 0 ;
+  int arg2 ;
+  char *arg3 = (char *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(char ***)&jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = 0;
+  if (jarg3) {
+    arg3 = (char *)(*jenv)->GetStringUTFChars(jenv, jarg3, 0);
+    if (!arg3) return ;
+  }
+  StringArray_setitem(arg1,arg2,arg3);
+  if (arg3) (*jenv)->ReleaseStringUTFChars(jenv, jarg3, (const char *)arg3);
+}
+
 
 SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_AnalysisJNI_LLVMVerifyModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
   jlong jresult = 0 ;

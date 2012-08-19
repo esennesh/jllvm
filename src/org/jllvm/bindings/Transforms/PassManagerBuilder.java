@@ -6,9 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package org.jllvm.bindings.Transforms;
-
-import org.jllvm.bindings.SWIGTYPE_p_LLVMOpaquePassManager;
+package org.jllvm.bindings;
 
 public class PassManagerBuilder {
   public static SWIGTYPE_p_LLVMOpaquePassManagerBuilder LLVMPassManagerBuilderCreate() {
@@ -28,16 +26,16 @@ public class PassManagerBuilder {
     PassManagerBuilderJNI.LLVMPassManagerBuilderSetSizeLevel(SWIGTYPE_p_LLVMOpaquePassManagerBuilder.getCPtr(PMB), SizeLevel);
   }
 
-  public static void LLVMPassManagerBuilderSetDisableUnitAtATime(SWIGTYPE_p_LLVMOpaquePassManagerBuilder PMB, boolean Value) {
-    PassManagerBuilderJNI.LLVMPassManagerBuilderSetDisableUnitAtATime(SWIGTYPE_p_LLVMOpaquePassManagerBuilder.getCPtr(PMB), Value ? 1 : 0);
+  public static void LLVMPassManagerBuilderSetDisableUnitAtATime(SWIGTYPE_p_LLVMOpaquePassManagerBuilder PMB, int Value) {
+    PassManagerBuilderJNI.LLVMPassManagerBuilderSetDisableUnitAtATime(SWIGTYPE_p_LLVMOpaquePassManagerBuilder.getCPtr(PMB), Value);
   }
 
-  public static void LLVMPassManagerBuilderSetDisableUnrollLoops(SWIGTYPE_p_LLVMOpaquePassManagerBuilder PMB, boolean Value) {
-    PassManagerBuilderJNI.LLVMPassManagerBuilderSetDisableUnrollLoops(SWIGTYPE_p_LLVMOpaquePassManagerBuilder.getCPtr(PMB), Value ? 1 : 0);
+  public static void LLVMPassManagerBuilderSetDisableUnrollLoops(SWIGTYPE_p_LLVMOpaquePassManagerBuilder PMB, int Value) {
+    PassManagerBuilderJNI.LLVMPassManagerBuilderSetDisableUnrollLoops(SWIGTYPE_p_LLVMOpaquePassManagerBuilder.getCPtr(PMB), Value);
   }
 
-  public static void LLVMPassManagerBuilderSetDisableSimplifyLibCalls(SWIGTYPE_p_LLVMOpaquePassManagerBuilder PMB, boolean Value) {
-    PassManagerBuilderJNI.LLVMPassManagerBuilderSetDisableSimplifyLibCalls(SWIGTYPE_p_LLVMOpaquePassManagerBuilder.getCPtr(PMB), Value ? 1 : 0);
+  public static void LLVMPassManagerBuilderSetDisableSimplifyLibCalls(SWIGTYPE_p_LLVMOpaquePassManagerBuilder PMB, int Value) {
+    PassManagerBuilderJNI.LLVMPassManagerBuilderSetDisableSimplifyLibCalls(SWIGTYPE_p_LLVMOpaquePassManagerBuilder.getCPtr(PMB), Value);
   }
 
   public static void LLVMPassManagerBuilderUseInlinerWithThreshold(SWIGTYPE_p_LLVMOpaquePassManagerBuilder PMB, long Threshold) {

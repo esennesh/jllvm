@@ -9,6 +9,14 @@
 package org.jllvm.bindings;
 
 public class BitReaderJNI {
+  public final static native long new_LLVMModuleRefArray(int jarg1);
+  public final static native void delete_LLVMModuleRefArray(long jarg1);
+  public final static native long LLVMModuleRefArray_getitem(long jarg1, int jarg2);
+  public final static native void LLVMModuleRefArray_setitem(long jarg1, int jarg2, long jarg3);
+  public final static native long new_StringArray(int jarg1);
+  public final static native void delete_StringArray(long jarg1);
+  public final static native String StringArray_getitem(long jarg1, int jarg2);
+  public final static native void StringArray_setitem(long jarg1, int jarg2, String jarg3);
   public final static native long LLVMParseBitcode(long jarg1, long jarg2, long jarg3);
   public final static native long LLVMParseBitcodeInContext(long jarg1, long jarg2, long jarg3, long jarg4);
   public final static native long LLVMGetBitcodeModuleInContext(long jarg1, long jarg2, long jarg3, long jarg4);

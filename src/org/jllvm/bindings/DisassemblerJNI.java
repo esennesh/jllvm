@@ -9,6 +9,10 @@
 package org.jllvm.bindings;
 
 public class DisassemblerJNI {
+  public final static native long new_StringArray(int jarg1);
+  public final static native void delete_StringArray(long jarg1);
+  public final static native String StringArray_getitem(long jarg1, int jarg2);
+  public final static native void StringArray_setitem(long jarg1, int jarg2, String jarg3);
   public final static native void LLVMOpInfoSymbol1_Present_set(long jarg1, LLVMOpInfoSymbol1 jarg1_, long jarg2);
   public final static native long LLVMOpInfoSymbol1_Present_get(long jarg1, LLVMOpInfoSymbol1 jarg1_);
   public final static native void LLVMOpInfoSymbol1_Name_set(long jarg1, LLVMOpInfoSymbol1 jarg1_, String jarg2);

@@ -1,10 +1,12 @@
 package org.jllvm;
 
 import org.jllvm.bindings.Core;
+import org.jllvm.bindings.BitWriter;
 import org.jllvm.bindings.SWIGTYPE_p_LLVMOpaqueModule;
 import java.util.*;
 
-/* Fully translated all functions for Modules from Core.java/Core.h back to a Module class. */
+/* Fully translated all functions for Modules from Core.java/Core.h back to a Module class. 
+   Also fully translated all functions for Modules from BitWriter.java/Bitwriter.h to this Module class. */
 public class LLVMModule {
 	protected static HashMap<SWIGTYPE_p_LLVMOpaqueModule,LLVMModule> llvm_modules;
 	protected SWIGTYPE_p_LLVMOpaqueModule instance;
@@ -70,9 +72,32 @@ public class LLVMModule {
 		return LLVMContext.getContext(Core.LLVMGetModuleContext(instance));
 	}
 	
+	public boolean writeBitcodeToFile(String path) {
+		int result = BitWriter.LLVMWriteBitcodeToFile(instance,path);
+		return (result == 0);
+	}
+	
+	public boolean writeBitcodeToFD(int fd,boolean shouldClose,boolean unbuffered) {
+		int result = BitWriter.LLVMWriteBitcodeToFD(instance,fd,shouldClose ? 1 : 0,unbuffered ? 1 : 0);
+		return (result == 0);
+	}
+	
+	public boolean writeBitcodeToFileHandle(int handle) {
+		int result = BitWriter.LLVMWriteBitcodeToFileHandle(instance,handle);
+		return (result == 0);
+	}
+	
 	public LLVMModule(String moduleid) {
 		instance = Core.LLVMModuleCreateWithName(moduleid);
 		identifier = moduleid;
+		if(llvm_modules == null)
+			llvm_modules = new HashMap<SWIGTYPE_p_LLVMOpaqueModule,LLVMModule>();
+		llvm_modules.put(instance,this);
+	}
+	
+	public LLVMModule(String name,LLVMContext context) {
+		instance = Core.LLVMModuleCreateWithNameInContext(name,context.getInstance());
+		identifier = name;
 		if(llvm_modules == null)
 			llvm_modules = new HashMap<SWIGTYPE_p_LLVMOpaqueModule,LLVMModule>();
 		llvm_modules.put(instance,this);

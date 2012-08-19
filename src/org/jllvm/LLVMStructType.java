@@ -53,6 +53,6 @@ public class LLVMStructType extends LLVMType {
 	}
 	
 	public boolean isPacked() {
-		return Core.LLVMIsPackedStruct(instance);
+		return Core.LLVMIsPackedStruct(instance) > 0;
 	}
 }

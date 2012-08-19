@@ -2,6 +2,9 @@
 %{
 #include <llvm-c/Analysis.h>
 %}
+
+%include "carrays.i"
+%array_functions(char *,StringArray)
 /*===-- llvm-c/Analysis.h - Analysis Library C Interface --------*- C++ -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|

@@ -9,6 +9,23 @@
 package org.jllvm.bindings;
 
 public class Disassembler implements DisassemblerConstants {
+  public static SWIGTYPE_p_p_char new_StringArray(int nelements) {
+    long cPtr = DisassemblerJNI.new_StringArray(nelements);
+    return (cPtr == 0) ? null : new SWIGTYPE_p_p_char(cPtr, false);
+  }
+
+  public static void delete_StringArray(SWIGTYPE_p_p_char ary) {
+    DisassemblerJNI.delete_StringArray(SWIGTYPE_p_p_char.getCPtr(ary));
+  }
+
+  public static String StringArray_getitem(SWIGTYPE_p_p_char ary, int index) {
+    return DisassemblerJNI.StringArray_getitem(SWIGTYPE_p_p_char.getCPtr(ary), index);
+  }
+
+  public static void StringArray_setitem(SWIGTYPE_p_p_char ary, int index, String value) {
+    DisassemblerJNI.StringArray_setitem(SWIGTYPE_p_p_char.getCPtr(ary), index, value);
+  }
+
   public static SWIGTYPE_p_void LLVMCreateDisasm(String TripleName, SWIGTYPE_p_void DisInfo, int TagType, SWIGTYPE_p_f_p_void_uint64_t_uint64_t_uint64_t_int_p_void__int GetOpInfo, SWIGTYPE_p_f_p_void_uint64_t_p_uint64_t_uint64_t_p_p_q_const__char__p_char SymbolLookUp) {
     long cPtr = DisassemblerJNI.LLVMCreateDisasm(TripleName, SWIGTYPE_p_void.getCPtr(DisInfo), TagType, SWIGTYPE_p_f_p_void_uint64_t_uint64_t_uint64_t_int_p_void__int.getCPtr(GetOpInfo), SWIGTYPE_p_f_p_void_uint64_t_p_uint64_t_uint64_t_p_p_q_const__char__p_char.getCPtr(SymbolLookUp));
     return (cPtr == 0) ? null : new SWIGTYPE_p_void(cPtr, false);

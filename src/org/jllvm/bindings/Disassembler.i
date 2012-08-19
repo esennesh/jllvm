@@ -2,6 +2,9 @@
 %{
 #include <llvm-c/Disassembler.h>
 %}
+
+%include "carrays.i"
+%array_functions(char *,StringArray)
 /*===-- llvm-c/Disassembler.h - Disassembler Public C Interface ---*- C -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|

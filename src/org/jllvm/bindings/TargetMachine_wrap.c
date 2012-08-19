@@ -187,13 +187,88 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 #define SWIG_contract_assert(nullreturn, expr, msg) if (!(expr)) {SWIG_JavaThrowException(jenv, SWIG_JavaIllegalArgumentException, msg); return nullreturn; } else
 
 
-#include <llvm-c/Target.h>
 #include <llvm-c/TargetMachine.h>
+#include <llvm-c/Target.h>
+
+
+static char * *new_StringArray(int nelements) { 
+  return (char * *) calloc(nelements,sizeof(char *)); 
+}
+
+static void delete_StringArray(char * *ary) { 
+  free(ary); 
+}
+
+static char * StringArray_getitem(char * *ary, int index) {
+    return ary[index];
+}
+static void StringArray_setitem(char * *ary, int index, char * value) {
+    ary[index] = value;
+}
 
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_TargetMachineJNI_new_1StringArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
+  jlong jresult = 0 ;
+  int arg1 ;
+  char **result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = (int)jarg1; 
+  result = (char **)new_StringArray(arg1);
+  *(char ***)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_TargetMachineJNI_delete_1StringArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  char **arg1 = (char **) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(char ***)&jarg1; 
+  delete_StringArray(arg1);
+}
+
+
+SWIGEXPORT jstring JNICALL Java_org_jllvm_bindings_TargetMachineJNI_StringArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  jstring jresult = 0 ;
+  char **arg1 = (char **) 0 ;
+  int arg2 ;
+  char *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(char ***)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = (char *)StringArray_getitem(arg1,arg2);
+  if (result) jresult = (*jenv)->NewStringUTF(jenv, (const char *)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_TargetMachineJNI_StringArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jstring jarg3) {
+  char **arg1 = (char **) 0 ;
+  int arg2 ;
+  char *arg3 = (char *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(char ***)&jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = 0;
+  if (jarg3) {
+    arg3 = (char *)(*jenv)->GetStringUTFChars(jenv, jarg3, 0);
+    if (!arg3) return ;
+  }
+  StringArray_setitem(arg1,arg2,arg3);
+  if (arg3) (*jenv)->ReleaseStringUTFChars(jenv, jarg3, (const char *)arg3);
+}
+
 
 SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_TargetMachineJNI_LLVMGetFirstTarget(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
@@ -249,56 +324,44 @@ SWIGEXPORT jstring JNICALL Java_org_jllvm_bindings_TargetMachineJNI_LLVMGetTarge
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_TargetMachineJNI_LLVMTargetHasJIT(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_TargetMachineJNI_LLVMTargetHasJIT(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  jint jresult = 0 ;
   LLVMTargetRef arg1 = (LLVMTargetRef) 0 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMTargetRef *)&jarg1; 
-  result = LLVMTargetHasJIT(arg1);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMTargetHasJIT(arg1);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_TargetMachineJNI_LLVMTargetHasTargetMachine(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_TargetMachineJNI_LLVMTargetHasTargetMachine(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  jint jresult = 0 ;
   LLVMTargetRef arg1 = (LLVMTargetRef) 0 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMTargetRef *)&jarg1; 
-  result = LLVMTargetHasTargetMachine(arg1);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMTargetHasTargetMachine(arg1);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_TargetMachineJNI_LLVMTargetHasAsmBackend(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_TargetMachineJNI_LLVMTargetHasAsmBackend(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  jint jresult = 0 ;
   LLVMTargetRef arg1 = (LLVMTargetRef) 0 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMTargetRef *)&jarg1; 
-  result = LLVMTargetHasAsmBackend(arg1);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMTargetHasAsmBackend(arg1);
+  jresult = (jint)result; 
   return jresult;
 }
 
@@ -418,35 +481,25 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_TargetMachineJNI_LLVMGetTargetM
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMTargetMachineRef *)&jarg1; 
-  result = LLVMGetTargetMachineData(arg1);
-  {
-    LLVMTargetDataRef * resultptr = (LLVMTargetDataRef *) malloc(sizeof(LLVMTargetDataRef));
-    memmove(resultptr, &result, sizeof(LLVMTargetDataRef));
-    *(LLVMTargetDataRef **)&jresult = resultptr;
-  }
+  result = (LLVMTargetDataRef)LLVMGetTargetMachineData(arg1);
+  *(LLVMTargetDataRef *)&jresult = result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_TargetMachineJNI_LLVMTargetMachineEmitToFile(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jstring jarg3, jint jarg4, jlong jarg5) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_TargetMachineJNI_LLVMTargetMachineEmitToFile(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jstring jarg3, jint jarg4, jlong jarg5) {
+  jint jresult = 0 ;
   LLVMTargetMachineRef arg1 = (LLVMTargetMachineRef) 0 ;
-  LLVMModuleRef arg2 ;
+  LLVMModuleRef arg2 = (LLVMModuleRef) 0 ;
   char *arg3 = (char *) 0 ;
   LLVMCodeGenFileType arg4 ;
   char **arg5 = (char **) 0 ;
-  LLVMModuleRef *argp2 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMTargetMachineRef *)&jarg1; 
-  argp2 = *(LLVMModuleRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMModuleRef *)&jarg2; 
   arg3 = 0;
   if (jarg3) {
     arg3 = (char *)(*jenv)->GetStringUTFChars(jenv, jarg3, 0);
@@ -454,12 +507,8 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_TargetMachineJNI_LLVMTargetMach
   }
   arg4 = (LLVMCodeGenFileType)jarg4; 
   arg5 = *(char ***)&jarg5; 
-  result = LLVMTargetMachineEmitToFile(arg1,arg2,arg3,arg4,arg5);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMTargetMachineEmitToFile(arg1,arg2,arg3,arg4,arg5);
+  jresult = (jint)result; 
   if (arg3) (*jenv)->ReleaseStringUTFChars(jenv, jarg3, (const char *)arg3);
   return jresult;
 }

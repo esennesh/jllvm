@@ -195,7 +195,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 extern "C" {
 #endif
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI_LLVMPassManagerBuilderCreate(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderCreate(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   LLVMPassManagerBuilderRef result;
   
@@ -207,7 +207,7 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJN
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI_LLVMPassManagerBuilderDispose(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderDispose(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
   
   (void)jenv;
@@ -217,7 +217,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI_LLVMPassManagerBuilderSetOptLevel(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderSetOptLevel(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
   LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
   unsigned int arg2 ;
   
@@ -229,7 +229,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI_LLVMPassManagerBuilderSetSizeLevel(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderSetSizeLevel(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
   LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
   unsigned int arg2 ;
   
@@ -241,61 +241,43 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI_LLVMPassManagerBuilderSetDisableUnitAtATime(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderSetDisableUnitAtATime(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
   LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
   LLVMBool arg2 ;
-  LLVMBool *argp2 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
-  argp2 = *(LLVMBool **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMBool");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = (LLVMBool)jarg2; 
   LLVMPassManagerBuilderSetDisableUnitAtATime(arg1,arg2);
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI_LLVMPassManagerBuilderSetDisableUnrollLoops(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderSetDisableUnrollLoops(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
   LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
   LLVMBool arg2 ;
-  LLVMBool *argp2 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
-  argp2 = *(LLVMBool **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMBool");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = (LLVMBool)jarg2; 
   LLVMPassManagerBuilderSetDisableUnrollLoops(arg1,arg2);
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI_LLVMPassManagerBuilderSetDisableSimplifyLibCalls(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderSetDisableSimplifyLibCalls(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
   LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
   LLVMBool arg2 ;
-  LLVMBool *argp2 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
-  argp2 = *(LLVMBool **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMBool");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = (LLVMBool)jarg2; 
   LLVMPassManagerBuilderSetDisableSimplifyLibCalls(arg1,arg2);
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI_LLVMPassManagerBuilderUseInlinerWithThreshold(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderUseInlinerWithThreshold(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
   LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
   unsigned int arg2 ;
   
@@ -307,58 +289,40 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI_LLVMPassManagerBuilderPopulateFunctionPassManager(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderPopulateFunctionPassManager(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
   LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
-  LLVMPassManagerRef arg2 ;
-  LLVMPassManagerRef *argp2 ;
+  LLVMPassManagerRef arg2 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
-  argp2 = *(LLVMPassManagerRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMPassManagerRef *)&jarg2; 
   LLVMPassManagerBuilderPopulateFunctionPassManager(arg1,arg2);
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI_LLVMPassManagerBuilderPopulateModulePassManager(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderPopulateModulePassManager(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
   LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
-  LLVMPassManagerRef arg2 ;
-  LLVMPassManagerRef *argp2 ;
+  LLVMPassManagerRef arg2 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
-  argp2 = *(LLVMPassManagerRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMPassManagerRef *)&jarg2; 
   LLVMPassManagerBuilderPopulateModulePassManager(arg1,arg2);
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_PassManagerBuilderJNI_LLVMPassManagerBuilderPopulateLTOPassManager(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jboolean jarg3, jboolean jarg4) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderPopulateLTOPassManager(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jboolean jarg3, jboolean jarg4) {
   LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
-  LLVMPassManagerRef arg2 ;
+  LLVMPassManagerRef arg2 = (LLVMPassManagerRef) 0 ;
   bool arg3 ;
   bool arg4 ;
-  LLVMPassManagerRef *argp2 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
-  argp2 = *(LLVMPassManagerRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMPassManagerRef *)&jarg2; 
   arg3 = jarg3 ? true : false; 
   arg4 = jarg4 ? true : false; 
   LLVMPassManagerBuilderPopulateLTOPassManager(arg1,arg2,arg3,arg4);

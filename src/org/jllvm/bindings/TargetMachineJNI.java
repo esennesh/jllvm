@@ -9,13 +9,17 @@
 package org.jllvm.bindings;
 
 public class TargetMachineJNI {
+  public final static native long new_StringArray(int jarg1);
+  public final static native void delete_StringArray(long jarg1);
+  public final static native String StringArray_getitem(long jarg1, int jarg2);
+  public final static native void StringArray_setitem(long jarg1, int jarg2, String jarg3);
   public final static native long LLVMGetFirstTarget();
   public final static native long LLVMGetNextTarget(long jarg1);
   public final static native String LLVMGetTargetName(long jarg1);
   public final static native String LLVMGetTargetDescription(long jarg1);
-  public final static native long LLVMTargetHasJIT(long jarg1);
-  public final static native long LLVMTargetHasTargetMachine(long jarg1);
-  public final static native long LLVMTargetHasAsmBackend(long jarg1);
+  public final static native int LLVMTargetHasJIT(long jarg1);
+  public final static native int LLVMTargetHasTargetMachine(long jarg1);
+  public final static native int LLVMTargetHasAsmBackend(long jarg1);
   public final static native long LLVMCreateTargetMachine(long jarg1, String jarg2, String jarg3, String jarg4, int jarg5, int jarg6, int jarg7);
   public final static native void LLVMDisposeTargetMachine(long jarg1);
   public final static native long LLVMGetTargetMachineTarget(long jarg1);
@@ -23,5 +27,5 @@ public class TargetMachineJNI {
   public final static native String LLVMGetTargetMachineCPU(long jarg1);
   public final static native String LLVMGetTargetMachineFeatureString(long jarg1);
   public final static native long LLVMGetTargetMachineData(long jarg1);
-  public final static native long LLVMTargetMachineEmitToFile(long jarg1, long jarg2, String jarg3, int jarg4, long jarg5);
+  public final static native int LLVMTargetMachineEmitToFile(long jarg1, long jarg2, String jarg3, int jarg4, long jarg5);
 }

@@ -190,9 +190,164 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 #include <llvm-c/BitReader.h>
 
 
+static LLVMModuleRef *new_LLVMModuleRefArray(int nelements) { 
+  return (LLVMModuleRef *) calloc(nelements,sizeof(LLVMModuleRef)); 
+}
+
+static void delete_LLVMModuleRefArray(LLVMModuleRef *ary) { 
+  free(ary); 
+}
+
+static LLVMModuleRef LLVMModuleRefArray_getitem(LLVMModuleRef *ary, int index) {
+    return ary[index];
+}
+static void LLVMModuleRefArray_setitem(LLVMModuleRef *ary, int index, LLVMModuleRef value) {
+    ary[index] = value;
+}
+
+
+static char * *new_StringArray(int nelements) { 
+  return (char * *) calloc(nelements,sizeof(char *)); 
+}
+
+static void delete_StringArray(char * *ary) { 
+  free(ary); 
+}
+
+static char * StringArray_getitem(char * *ary, int index) {
+    return ary[index];
+}
+static void StringArray_setitem(char * *ary, int index, char * value) {
+    ary[index] = value;
+}
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_BitReaderJNI_new_1LLVMModuleRefArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
+  jlong jresult = 0 ;
+  int arg1 ;
+  LLVMModuleRef *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = (int)jarg1; 
+  result = (LLVMModuleRef *)new_LLVMModuleRefArray(arg1);
+  *(LLVMModuleRef **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_BitReaderJNI_delete_1LLVMModuleRefArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  LLVMModuleRef *arg1 = (LLVMModuleRef *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMModuleRef **)&jarg1; 
+  delete_LLVMModuleRefArray(arg1);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMModuleRefArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  jlong jresult = 0 ;
+  LLVMModuleRef *arg1 = (LLVMModuleRef *) 0 ;
+  int arg2 ;
+  LLVMModuleRef result;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMModuleRef **)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = LLVMModuleRefArray_getitem(arg1,arg2);
+  {
+    LLVMModuleRef * resultptr = (LLVMModuleRef *) malloc(sizeof(LLVMModuleRef));
+    memmove(resultptr, &result, sizeof(LLVMModuleRef));
+    *(LLVMModuleRef **)&jresult = resultptr;
+  }
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMModuleRefArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
+  LLVMModuleRef *arg1 = (LLVMModuleRef *) 0 ;
+  int arg2 ;
+  LLVMModuleRef arg3 ;
+  LLVMModuleRef *argp3 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMModuleRef **)&jarg1; 
+  arg2 = (int)jarg2; 
+  argp3 = *(LLVMModuleRef **)&jarg3; 
+  if (!argp3) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
+    return ;
+  }
+  arg3 = *argp3; 
+  LLVMModuleRefArray_setitem(arg1,arg2,arg3);
+}
+
+
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_BitReaderJNI_new_1StringArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
+  jlong jresult = 0 ;
+  int arg1 ;
+  char **result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = (int)jarg1; 
+  result = (char **)new_StringArray(arg1);
+  *(char ***)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_BitReaderJNI_delete_1StringArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  char **arg1 = (char **) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(char ***)&jarg1; 
+  delete_StringArray(arg1);
+}
+
+
+SWIGEXPORT jstring JNICALL Java_org_jllvm_bindings_BitReaderJNI_StringArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  jstring jresult = 0 ;
+  char **arg1 = (char **) 0 ;
+  int arg2 ;
+  char *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(char ***)&jarg1; 
+  arg2 = (int)jarg2; 
+  result = (char *)StringArray_getitem(arg1,arg2);
+  if (result) jresult = (*jenv)->NewStringUTF(jenv, (const char *)result);
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_BitReaderJNI_StringArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jstring jarg3) {
+  char **arg1 = (char **) 0 ;
+  int arg2 ;
+  char *arg3 = (char *) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(char ***)&jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = 0;
+  if (jarg3) {
+    arg3 = (char *)(*jenv)->GetStringUTFChars(jenv, jarg3, 0);
+    if (!arg3) return ;
+  }
+  StringArray_setitem(arg1,arg2,arg3);
+  if (arg3) (*jenv)->ReleaseStringUTFChars(jenv, jarg3, (const char *)arg3);
+}
+
 
 SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMParseBitcode(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
   jlong jresult = 0 ;

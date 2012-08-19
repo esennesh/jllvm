@@ -15,7 +15,7 @@ public class TargetJNI {
   public final static native void LLVMInitializeAllAsmPrinters();
   public final static native void LLVMInitializeAllAsmParsers();
   public final static native void LLVMInitializeAllDisassemblers();
-  public final static native long LLVMInitializeNativeTarget();
+  public final static native int LLVMInitializeNativeTarget();
   public final static native long LLVMCreateTargetData(String jarg1);
   public final static native void LLVMAddTargetData(long jarg1, long jarg2);
   public final static native void LLVMAddTargetLibraryInfo(long jarg1, long jarg2);

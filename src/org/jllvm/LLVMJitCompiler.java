@@ -11,7 +11,7 @@ public class LLVMJitCompiler extends LLVMExecutionEngine {
 		super(null);
 		SWIGTYPE_p_p_LLVMOpaqueExecutionEngine engines = ExecutionEngine.new_LLVMExecutionEngineRefArray(1);
 		SWIGTYPE_p_p_char outerrs = ExecutionEngine.new_StringArray(1);
-		boolean success = ExecutionEngine.LLVMCreateJITCompilerForModule(engines,mod.getInstance(),0,outerrs);
+		boolean success = ExecutionEngine.LLVMCreateJITCompilerForModule(engines,mod.getInstance(),0,outerrs) > 0;
 		String outerr = ExecutionEngine.StringArray_getitem(outerrs,0);
 		ExecutionEngine.delete_StringArray(outerrs); outerrs = null;
 		instance = ExecutionEngine.LLVMExecutionEngineRefArray_getitem(engines,0);

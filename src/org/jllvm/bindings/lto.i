@@ -2,6 +2,9 @@
 %{
 #include <llvm-c/lto.h>
 %}
+
+%include "carrays.i"
+%array_functions(char *,StringArray)
 /*===-- llvm-c/lto.h - LTO Public C Interface ---------------------*- C -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|
