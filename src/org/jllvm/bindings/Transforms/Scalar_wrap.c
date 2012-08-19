@@ -195,483 +195,303 @@ extern "C" {
 #endif
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddAggressiveDCEPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddAggressiveDCEPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddCFGSimplificationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddCFGSimplificationPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddDeadStoreEliminationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddDeadStoreEliminationPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddGVNPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddGVNPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddIndVarSimplifyPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddIndVarSimplifyPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddInstructionCombiningPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddInstructionCombiningPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddJumpThreadingPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddJumpThreadingPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLICMPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddLICMPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLoopDeletionPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddLoopDeletionPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLoopIdiomPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddLoopIdiomPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLoopRotatePass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddLoopRotatePass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLoopUnrollPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddLoopUnrollPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLoopUnswitchPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddLoopUnswitchPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddMemCpyOptPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddMemCpyOptPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddPromoteMemoryToRegisterPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddPromoteMemoryToRegisterPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddReassociatePass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddReassociatePass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddSCCPPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddSCCPPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddScalarReplAggregatesPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddScalarReplAggregatesPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddScalarReplAggregatesPassSSA(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddScalarReplAggregatesPassSSA(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddScalarReplAggregatesPassWithThreshold(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
-  LLVMPassManagerRef arg1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   int arg2 ;
-  LLVMPassManagerRef *argp1 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   arg2 = (int)jarg2; 
   LLVMAddScalarReplAggregatesPassWithThreshold(arg1,arg2);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddSimplifyLibCallsPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddSimplifyLibCallsPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddTailCallEliminationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddTailCallEliminationPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddConstantPropagationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddConstantPropagationPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddDemoteMemoryToRegisterPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddDemoteMemoryToRegisterPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddVerifierPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddVerifierPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddCorrelatedValuePropagationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddCorrelatedValuePropagationPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddEarlyCSEPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddEarlyCSEPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLowerExpectIntrinsicPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddLowerExpectIntrinsicPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddTypeBasedAliasAnalysisPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddTypeBasedAliasAnalysisPass(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddBasicAliasAnalysisPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddBasicAliasAnalysisPass(arg1);
 }
 

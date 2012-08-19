@@ -187,6 +187,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 #define SWIG_contract_assert(nullreturn, expr, msg) if (!(expr)) {SWIG_JavaThrowException(jenv, SWIG_JavaIllegalArgumentException, msg); return nullreturn; } else
 
 
+#include <stdbool.h>
 #include <llvm-c/Analysis.h>
 
 
@@ -269,88 +270,56 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_AnalysisJNI_StringArray_1setitem
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_AnalysisJNI_LLVMVerifyModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
-  jlong jresult = 0 ;
-  LLVMModuleRef arg1 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_AnalysisJNI_LLVMVerifyModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
+  jint jresult = 0 ;
+  LLVMModuleRef arg1 = (LLVMModuleRef) 0 ;
   LLVMVerifierFailureAction arg2 ;
   char **arg3 = (char **) 0 ;
-  LLVMModuleRef *argp1 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMModuleRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMModuleRef *)&jarg1; 
   arg2 = (LLVMVerifierFailureAction)jarg2; 
   arg3 = *(char ***)&jarg3; 
-  result = LLVMVerifyModule(arg1,arg2,arg3);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMVerifyModule(arg1,arg2,arg3);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_AnalysisJNI_LLVMVerifyFunction(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
-  jlong jresult = 0 ;
-  LLVMValueRef arg1 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_AnalysisJNI_LLVMVerifyFunction(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  jint jresult = 0 ;
+  LLVMValueRef arg1 = (LLVMValueRef) 0 ;
   LLVMVerifierFailureAction arg2 ;
-  LLVMValueRef *argp1 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMValueRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMValueRef");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMValueRef *)&jarg1; 
   arg2 = (LLVMVerifierFailureAction)jarg2; 
-  result = LLVMVerifyFunction(arg1,arg2);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMVerifyFunction(arg1,arg2);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_AnalysisJNI_LLVMViewFunctionCFG(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMValueRef arg1 ;
-  LLVMValueRef *argp1 ;
+  LLVMValueRef arg1 = (LLVMValueRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMValueRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMValueRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMValueRef *)&jarg1; 
   LLVMViewFunctionCFG(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_AnalysisJNI_LLVMViewFunctionCFGOnly(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMValueRef arg1 ;
-  LLVMValueRef *argp1 ;
+  LLVMValueRef arg1 = (LLVMValueRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMValueRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMValueRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMValueRef *)&jarg1; 
   LLVMViewFunctionCFGOnly(arg1);
 }
 

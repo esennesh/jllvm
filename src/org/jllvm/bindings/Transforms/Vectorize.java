@@ -9,8 +9,8 @@
 package org.jllvm.bindings;
 
 public class Vectorize {
-  public static void LLVMAddBBVectorizePass(SWIGTYPE_p_LLVMPassManagerRef PM) {
-    VectorizeJNI.LLVMAddBBVectorizePass(SWIGTYPE_p_LLVMPassManagerRef.getCPtr(PM));
+  public static void LLVMAddBBVectorizePass(SWIGTYPE_p_LLVMOpaquePassManager PM) {
+    VectorizeJNI.LLVMAddBBVectorizePass(SWIGTYPE_p_LLVMOpaquePassManager.getCPtr(PM));
   }
 
 }

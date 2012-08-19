@@ -187,6 +187,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 #define SWIG_contract_assert(nullreturn, expr, msg) if (!(expr)) {SWIG_JavaThrowException(jenv, SWIG_JavaIllegalArgumentException, msg); return nullreturn; } else
 
 
+#include <stdbool.h>
 #include <llvm-c/Object.h>
 
 
@@ -196,18 +197,12 @@ extern "C" {
 
 SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMCreateObjectFile(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   jlong jresult = 0 ;
-  LLVMMemoryBufferRef arg1 ;
-  LLVMMemoryBufferRef *argp1 ;
+  LLVMMemoryBufferRef arg1 = (LLVMMemoryBufferRef) 0 ;
   LLVMObjectFileRef result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMMemoryBufferRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMMemoryBufferRef");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMMemoryBufferRef *)&jarg1; 
   result = (LLVMObjectFileRef)LLVMCreateObjectFile(arg1);
   *(LLVMObjectFileRef *)&jresult = result; 
   return jresult;
@@ -248,8 +243,8 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMDisposeSectionIter
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMIsSectionIteratorAtEnd(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMIsSectionIteratorAtEnd(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+  jint jresult = 0 ;
   LLVMObjectFileRef arg1 = (LLVMObjectFileRef) 0 ;
   LLVMSectionIteratorRef arg2 = (LLVMSectionIteratorRef) 0 ;
   LLVMBool result;
@@ -258,12 +253,8 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMIsSectionIterator
   (void)jcls;
   arg1 = *(LLVMObjectFileRef *)&jarg1; 
   arg2 = *(LLVMSectionIteratorRef *)&jarg2; 
-  result = LLVMIsSectionIteratorAtEnd(arg1,arg2);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMIsSectionIteratorAtEnd(arg1,arg2);
+  jresult = (jint)result; 
   return jresult;
 }
 
@@ -314,8 +305,8 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMDisposeSymbolItera
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMIsSymbolIteratorAtEnd(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMIsSymbolIteratorAtEnd(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+  jint jresult = 0 ;
   LLVMObjectFileRef arg1 = (LLVMObjectFileRef) 0 ;
   LLVMSymbolIteratorRef arg2 = (LLVMSymbolIteratorRef) 0 ;
   LLVMBool result;
@@ -324,12 +315,8 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMIsSymbolIteratorA
   (void)jcls;
   arg1 = *(LLVMObjectFileRef *)&jarg1; 
   arg2 = *(LLVMSymbolIteratorRef *)&jarg2; 
-  result = LLVMIsSymbolIteratorAtEnd(arg1,arg2);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMIsSymbolIteratorAtEnd(arg1,arg2);
+  jresult = (jint)result; 
   return jresult;
 }
 
@@ -408,8 +395,8 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMGetSectionAddress
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMGetSectionContainsSymbol(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMGetSectionContainsSymbol(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+  jint jresult = 0 ;
   LLVMSectionIteratorRef arg1 = (LLVMSectionIteratorRef) 0 ;
   LLVMSymbolIteratorRef arg2 = (LLVMSymbolIteratorRef) 0 ;
   LLVMBool result;
@@ -418,12 +405,8 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMGetSectionContain
   (void)jcls;
   arg1 = *(LLVMSectionIteratorRef *)&jarg1; 
   arg2 = *(LLVMSymbolIteratorRef *)&jarg2; 
-  result = LLVMGetSectionContainsSymbol(arg1,arg2);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMGetSectionContainsSymbol(arg1,arg2);
+  jresult = (jint)result; 
   return jresult;
 }
 
@@ -452,8 +435,8 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMDisposeRelocationI
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMIsRelocationIteratorAtEnd(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMIsRelocationIteratorAtEnd(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+  jint jresult = 0 ;
   LLVMSectionIteratorRef arg1 = (LLVMSectionIteratorRef) 0 ;
   LLVMRelocationIteratorRef arg2 = (LLVMRelocationIteratorRef) 0 ;
   LLVMBool result;
@@ -462,12 +445,8 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_ObjectJNI_LLVMIsRelocationItera
   (void)jcls;
   arg1 = *(LLVMSectionIteratorRef *)&jarg1; 
   arg2 = *(LLVMRelocationIteratorRef *)&jarg2; 
-  result = LLVMIsRelocationIteratorAtEnd(arg1,arg2);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMIsRelocationIteratorAtEnd(arg1,arg2);
+  jresult = (jint)result; 
   return jresult;
 }
 

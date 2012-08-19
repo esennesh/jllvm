@@ -9,7 +9,6 @@
 package org.jllvm.bindings;
 
 public class InitializationJNI {
-  public final static native void LLVMInitializeCore(long jarg1);
   public final static native void LLVMInitializeTransformUtils(long jarg1);
   public final static native void LLVMInitializeScalarOpts(long jarg1);
   public final static native void LLVMInitializeVectorization(long jarg1);

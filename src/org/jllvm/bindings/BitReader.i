@@ -1,11 +1,14 @@
 %module BitReader
 %{
+#include <stdbool.h>
 #include <llvm-c/BitReader.h>
 %}
 
 %include "carrays.i"
 %array_functions(LLVMModuleRef,LLVMModuleRefArray)
 %array_functions(char *,StringArray)
+
+%import "Core.i"
 /*===-- llvm-c/BitReader.h - BitReader Library C Interface ------*- C++ -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|

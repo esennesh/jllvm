@@ -1,7 +1,10 @@
 %module Object
 %{
+#include <stdbool.h>
 #include <llvm-c/Object.h>
 %}
+
+%import "Core.i"
 /*===-- llvm-c/Object.h - Object Lib C Iface --------------------*- C++ -*-===*/
 /*                                                                            */
 /*                     The LLVM Compiler Infrastructure                       */

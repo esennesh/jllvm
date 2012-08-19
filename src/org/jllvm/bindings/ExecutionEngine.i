@@ -2,13 +2,15 @@
 %{
 #include <llvm-c/ExecutionEngine.h>
 %}
-
 %include "carrays.i"
 %array_functions(LLVMValueRef,LLVMValueRefArray)
 %array_functions(LLVMModuleRef,LLVMModuleRefArray)
 %array_functions(LLVMExecutionEngineRef,LLVMExecutionEngineRefArray)
 %array_functions(LLVMGenericValueRef,LLVMGenericValueRefArray)
 %array_functions(char *,StringArray)
+
+%import "Core.i"
+%import "Target.i"
 /*===-- llvm-c/ExecutionEngine.h - ExecutionEngine Lib C Iface --*- C++ -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|
@@ -36,54 +38,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-/**
- * @defgroup LLVMCCoreTypes Types and Enumerations
- *
- * @{
- */
-
-typedef int LLVMBool;
-
-/* Opaque types. */
-
-/**
- * The top-level container for all LLVM global data. See the LLVMContext class.
- */
-typedef struct LLVMOpaqueContext *LLVMContextRef;
-
-/**
- * The top-level container for all other LLVM Intermediate Representation (IR)
- * objects.
- *
- * @see llvm::Module
- */
-typedef struct LLVMOpaqueModule *LLVMModuleRef;
-
-/**
- * Each value in the LLVM IR has a type, an LLVMTypeRef.
- *
- * @see llvm::Type
- */
-typedef struct LLVMOpaqueType *LLVMTypeRef;
-
-/**
- * Represents an individual value in LLVM IR.
- *
- * This models llvm::Value.
- */
-typedef struct LLVMOpaqueValue *LLVMValueRef;
-
-/**
- * @defgroup LLVMCTarget Target information
- * @ingroup LLVMC
- *
- * @{
- */
-
-typedef struct LLVMOpaqueTargetData *LLVMTargetDataRef;
-typedef struct LLVMOpaqueTargetLibraryInfotData *LLVMTargetLibraryInfoRef;
-typedef struct LLVMStructLayout *LLVMStructLayoutRef;
 
 /**
  * @defgroup LLVMCExecutionEngine Execution Engine

@@ -2,6 +2,8 @@
 %{
 #include <llvm-c/Transforms/Vectorize.h>
 %}
+
+%import "../Core.i"
 /*===---------------------------Vectorize.h --------------------- -*- C -*-===*\
 |*===----------- Vectorization Transformation Library C Interface ---------===*|
 |*                                                                            *|

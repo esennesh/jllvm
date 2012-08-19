@@ -2,6 +2,8 @@
 %{
 #include <llvm-c/Initialization.h>
 %}
+
+%import "Core.i"
 /*===-- llvm-c/Initialization.h - Initialization C Interface ------*- C -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|

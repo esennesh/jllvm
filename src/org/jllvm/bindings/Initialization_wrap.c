@@ -194,178 +194,102 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 extern "C" {
 #endif
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_InitializationJNI_LLVMInitializeCore(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassRegistryRef arg1 ;
-  LLVMPassRegistryRef *argp1 ;
-  
-  (void)jenv;
-  (void)jcls;
-  argp1 = *(LLVMPassRegistryRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassRegistryRef");
-    return ;
-  }
-  arg1 = *argp1; 
-  LLVMInitializeCore(arg1);
-}
-
-
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_InitializationJNI_LLVMInitializeTransformUtils(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassRegistryRef arg1 ;
-  LLVMPassRegistryRef *argp1 ;
+  LLVMPassRegistryRef arg1 = (LLVMPassRegistryRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassRegistryRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassRegistryRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassRegistryRef *)&jarg1; 
   LLVMInitializeTransformUtils(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_InitializationJNI_LLVMInitializeScalarOpts(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassRegistryRef arg1 ;
-  LLVMPassRegistryRef *argp1 ;
+  LLVMPassRegistryRef arg1 = (LLVMPassRegistryRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassRegistryRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassRegistryRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassRegistryRef *)&jarg1; 
   LLVMInitializeScalarOpts(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_InitializationJNI_LLVMInitializeVectorization(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassRegistryRef arg1 ;
-  LLVMPassRegistryRef *argp1 ;
+  LLVMPassRegistryRef arg1 = (LLVMPassRegistryRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassRegistryRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassRegistryRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassRegistryRef *)&jarg1; 
   LLVMInitializeVectorization(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_InitializationJNI_LLVMInitializeInstCombine(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassRegistryRef arg1 ;
-  LLVMPassRegistryRef *argp1 ;
+  LLVMPassRegistryRef arg1 = (LLVMPassRegistryRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassRegistryRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassRegistryRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassRegistryRef *)&jarg1; 
   LLVMInitializeInstCombine(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_InitializationJNI_LLVMInitializeIPO(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassRegistryRef arg1 ;
-  LLVMPassRegistryRef *argp1 ;
+  LLVMPassRegistryRef arg1 = (LLVMPassRegistryRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassRegistryRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassRegistryRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassRegistryRef *)&jarg1; 
   LLVMInitializeIPO(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_InitializationJNI_LLVMInitializeInstrumentation(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassRegistryRef arg1 ;
-  LLVMPassRegistryRef *argp1 ;
+  LLVMPassRegistryRef arg1 = (LLVMPassRegistryRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassRegistryRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassRegistryRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassRegistryRef *)&jarg1; 
   LLVMInitializeInstrumentation(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_InitializationJNI_LLVMInitializeAnalysis(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassRegistryRef arg1 ;
-  LLVMPassRegistryRef *argp1 ;
+  LLVMPassRegistryRef arg1 = (LLVMPassRegistryRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassRegistryRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassRegistryRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassRegistryRef *)&jarg1; 
   LLVMInitializeAnalysis(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_InitializationJNI_LLVMInitializeIPA(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassRegistryRef arg1 ;
-  LLVMPassRegistryRef *argp1 ;
+  LLVMPassRegistryRef arg1 = (LLVMPassRegistryRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassRegistryRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassRegistryRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassRegistryRef *)&jarg1; 
   LLVMInitializeIPA(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_InitializationJNI_LLVMInitializeCodeGen(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassRegistryRef arg1 ;
-  LLVMPassRegistryRef *argp1 ;
+  LLVMPassRegistryRef arg1 = (LLVMPassRegistryRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassRegistryRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassRegistryRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassRegistryRef *)&jarg1; 
   LLVMInitializeCodeGen(arg1);
 }
 
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_InitializationJNI_LLVMInitializeTarget(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassRegistryRef arg1 ;
-  LLVMPassRegistryRef *argp1 ;
+  LLVMPassRegistryRef arg1 = (LLVMPassRegistryRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassRegistryRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassRegistryRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassRegistryRef *)&jarg1; 
   LLVMInitializeTarget(arg1);
 }
 

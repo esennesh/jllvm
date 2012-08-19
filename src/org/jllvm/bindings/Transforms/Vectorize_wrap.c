@@ -195,17 +195,11 @@ extern "C" {
 #endif
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_VectorizeJNI_LLVMAddBBVectorizePass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 ;
-  LLVMPassManagerRef *argp1 ;
+  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMPassManagerRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMPassManagerRef");
-    return ;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMPassManagerRef *)&jarg1; 
   LLVMAddBBVectorizePass(arg1);
 }
 

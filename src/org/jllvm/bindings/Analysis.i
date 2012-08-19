@@ -1,10 +1,13 @@
 %module Analysis
 %{
+#include <stdbool.h>
 #include <llvm-c/Analysis.h>
 %}
 
 %include "carrays.i"
 %array_functions(char *,StringArray)
+
+%import "Core.i"
 /*===-- llvm-c/Analysis.h - Analysis Library C Interface --------*- C++ -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|

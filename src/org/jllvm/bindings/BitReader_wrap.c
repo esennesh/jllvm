@@ -187,6 +187,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 #define SWIG_contract_assert(nullreturn, expr, msg) if (!(expr)) {SWIG_JavaThrowException(jenv, SWIG_JavaIllegalArgumentException, msg); return nullreturn; } else
 
 
+#include <stdbool.h>
 #include <llvm-c/BitReader.h>
 
 
@@ -260,12 +261,8 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMModuleRefArray
   (void)jcls;
   arg1 = *(LLVMModuleRef **)&jarg1; 
   arg2 = (int)jarg2; 
-  result = LLVMModuleRefArray_getitem(arg1,arg2);
-  {
-    LLVMModuleRef * resultptr = (LLVMModuleRef *) malloc(sizeof(LLVMModuleRef));
-    memmove(resultptr, &result, sizeof(LLVMModuleRef));
-    *(LLVMModuleRef **)&jresult = resultptr;
-  }
+  result = (LLVMModuleRef)LLVMModuleRefArray_getitem(arg1,arg2);
+  *(LLVMModuleRef *)&jresult = result; 
   return jresult;
 }
 
@@ -273,19 +270,13 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMModuleRefArray
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMModuleRefArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
   LLVMModuleRef *arg1 = (LLVMModuleRef *) 0 ;
   int arg2 ;
-  LLVMModuleRef arg3 ;
-  LLVMModuleRef *argp3 ;
+  LLVMModuleRef arg3 = (LLVMModuleRef) 0 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMModuleRef **)&jarg1; 
   arg2 = (int)jarg2; 
-  argp3 = *(LLVMModuleRef **)&jarg3; 
-  if (!argp3) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleRef");
-    return ;
-  }
-  arg3 = *argp3; 
+  arg3 = *(LLVMModuleRef *)&jarg3; 
   LLVMModuleRefArray_setitem(arg1,arg2,arg3);
 }
 
@@ -349,194 +340,116 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_BitReaderJNI_StringArray_1setite
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMParseBitcode(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
-  jlong jresult = 0 ;
-  LLVMMemoryBufferRef arg1 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMParseBitcode(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
+  jint jresult = 0 ;
+  LLVMMemoryBufferRef arg1 = (LLVMMemoryBufferRef) 0 ;
   LLVMModuleRef *arg2 = (LLVMModuleRef *) 0 ;
   char **arg3 = (char **) 0 ;
-  LLVMMemoryBufferRef *argp1 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMMemoryBufferRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMMemoryBufferRef");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMMemoryBufferRef *)&jarg1; 
   arg2 = *(LLVMModuleRef **)&jarg2; 
   arg3 = *(char ***)&jarg3; 
-  result = LLVMParseBitcode(arg1,arg2,arg3);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMParseBitcode(arg1,arg2,arg3);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMParseBitcodeInContext(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
-  jlong jresult = 0 ;
-  LLVMContextRef arg1 ;
-  LLVMMemoryBufferRef arg2 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMParseBitcodeInContext(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
+  jint jresult = 0 ;
+  LLVMContextRef arg1 = (LLVMContextRef) 0 ;
+  LLVMMemoryBufferRef arg2 = (LLVMMemoryBufferRef) 0 ;
   LLVMModuleRef *arg3 = (LLVMModuleRef *) 0 ;
   char **arg4 = (char **) 0 ;
-  LLVMContextRef *argp1 ;
-  LLVMMemoryBufferRef *argp2 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMContextRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMContextRef");
-    return 0;
-  }
-  arg1 = *argp1; 
-  argp2 = *(LLVMMemoryBufferRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMMemoryBufferRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg1 = *(LLVMContextRef *)&jarg1; 
+  arg2 = *(LLVMMemoryBufferRef *)&jarg2; 
   arg3 = *(LLVMModuleRef **)&jarg3; 
   arg4 = *(char ***)&jarg4; 
-  result = LLVMParseBitcodeInContext(arg1,arg2,arg3,arg4);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMParseBitcodeInContext(arg1,arg2,arg3,arg4);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMGetBitcodeModuleInContext(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
-  jlong jresult = 0 ;
-  LLVMContextRef arg1 ;
-  LLVMMemoryBufferRef arg2 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMGetBitcodeModuleInContext(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
+  jint jresult = 0 ;
+  LLVMContextRef arg1 = (LLVMContextRef) 0 ;
+  LLVMMemoryBufferRef arg2 = (LLVMMemoryBufferRef) 0 ;
   LLVMModuleRef *arg3 = (LLVMModuleRef *) 0 ;
   char **arg4 = (char **) 0 ;
-  LLVMContextRef *argp1 ;
-  LLVMMemoryBufferRef *argp2 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMContextRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMContextRef");
-    return 0;
-  }
-  arg1 = *argp1; 
-  argp2 = *(LLVMMemoryBufferRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMMemoryBufferRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg1 = *(LLVMContextRef *)&jarg1; 
+  arg2 = *(LLVMMemoryBufferRef *)&jarg2; 
   arg3 = *(LLVMModuleRef **)&jarg3; 
   arg4 = *(char ***)&jarg4; 
-  result = LLVMGetBitcodeModuleInContext(arg1,arg2,arg3,arg4);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMGetBitcodeModuleInContext(arg1,arg2,arg3,arg4);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMGetBitcodeModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
-  jlong jresult = 0 ;
-  LLVMMemoryBufferRef arg1 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMGetBitcodeModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
+  jint jresult = 0 ;
+  LLVMMemoryBufferRef arg1 = (LLVMMemoryBufferRef) 0 ;
   LLVMModuleRef *arg2 = (LLVMModuleRef *) 0 ;
   char **arg3 = (char **) 0 ;
-  LLVMMemoryBufferRef *argp1 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMMemoryBufferRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMMemoryBufferRef");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMMemoryBufferRef *)&jarg1; 
   arg2 = *(LLVMModuleRef **)&jarg2; 
   arg3 = *(char ***)&jarg3; 
-  result = LLVMGetBitcodeModule(arg1,arg2,arg3);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMGetBitcodeModule(arg1,arg2,arg3);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMGetBitcodeModuleProviderInContext(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
-  jlong jresult = 0 ;
-  LLVMContextRef arg1 ;
-  LLVMMemoryBufferRef arg2 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMGetBitcodeModuleProviderInContext(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
+  jint jresult = 0 ;
+  LLVMContextRef arg1 = (LLVMContextRef) 0 ;
+  LLVMMemoryBufferRef arg2 = (LLVMMemoryBufferRef) 0 ;
   LLVMModuleProviderRef *arg3 = (LLVMModuleProviderRef *) 0 ;
   char **arg4 = (char **) 0 ;
-  LLVMContextRef *argp1 ;
-  LLVMMemoryBufferRef *argp2 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMContextRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMContextRef");
-    return 0;
-  }
-  arg1 = *argp1; 
-  argp2 = *(LLVMMemoryBufferRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMMemoryBufferRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg1 = *(LLVMContextRef *)&jarg1; 
+  arg2 = *(LLVMMemoryBufferRef *)&jarg2; 
   arg3 = *(LLVMModuleProviderRef **)&jarg3; 
   arg4 = *(char ***)&jarg4; 
-  result = LLVMGetBitcodeModuleProviderInContext(arg1,arg2,arg3,arg4);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMGetBitcodeModuleProviderInContext(arg1,arg2,arg3,arg4);
+  jresult = (jint)result; 
   return jresult;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMGetBitcodeModuleProvider(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
-  jlong jresult = 0 ;
-  LLVMMemoryBufferRef arg1 ;
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_BitReaderJNI_LLVMGetBitcodeModuleProvider(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
+  jint jresult = 0 ;
+  LLVMMemoryBufferRef arg1 = (LLVMMemoryBufferRef) 0 ;
   LLVMModuleProviderRef *arg2 = (LLVMModuleProviderRef *) 0 ;
   char **arg3 = (char **) 0 ;
-  LLVMMemoryBufferRef *argp1 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
-  argp1 = *(LLVMMemoryBufferRef **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMMemoryBufferRef");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = *(LLVMMemoryBufferRef *)&jarg1; 
   arg2 = *(LLVMModuleProviderRef **)&jarg2; 
   arg3 = *(char ***)&jarg3; 
-  result = LLVMGetBitcodeModuleProvider(arg1,arg2,arg3);
-  {
-    LLVMBool * resultptr = (LLVMBool *) malloc(sizeof(LLVMBool));
-    memmove(resultptr, &result, sizeof(LLVMBool));
-    *(LLVMBool **)&jresult = resultptr;
-  }
+  result = (LLVMBool)LLVMGetBitcodeModuleProvider(arg1,arg2,arg3);
+  jresult = (jint)result; 
   return jresult;
 }
 

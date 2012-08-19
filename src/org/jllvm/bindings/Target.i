@@ -2,6 +2,9 @@
 %{
 #include <llvm-c/Target.h>
 %}
+
+%import "Core.i"
+
 /*===-- llvm-c/Target.h - Target Lib C Iface --------------------*- C++ -*-===*/
 /*                                                                            */
 /*                     The LLVM Compiler Infrastructure                       */
@@ -29,83 +32,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-/**
- * @defgroup LLVMCCoreTypes Types and Enumerations
- *
- * @{
- */
-
-typedef int LLVMBool;
-
-/* Opaque types. */
-
-/**
- * The top-level container for all LLVM global data. See the LLVMContext class.
- */
-typedef struct LLVMOpaqueContext *LLVMContextRef;
-
-/**
- * The top-level container for all other LLVM Intermediate Representation (IR)
- * objects.
- *
- * @see llvm::Module
- */
-typedef struct LLVMOpaqueModule *LLVMModuleRef;
-
-/**
- * Each value in the LLVM IR has a type, an LLVMTypeRef.
- *
- * @see llvm::Type
- */
-typedef struct LLVMOpaqueType *LLVMTypeRef;
-
-/**
- * Represents an individual value in LLVM IR.
- *
- * This models llvm::Value.
- */
-typedef struct LLVMOpaqueValue *LLVMValueRef;
-
-/**
- * Represents a basic block of instruction in LLVM IR.
- *
- * This models llvm::BasicBlock.
- */
-typedef struct LLVMOpaqueBasicBlock *LLVMBasicBlockRef;
-
-/**
- * Represents an LLVM basic block builder.
- *
- * This models llvm::IRBuilder.
- */
-typedef struct LLVMOpaqueBuilder *LLVMBuilderRef;
-
-/**
- * Interface used to provide a module to JIT or interpreter.
- * This is now just a synonym for llvm::Module, but we have to keep using the
- * different type to keep binary compatibility.
- */
-typedef struct LLVMOpaqueModuleProvider *LLVMModuleProviderRef;
-
-/**
- * Used to provide a module to JIT or interpreter.
- *
- * @see llvm::MemoryBuffer
- */
-typedef struct LLVMOpaqueMemoryBuffer *LLVMMemoryBufferRef;
-
-/** @see llvm::PassManagerBase */
-typedef struct LLVMOpaquePassManager *LLVMPassManagerRef;
-
-/** @see llvm::PassRegistry */
-typedef struct LLVMOpaquePassRegistry *LLVMPassRegistryRef;
-
-/**
- * Used to get the users and usees of a Value.
- *
- * @see llvm::Use */
-typedef struct LLVMOpaqueUse *LLVMUseRef;
 
 /**
  * @defgroup LLVMCTarget Target information

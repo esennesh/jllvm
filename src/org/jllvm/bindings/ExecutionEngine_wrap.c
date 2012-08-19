@@ -778,20 +778,14 @@ SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateJIT
 SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateExecutionEngine(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
   jint jresult = 0 ;
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
-  LLVMModuleProviderRef arg2 ;
+  LLVMModuleProviderRef arg2 = (LLVMModuleProviderRef) 0 ;
   char **arg3 = (char **) 0 ;
-  LLVMModuleProviderRef *argp2 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef **)&jarg1; 
-  argp2 = *(LLVMModuleProviderRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleProviderRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMModuleProviderRef *)&jarg2; 
   arg3 = *(char ***)&jarg3; 
   result = (LLVMBool)LLVMCreateExecutionEngine(arg1,arg2,arg3);
   jresult = (jint)result; 
@@ -802,20 +796,14 @@ SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateExe
 SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateInterpreter(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3) {
   jint jresult = 0 ;
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
-  LLVMModuleProviderRef arg2 ;
+  LLVMModuleProviderRef arg2 = (LLVMModuleProviderRef) 0 ;
   char **arg3 = (char **) 0 ;
-  LLVMModuleProviderRef *argp2 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef **)&jarg1; 
-  argp2 = *(LLVMModuleProviderRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleProviderRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMModuleProviderRef *)&jarg2; 
   arg3 = *(char ***)&jarg3; 
   result = (LLVMBool)LLVMCreateInterpreter(arg1,arg2,arg3);
   jresult = (jint)result; 
@@ -826,21 +814,15 @@ SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateInt
 SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMCreateJITCompiler(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
   jint jresult = 0 ;
   LLVMExecutionEngineRef *arg1 = (LLVMExecutionEngineRef *) 0 ;
-  LLVMModuleProviderRef arg2 ;
+  LLVMModuleProviderRef arg2 = (LLVMModuleProviderRef) 0 ;
   unsigned int arg3 ;
   char **arg4 = (char **) 0 ;
-  LLVMModuleProviderRef *argp2 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef **)&jarg1; 
-  argp2 = *(LLVMModuleProviderRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleProviderRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMModuleProviderRef *)&jarg2; 
   arg3 = (unsigned int)jarg3; 
   arg4 = *(char ***)&jarg4; 
   result = (LLVMBool)LLVMCreateJITCompiler(arg1,arg2,arg3,arg4);
@@ -947,18 +929,12 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMAddModule
 
 SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMAddModuleProvider(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
   LLVMExecutionEngineRef arg1 = (LLVMExecutionEngineRef) 0 ;
-  LLVMModuleProviderRef arg2 ;
-  LLVMModuleProviderRef *argp2 ;
+  LLVMModuleProviderRef arg2 = (LLVMModuleProviderRef) 0 ;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef *)&jarg1; 
-  argp2 = *(LLVMModuleProviderRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleProviderRef");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMModuleProviderRef *)&jarg2; 
   LLVMAddModuleProvider(arg1,arg2);
 }
 
@@ -986,21 +962,15 @@ SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMRemoveMod
 SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_ExecutionEngineJNI_LLVMRemoveModuleProvider(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jlong jarg3, jlong jarg4) {
   jint jresult = 0 ;
   LLVMExecutionEngineRef arg1 = (LLVMExecutionEngineRef) 0 ;
-  LLVMModuleProviderRef arg2 ;
+  LLVMModuleProviderRef arg2 = (LLVMModuleProviderRef) 0 ;
   LLVMModuleRef *arg3 = (LLVMModuleRef *) 0 ;
   char **arg4 = (char **) 0 ;
-  LLVMModuleProviderRef *argp2 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMExecutionEngineRef *)&jarg1; 
-  argp2 = *(LLVMModuleProviderRef **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null LLVMModuleProviderRef");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = *(LLVMModuleProviderRef *)&jarg2; 
   arg3 = *(LLVMModuleRef **)&jarg3; 
   arg4 = *(char ***)&jarg4; 
   result = (LLVMBool)LLVMRemoveModuleProvider(arg1,arg2,arg3,arg4);

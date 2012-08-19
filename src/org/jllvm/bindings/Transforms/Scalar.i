@@ -2,6 +2,8 @@
 %{
 #include <llvm-c/Transforms/Scalar.h>
 %}
+
+%import "../Core.i"
 /*===-- Scalar.h - Scalar Transformation Library C Interface ----*- C++ -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|
