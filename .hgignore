@@ -2,5 +2,7 @@ syntax: glob
 
 build/*
 src/org/jllvm/bindings/CMake*
+src/org/jllvm/bindings/Makefile
+src/org/jllvm/bindings/install_manifest
 jllvm.jar
 libjllvm.so
