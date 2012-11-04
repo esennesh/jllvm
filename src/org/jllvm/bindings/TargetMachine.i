@@ -1,12 +1,12 @@
 %module TargetMachine
 %{
 #include <stdbool.h>
+#include <llvm-c/Target.h>
 #include <llvm-c/TargetMachine.h>
 %}
 
 %include "carrays.i"
 %array_functions(char *,StringArray)
-
 %import "Core.i"
 %import "Target.i"
 /*===-- llvm-c/TargetMachine.h - Target Machine Library C Interface - C++ -*-=*\
@@ -31,7 +31,6 @@
 #define LLVM_C_TARGETMACHINE_H
 
 #include "llvm-c/Core.h"
-#include "llvm-c/Target.h"
 
 #ifdef __cplusplus
 extern "C" {
