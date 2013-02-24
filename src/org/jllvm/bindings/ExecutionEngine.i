@@ -1,12 +1,14 @@
 %module ExecutionEngine
 %{
+#include <stdbool.h>
 #include <llvm-c/ExecutionEngine.h>
 %}
+
 %include "carrays.i"
 %array_functions(LLVMValueRef,LLVMValueRefArray)
+%array_functions(LLVMGenericValueRef,LLVMGenericValueRefArray)
 %array_functions(LLVMModuleRef,LLVMModuleRefArray)
 %array_functions(LLVMExecutionEngineRef,LLVMExecutionEngineRefArray)
-%array_functions(LLVMGenericValueRef,LLVMGenericValueRefArray)
 %array_functions(char *,StringArray)
 
 %import "Core.i"

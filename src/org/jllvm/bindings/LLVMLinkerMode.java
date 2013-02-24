@@ -8,10 +8,9 @@
 
 package org.jllvm.bindings;
 
-public final class LLVMVerifierFailureAction {
-  public final static LLVMVerifierFailureAction LLVMAbortProcessAction = new LLVMVerifierFailureAction("LLVMAbortProcessAction");
-  public final static LLVMVerifierFailureAction LLVMPrintMessageAction = new LLVMVerifierFailureAction("LLVMPrintMessageAction");
-  public final static LLVMVerifierFailureAction LLVMReturnStatusAction = new LLVMVerifierFailureAction("LLVMReturnStatusAction");
+public final class LLVMLinkerMode {
+  public final static LLVMLinkerMode LLVMLinkerDestroySource = new LLVMLinkerMode("LLVMLinkerDestroySource", LinkerJNI.LLVMLinkerDestroySource_get());
+  public final static LLVMLinkerMode LLVMLinkerPreserveSource = new LLVMLinkerMode("LLVMLinkerPreserveSource", LinkerJNI.LLVMLinkerPreserveSource_get());
 
   public final int swigValue() {
     return swigValue;
@@ -21,33 +20,33 @@ public final class LLVMVerifierFailureAction {
     return swigName;
   }
 
-  public static LLVMVerifierFailureAction swigToEnum(int swigValue) {
+  public static LLVMLinkerMode swigToEnum(int swigValue) {
     if (swigValue < swigValues.length && swigValue >= 0 && swigValues[swigValue].swigValue == swigValue)
       return swigValues[swigValue];
     for (int i = 0; i < swigValues.length; i++)
       if (swigValues[i].swigValue == swigValue)
         return swigValues[i];
-    throw new IllegalArgumentException("No enum " + LLVMVerifierFailureAction.class + " with value " + swigValue);
+    throw new IllegalArgumentException("No enum " + LLVMLinkerMode.class + " with value " + swigValue);
   }
 
-  private LLVMVerifierFailureAction(String swigName) {
+  private LLVMLinkerMode(String swigName) {
     this.swigName = swigName;
     this.swigValue = swigNext++;
   }
 
-  private LLVMVerifierFailureAction(String swigName, int swigValue) {
+  private LLVMLinkerMode(String swigName, int swigValue) {
     this.swigName = swigName;
     this.swigValue = swigValue;
     swigNext = swigValue+1;
   }
 
-  private LLVMVerifierFailureAction(String swigName, LLVMVerifierFailureAction swigEnum) {
+  private LLVMLinkerMode(String swigName, LLVMLinkerMode swigEnum) {
     this.swigName = swigName;
     this.swigValue = swigEnum.swigValue;
     swigNext = this.swigValue+1;
   }
 
-  private static LLVMVerifierFailureAction[] swigValues = { LLVMAbortProcessAction, LLVMPrintMessageAction, LLVMReturnStatusAction };
+  private static LLVMLinkerMode[] swigValues = { LLVMLinkerDestroySource, LLVMLinkerPreserveSource };
   private static int swigNext = 0;
   private final int swigValue;
   private final String swigName;

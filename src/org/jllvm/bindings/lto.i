@@ -1,8 +1,5 @@
 %module lto
 %{
-#include <stdbool.h>
-#include <stddef.h>
-#include <unistd.h>
 #include <llvm-c/lto.h>
 %}
 

@@ -188,7 +188,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 
 
 #include <stdbool.h>
-#include <llvm-c/Analysis.h>
+#include <llvm-c/Linker.h>
 
 
 static char * *new_StringArray(int nelements) { 
@@ -211,7 +211,7 @@ static void StringArray_setitem(char * *ary, int index, char * value) {
 extern "C" {
 #endif
 
-SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_AnalysisJNI_new_1StringArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_LinkerJNI_new_1StringArray(JNIEnv *jenv, jclass jcls, jint jarg1) {
   jlong jresult = 0 ;
   int arg1 ;
   char **result = 0 ;
@@ -225,7 +225,7 @@ SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_AnalysisJNI_new_1StringArray(JN
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_AnalysisJNI_delete_1StringArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_LinkerJNI_delete_1StringArray(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   char **arg1 = (char **) 0 ;
   
   (void)jenv;
@@ -235,7 +235,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_AnalysisJNI_delete_1StringArray(
 }
 
 
-SWIGEXPORT jstring JNICALL Java_org_jllvm_bindings_AnalysisJNI_StringArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+SWIGEXPORT jstring JNICALL Java_org_jllvm_bindings_LinkerJNI_StringArray_1getitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
   jstring jresult = 0 ;
   char **arg1 = (char **) 0 ;
   int arg2 ;
@@ -251,7 +251,7 @@ SWIGEXPORT jstring JNICALL Java_org_jllvm_bindings_AnalysisJNI_StringArray_1geti
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_AnalysisJNI_StringArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jstring jarg3) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_LinkerJNI_StringArray_1setitem(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jstring jarg3) {
   char **arg1 = (char **) 0 ;
   int arg2 ;
   char *arg3 = (char *) 0 ;
@@ -270,57 +270,47 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_AnalysisJNI_StringArray_1setitem
 }
 
 
-SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_AnalysisJNI_LLVMVerifyModule(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2, jlong jarg3) {
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_LinkerJNI_LLVMLinkerDestroySource_1get(JNIEnv *jenv, jclass jcls) {
+  jint jresult = 0 ;
+  LLVMLinkerMode result;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (LLVMLinkerMode)LLVMLinkerDestroySource;
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_LinkerJNI_LLVMLinkerPreserveSource_1get(JNIEnv *jenv, jclass jcls) {
+  jint jresult = 0 ;
+  LLVMLinkerMode result;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (LLVMLinkerMode)LLVMLinkerPreserveSource;
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_LinkerJNI_LLVMLinkModules(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jint jarg3, jlong jarg4) {
   jint jresult = 0 ;
   LLVMModuleRef arg1 = (LLVMModuleRef) 0 ;
-  LLVMVerifierFailureAction arg2 ;
-  char **arg3 = (char **) 0 ;
+  LLVMModuleRef arg2 = (LLVMModuleRef) 0 ;
+  LLVMLinkerMode arg3 ;
+  char **arg4 = (char **) 0 ;
   LLVMBool result;
   
   (void)jenv;
   (void)jcls;
   arg1 = *(LLVMModuleRef *)&jarg1; 
-  arg2 = (LLVMVerifierFailureAction)jarg2; 
-  arg3 = *(char ***)&jarg3; 
-  result = (LLVMBool)LLVMVerifyModule(arg1,arg2,arg3);
+  arg2 = *(LLVMModuleRef *)&jarg2; 
+  arg3 = (LLVMLinkerMode)jarg3; 
+  arg4 = *(char ***)&jarg4; 
+  result = (LLVMBool)LLVMLinkModules(arg1,arg2,arg3,arg4);
   jresult = (jint)result; 
   return jresult;
-}
-
-
-SWIGEXPORT jint JNICALL Java_org_jllvm_bindings_AnalysisJNI_LLVMVerifyFunction(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
-  jint jresult = 0 ;
-  LLVMValueRef arg1 = (LLVMValueRef) 0 ;
-  LLVMVerifierFailureAction arg2 ;
-  LLVMBool result;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMValueRef *)&jarg1; 
-  arg2 = (LLVMVerifierFailureAction)jarg2; 
-  result = (LLVMBool)LLVMVerifyFunction(arg1,arg2);
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_AnalysisJNI_LLVMViewFunctionCFG(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMValueRef arg1 = (LLVMValueRef) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMValueRef *)&jarg1; 
-  LLVMViewFunctionCFG(arg1);
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_AnalysisJNI_LLVMViewFunctionCFGOnly(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMValueRef arg1 = (LLVMValueRef) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMValueRef *)&jarg1; 
-  LLVMViewFunctionCFGOnly(arg1);
 }
 
 
