@@ -4,6 +4,10 @@
 %}
 
 %import "../Core.i"
+
+%pragma(java) moduleimports=%{
+import org.jllvm.bindings.*;
+%}
 /*===-- Scalar.h - Scalar Transformation Library C Interface ----*- C++ -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|

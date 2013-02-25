@@ -8,6 +8,8 @@
 
 package org.jllvm.bindings.Transforms;
 
+import org.jllvm.bindings.*;
+
 public class Scalar {
   public static void LLVMAddAggressiveDCEPass(SWIGTYPE_p_LLVMOpaquePassManager PM) {
     ScalarJNI.LLVMAddAggressiveDCEPass(SWIGTYPE_p_LLVMOpaquePassManager.getCPtr(PM));

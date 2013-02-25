@@ -4,6 +4,10 @@
 %}
 
 %import "../Core.i"
+
+%pragma(java) moduleimports=%{
+import org.jllvm.bindings.*;
+%}
 /*===-- IPO.h - Interprocedural Transformations C Interface -----*- C++ -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|

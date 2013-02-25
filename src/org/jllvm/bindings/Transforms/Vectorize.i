@@ -4,6 +4,10 @@
 %}
 
 %import "../Core.i"
+
+%pragma(java) moduleimports=%{
+import org.jllvm.bindings.*;
+%}
 /*===---------------------------Vectorize.h --------------------- -*- C -*-===*\
 |*===----------- Vectorization Transformation Library C Interface ---------===*|
 |*                                                                            *|

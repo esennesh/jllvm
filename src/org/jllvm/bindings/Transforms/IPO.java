@@ -8,6 +8,8 @@
 
 package org.jllvm.bindings.Transforms;
 
+import org.jllvm.bindings.*;
+
 public class IPO {
   public static void LLVMAddArgumentPromotionPass(SWIGTYPE_p_LLVMOpaquePassManager PM) {
     IPOJNI.LLVMAddArgumentPromotionPass(SWIGTYPE_p_LLVMOpaquePassManager.getCPtr(PM));

@@ -8,6 +8,8 @@
 
 package org.jllvm.bindings.Transforms;
 
+import org.jllvm.bindings.*;
+
 public class Vectorize {
   public static void LLVMAddBBVectorizePass(SWIGTYPE_p_LLVMOpaquePassManager PM) {
     VectorizeJNI.LLVMAddBBVectorizePass(SWIGTYPE_p_LLVMOpaquePassManager.getCPtr(PM));
