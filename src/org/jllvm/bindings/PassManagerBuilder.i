@@ -4,7 +4,7 @@
 #include <llvm-c/Transforms/PassManagerBuilder.h>
 %}
 
-%import "../Core.i"
+%import "Core.i"
 /*===-- llvm-c/Transform/PassManagerBuilder.h - PMB C Interface ---*- C -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|

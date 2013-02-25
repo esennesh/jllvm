@@ -187,152 +187,145 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 #define SWIG_contract_assert(nullreturn, expr, msg) if (!(expr)) {SWIG_JavaThrowException(jenv, SWIG_JavaIllegalArgumentException, msg); return nullreturn; } else
 
 
-#include <llvm-c/Transforms/IPO.h>
+#include <stdbool.h>
+#include <llvm-c/Transforms/PassManagerBuilder.h>
 
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddArgumentPromotionPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
+SWIGEXPORT jlong JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderCreate(JNIEnv *jenv, jclass jcls) {
+  jlong jresult = 0 ;
+  LLVMPassManagerBuilderRef result;
   
   (void)jenv;
   (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
-  LLVMAddArgumentPromotionPass(arg1);
+  result = (LLVMPassManagerBuilderRef)LLVMPassManagerBuilderCreate();
+  *(LLVMPassManagerBuilderRef *)&jresult = result; 
+  return jresult;
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddConstantMergePass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderDispose(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
   
   (void)jenv;
   (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
-  LLVMAddConstantMergePass(arg1);
+  arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
+  LLVMPassManagerBuilderDispose(arg1);
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddDeadArgEliminationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
-  LLVMAddDeadArgEliminationPass(arg1);
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddFunctionAttrsPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
-  LLVMAddFunctionAttrsPass(arg1);
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddFunctionInliningPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
-  LLVMAddFunctionInliningPass(arg1);
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddAlwaysInlinerPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
-  LLVMAddAlwaysInlinerPass(arg1);
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddGlobalDCEPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
-  LLVMAddGlobalDCEPass(arg1);
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddGlobalOptimizerPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
-  LLVMAddGlobalOptimizerPass(arg1);
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddIPConstantPropagationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
-  LLVMAddIPConstantPropagationPass(arg1);
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddPruneEHPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
-  LLVMAddPruneEHPass(arg1);
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddIPSCCPPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
-  LLVMAddIPSCCPPass(arg1);
-}
-
-
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddInternalizePass(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderSetOptLevel(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+  LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
   unsigned int arg2 ;
   
   (void)jenv;
   (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
+  arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
   arg2 = (unsigned int)jarg2; 
-  LLVMAddInternalizePass(arg1,arg2);
+  LLVMPassManagerBuilderSetOptLevel(arg1,arg2);
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddStripDeadPrototypesPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderSetSizeLevel(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+  LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
+  unsigned int arg2 ;
   
   (void)jenv;
   (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
-  LLVMAddStripDeadPrototypesPass(arg1);
+  arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  LLVMPassManagerBuilderSetSizeLevel(arg1,arg2);
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_IPOJNI_LLVMAddStripSymbolsPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderSetDisableUnitAtATime(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
+  LLVMBool arg2 ;
   
   (void)jenv;
   (void)jcls;
-  arg1 = *(LLVMPassManagerRef *)&jarg1; 
-  LLVMAddStripSymbolsPass(arg1);
+  arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
+  arg2 = (LLVMBool)jarg2; 
+  LLVMPassManagerBuilderSetDisableUnitAtATime(arg1,arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderSetDisableUnrollLoops(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
+  LLVMBool arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
+  arg2 = (LLVMBool)jarg2; 
+  LLVMPassManagerBuilderSetDisableUnrollLoops(arg1,arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderSetDisableSimplifyLibCalls(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+  LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
+  LLVMBool arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
+  arg2 = (LLVMBool)jarg2; 
+  LLVMPassManagerBuilderSetDisableSimplifyLibCalls(arg1,arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderUseInlinerWithThreshold(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+  LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
+  unsigned int arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
+  arg2 = (unsigned int)jarg2; 
+  LLVMPassManagerBuilderUseInlinerWithThreshold(arg1,arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderPopulateFunctionPassManager(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+  LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
+  LLVMPassManagerRef arg2 = (LLVMPassManagerRef) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
+  arg2 = *(LLVMPassManagerRef *)&jarg2; 
+  LLVMPassManagerBuilderPopulateFunctionPassManager(arg1,arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderPopulateModulePassManager(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2) {
+  LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
+  LLVMPassManagerRef arg2 = (LLVMPassManagerRef) 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
+  arg2 = *(LLVMPassManagerRef *)&jarg2; 
+  LLVMPassManagerBuilderPopulateModulePassManager(arg1,arg2);
+}
+
+
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_PassManagerBuilderJNI_LLVMPassManagerBuilderPopulateLTOPassManager(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jboolean jarg3, jboolean jarg4) {
+  LLVMPassManagerBuilderRef arg1 = (LLVMPassManagerBuilderRef) 0 ;
+  LLVMPassManagerRef arg2 = (LLVMPassManagerRef) 0 ;
+  bool arg3 ;
+  bool arg4 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(LLVMPassManagerBuilderRef *)&jarg1; 
+  arg2 = *(LLVMPassManagerRef *)&jarg2; 
+  arg3 = jarg3 ? true : false; 
+  arg4 = jarg4 ? true : false; 
+  LLVMPassManagerBuilderPopulateLTOPassManager(arg1,arg2,arg3,arg4);
 }
 
 

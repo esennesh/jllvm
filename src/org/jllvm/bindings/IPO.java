@@ -6,9 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package org.jllvm.bindings.Transforms;
-
-import org.jllvm.bindings.*;
+package org.jllvm.bindings;
 
 public class IPO {
   public static void LLVMAddArgumentPromotionPass(SWIGTYPE_p_LLVMOpaquePassManager PM) {

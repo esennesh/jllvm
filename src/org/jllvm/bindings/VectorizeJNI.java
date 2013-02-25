@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package org.jllvm.bindings.Transforms;
+package org.jllvm.bindings;
 
 public class VectorizeJNI {
   public final static native void LLVMAddBBVectorizePass(long jarg1);

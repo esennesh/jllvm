@@ -3,11 +3,7 @@
 #include <llvm-c/Transforms/Vectorize.h>
 %}
 
-%import "../Core.i"
-
-%pragma(java) moduleimports=%{
-import org.jllvm.bindings.*;
-%}
+%import "Core.i"
 /*===---------------------------Vectorize.h --------------------- -*- C -*-===*\
 |*===----------- Vectorization Transformation Library C Interface ---------===*|
 |*                                                                            *|

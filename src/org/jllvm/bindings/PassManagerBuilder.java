@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package org.jllvm.bindings.Transforms;
+package org.jllvm.bindings;
 
 public class PassManagerBuilder {
   public static SWIGTYPE_p_LLVMOpaquePassManagerBuilder LLVMPassManagerBuilderCreate() {

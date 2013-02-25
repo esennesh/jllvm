@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package org.jllvm.bindings.Transforms;
+package org.jllvm.bindings;
 
 public class ScalarJNI {
   public final static native void LLVMAddAggressiveDCEPass(long jarg1);

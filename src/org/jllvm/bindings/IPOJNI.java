@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package org.jllvm.bindings.Transforms;
+package org.jllvm.bindings;
 
 public class IPOJNI {
   public final static native void LLVMAddArgumentPromotionPass(long jarg1);

@@ -3,11 +3,7 @@
 #include <llvm-c/Transforms/IPO.h>
 %}
 
-%import "../Core.i"
-
-%pragma(java) moduleimports=%{
-import org.jllvm.bindings.*;
-%}
+%import "Core.i"
 /*===-- IPO.h - Interprocedural Transformations C Interface -----*- C++ -*-===*\
 |*                                                                            *|
 |*                     The LLVM Compiler Infrastructure                       *|

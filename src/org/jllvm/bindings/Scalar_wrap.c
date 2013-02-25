@@ -194,7 +194,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 extern "C" {
 #endif
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddAggressiveDCEPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddAggressiveDCEPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -204,7 +204,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddAggr
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddCFGSimplificationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddCFGSimplificationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -214,7 +214,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddCFGS
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddDeadStoreEliminationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddDeadStoreEliminationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -224,7 +224,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddDead
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddGVNPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddGVNPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -234,7 +234,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddGVNP
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddIndVarSimplifyPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddIndVarSimplifyPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -244,7 +244,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddIndV
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddInstructionCombiningPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddInstructionCombiningPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -254,7 +254,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddInst
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddJumpThreadingPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddJumpThreadingPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -264,7 +264,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddJump
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLICMPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLICMPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -274,7 +274,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLICM
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLoopDeletionPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLoopDeletionPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -284,7 +284,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLoop
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLoopIdiomPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLoopIdiomPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -294,7 +294,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLoop
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLoopRotatePass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLoopRotatePass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -304,7 +304,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLoop
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLoopUnrollPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLoopUnrollPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -314,7 +314,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLoop
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLoopUnswitchPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLoopUnswitchPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -324,7 +324,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLoop
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddMemCpyOptPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddMemCpyOptPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -334,7 +334,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddMemC
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddPromoteMemoryToRegisterPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddPromoteMemoryToRegisterPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -344,7 +344,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddProm
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddReassociatePass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddReassociatePass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -354,7 +354,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddReas
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddSCCPPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddSCCPPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -364,7 +364,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddSCCP
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddScalarReplAggregatesPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddScalarReplAggregatesPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -374,7 +374,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddScal
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddScalarReplAggregatesPassSSA(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddScalarReplAggregatesPassSSA(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -384,7 +384,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddScal
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddScalarReplAggregatesPassWithThreshold(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddScalarReplAggregatesPassWithThreshold(JNIEnv *jenv, jclass jcls, jlong jarg1, jint jarg2) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   int arg2 ;
   
@@ -396,7 +396,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddScal
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddSimplifyLibCallsPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddSimplifyLibCallsPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -406,7 +406,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddSimp
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddTailCallEliminationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddTailCallEliminationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -416,7 +416,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddTail
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddConstantPropagationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddConstantPropagationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -426,7 +426,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddCons
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddDemoteMemoryToRegisterPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddDemoteMemoryToRegisterPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -436,7 +436,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddDemo
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddVerifierPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddVerifierPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -446,7 +446,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddVeri
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddCorrelatedValuePropagationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddCorrelatedValuePropagationPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -456,7 +456,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddCorr
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddEarlyCSEPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddEarlyCSEPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -466,7 +466,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddEarl
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLowerExpectIntrinsicPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddLowerExpectIntrinsicPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -476,7 +476,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddLowe
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddTypeBasedAliasAnalysisPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddTypeBasedAliasAnalysisPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -486,7 +486,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddType
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_ScalarJNI_LLVMAddBasicAliasAnalysisPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_ScalarJNI_LLVMAddBasicAliasAnalysisPass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;

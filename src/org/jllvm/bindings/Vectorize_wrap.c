@@ -194,7 +194,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 extern "C" {
 #endif
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_VectorizeJNI_LLVMAddBBVectorizePass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_VectorizeJNI_LLVMAddBBVectorizePass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
@@ -204,7 +204,7 @@ SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_VectorizeJNI_LLVMAddB
 }
 
 
-SWIGEXPORT void JNICALL Java_org_jllvm_bindings_Transforms_VectorizeJNI_LLVMAddLoopVectorizePass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_org_jllvm_bindings_VectorizeJNI_LLVMAddLoopVectorizePass(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   LLVMPassManagerRef arg1 = (LLVMPassManagerRef) 0 ;
   
   (void)jenv;
