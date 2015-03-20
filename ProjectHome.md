@@ -1,0 +1,1 @@
+These are bindings for LLVM, providing an object-oriented interface as similar as possible to the C++ bindings for JVM languages.  Underneath, they go through LLVM's C bindings.  They currently bind to the headers and ABI of LLVM 3.2.
