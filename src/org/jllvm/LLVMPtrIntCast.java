@@ -18,6 +18,7 @@ public class LLVMPtrIntCast extends LLVMCastInstruction {
 			case PTR_TO_INT: {
 				assert(destType instanceof LLVMIntegerType);
 				instance = Core.LLVMBuildPtrToInt(builder.getInstance(),val.getInstance(),destType.getInstance(),name);
+				break;
 			}
 			case INT_TO_PTR: {
 				assert(destType instanceof LLVMPointerType);
